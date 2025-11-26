@@ -71,3 +71,11 @@ If you need to use your own CSS styles, create a file `assets/css/custom.css` in
 For a custom favicon, just place your file in `PNG` format at `assets/img/favicon.png`.
 
 For full control, clone this repository and modify the template as you need.
+
+
+
+Birds of a Feather… Fight Together?
+Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
+Online conflict is often imagined as a clash between groups that are fundamentally different —
+left vs right, gamers vs cinephiles, cats vs dogs.
+But what if this intuition is wrong?

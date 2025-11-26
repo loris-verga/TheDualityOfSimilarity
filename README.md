@@ -41,6 +41,93 @@ In this data story, we map out what it means for two communities to be “simila
 <strong>Do birds of a feather flock together, or do they fight?</strong>
 
 
+## <span style="color:#ff201e">A Map of Reddit’s Interactions</span>
+
+Before we can understand why communities clash, we must first understand **how they resemble one another**.  
+On Reddit, similarity is not a single dimension. It is an intricate mix of **who posts where**, **how people write**, and **what psychological traits they express**.  
+
+To capture this, we introduce **three notions of similarity**, each one giving rise to a corresponding **distance** between subreddits:
+
+1. **Shared Authorship Distance**  
+2. **Stylometric Distance**  
+3. **Psychological Distance**
+
+Together, these distances serve as a springboard to define communities can be close, aligned, or fundamentally opposed.
+
+## 1. Shared Authorship
+
+Every subreddit has a “population signature”: a set of users who post there.  
+The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community.  
+Two subreddits are close in this space **when many of the same users interact with both**.
+
+Mathematically, we compare two communities using **cosine similarity**:
+
+\[
+\text{cosine\_sim}(A, B)
+= 
+\frac{\sum_{i=1}^{300} A_i B_i}
+{\sqrt{\sum_{i=1}^{300} A_i^2}\,\sqrt{\sum_{i=1}^{300} B_i^2}}
+\]
+
+A value close to **1** means the two communities share a strong author overlap and are aligned in the embeddings space; **–1** means the inverse.
+
+However, in this story, because we want a *distance*, we flip the measure:
+
+\[
+\text{Shared Authorship Distance} = 1 - \text{cosine\_sim}(A,B)
+\]
+
+- **0** → communities whose authorship overlaps
+- **2** → communities with no shared authorship
+
+## 2. Stylometric Signatures: How Communities Write
+
+Communities also differ in how they **sound** : their structure, complexity, and textual habits.
+
+To capture a community’s writing style, we compute a **stylometric signature**, a vector built from features such as:
+
+- average character count  
+- fraction of uppercase letters  
+- number of unique stopwords  
+- average characters per sentence  
+- automated readability index  
+
+Because these features vary wildly in scale, we first apply **Z-score normalization**:
+
+\[
+\frac{x - \mu}{\sigma}
+\]
+
+This ensures that no single feature dominates simply because it has larger numerical values.
+
+Once each subreddit has its stylometric signature, we again compare communities via **cosine similarity**, not Euclidean distance, because we want to measure **proportions**, not magnitudes.
+
+The resulting distance is:
+
+\[
+\text{Stylometric Distance} = 1 - \text{cosine\_sim}(\text{signature}_A,\ \text{signature}_B)
+\]
+
+---
+
+## 3. Psychological Signatures: What Communities Express
+
+Language also reveals psychology.  
+Each hyperlink post in the dataset includes **64 LIWC features** and **VADER sentiment scores**, capturing emotional tone, cognitive style, social orientation, and more.
+
+For each subreddit, we aggregate the normalized LIWC+VADER features of all its outgoing posts to define a **psychological signature**, the average emotional and cognitive expression shown by its authors when interacting with other communities.
+
+As before, similarity is computed as a distance, using cosine similarity:
+
+\[
+\text{Psychological Distance} = 1 - \text{cosine\_sim}(\text{psych}_A,\ \text{psych}_B)
+\]
+
+This gives us a final lens:  
+**how similar communities are in what they feel, reveal, and signal psychologically**.
+
+---
+
 
 
 

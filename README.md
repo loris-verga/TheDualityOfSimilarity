@@ -72,10 +72,44 @@ For a custom favicon, just place your file in `PNG` format at `assets/img/favico
 
 For full control, clone this repository and modify the template as you need.
 
+# <span style="color:#ff201e">Birds of a Feather… Fight Together?</span>
+### Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
 
+We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes.
 
-Birds of a Feather… Fight Together?
-Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
-Online conflict is often imagined as a clash between groups that are fundamentally different —
-left vs right, gamers vs cinephiles, cats vs dogs.
-But what if this intuition is wrong?
+But what if this intuition is wrong?<br>
+What if the most intense disputes don’t arise between opposites…  
+but between communities that look almost exactly the <strong>same</strong>?
+
+Reddit, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
+
+Hidden inside these hyperlinks is a wealth of linguistic and psychological information:
+
+- how people <strong>write</strong>
+- how they <strong>feel</strong>
+- how communities <strong>relate</strong> to one another
+
+This leads us to a provocative set of questions:
+
+<strong>Does similarity create harmony… or fuel conflict?</strong>
+
+And more specifically:
+
+<em>What does “similarity” even mean?</em><br>
+Shared users? Writing style? Emotional tone?
+
+<em>Do subreddits within the same thematic universe behave alike?</em>
+
+<em>Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
+
+To investigate this, we rely on two large datasets from Stanford:
+
+- <strong>850,000 inter-subreddit hyperlinks</strong> enriched with stylometric and psychological attributes  
+- <strong>300-dimensional subreddit embeddings</strong> capturing patterns of shared authorship
+
+These datasets allow us to view Reddit not as a collection of disconnected topics,  
+but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>.
+
+In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
+
+<strong>Do birds of a feather flock together, or do they fight?</strong>

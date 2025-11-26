@@ -62,12 +62,14 @@ Two subreddits are close in this space **when many of the same users interact wi
 
 Mathematically, we compare two communities using **cosine similarity**:
 
-\[
+
+
+<p class="ignore">\[
 \text{cosine\_sim}(A, B)
 = 
 \frac{\sum_{i=1}^{300} A_i B_i}
 {\sqrt{\sum_{i=1}^{300} A_i^2}\,\sqrt{\sum_{i=1}^{300} B_i^2}}
-\]
+\]</p>
 
 A value close to **1** means the two communities share a strong author overlap and are aligned in the embeddings space; **–1** means the inverse.
 
@@ -79,6 +81,8 @@ However, in this story, because we want a *distance*, we flip the measure:
 
 - **0** → communities whose authorship overlaps
 - **2** → communities with no shared authorship
+
+---
 
 ## 2. Stylometric Signatures: How Communities Write
 
@@ -94,9 +98,9 @@ To capture a community’s writing style, we compute a **stylometric signature**
 
 Because these features vary wildly in scale, we first apply **Z-score normalization**:
 
-\[
+<p class="ignore">\[
 \frac{x - \mu}{\sigma}
-\]
+\]</p>
 
 This ensures that no single feature dominates simply because it has larger numerical values.
 
@@ -104,9 +108,9 @@ Once each subreddit has its stylometric signature, we again compare communities 
 
 The resulting distance is:
 
-\[
+<p class="ignore">\[
 \text{Stylometric Distance} = 1 - \text{cosine\_sim}(\text{signature}_A,\ \text{signature}_B)
-\]
+\]</p>
 
 ---
 
@@ -119,9 +123,9 @@ For each subreddit, we aggregate the normalized LIWC+VADER features of all its o
 
 As before, similarity is computed as a distance, using cosine similarity:
 
-\[
+<p class="ignore">\[
 \text{Psychological Distance} = 1 - \text{cosine\_sim}(\text{psych}_A,\ \text{psych}_B)
-\]
+\]</p>
 
 This gives us a final lens:  
 **how similar communities are in what they feel, reveal, and signal psychologically**.

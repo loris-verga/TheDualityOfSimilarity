@@ -102,7 +102,7 @@ The resulting distance is:
 ## 3. Psychological Signatures: What Communities Express
 
 Language also reveals psychology.  
-Each hyperlink post in the dataset includes **64 LIWC features** and **VADER sentiment scores**, capturing emotional tone, cognitive style, and more.
+Each hyperlink post in the dataset includes **64 LIWC features** and **VADER sentiment scores**. LIWC is a text analysis program that counts words belonging to psychologically meaningful categories. Meanwhile, VADER (Valence Aware Dictionary and Sentiment Reasoner) is a rule-based sentiment analysis tool. It uses a specialized dictionary designed to accurately understand the emotions and opinions found in social media texts.
 
 For each subreddit, we aggregate the normalized LIWC+VADER features of all its outgoing posts to define a **psychological signature**, the average emotional and cognitive expression shown by its authors when interacting with other communities.
 
@@ -115,11 +115,94 @@ This gives us a final observation angle:
 
 ---
 
+## <span style="color:#ff201e">Exploring the Geometry of Similarity</span>
+
+Before linking similarity to conflict, we first examine how each distance is distributed across Reddit.  
+These distributions reveal the shape of each similarity space and provide intuition for how communities are built.
+
+---
+
+## Distribution of Distances
+
+### **Shared Authorship Distance**
+
 <p align="center">
-  <img src="assets/img/test.png" width="65%">
+  <img src="assets/img/distrib_embeddings.png" width="70%" alt="Histogram of Shared Authorship Distances">
   <br>
-  <em>random graph test.</em>
+  <em>Figure : Distribution of shared authorship distances between subreddit pairs.</em>
 </p>
+ 
+The right-skewed distribution indicates that subreddits tend to be **moderately aligned** in structural space: they share enough authorship to be related, but rarely enough to be almost identical.  
+Only a small fraction of pairs reach very high distances, meaning interactions between structurally opposite communities are uncommon.
+
+---
+
+### **Stylometric Distance**
+
+<p align="center">
+  <img src="assets/img/distrib_stylo.png" width="70%" alt="Histogram of Stylometric Distances">
+  <br>
+  <em>Figure : Distribution of stylometric distances between subreddit pairs.</em>
+</p>
+
+In contrast to the embeddings distribution, stylometric distances are typically **lower**.  
+This means that the **writing styles** used in cross-subreddit interactions often share structural similarities.
+
+This suggests that users often have matching textual habits when dicussing across communities: sentence length, stopword diversity, or readability levels indicate a stylistic resemblance.
+
+---
+
+### **Psychological Distance**
+
+<p align="center">
+  <img src="assets/img/distrib_psych.png" width="70%" alt="Histogram of Psychological Distances">
+  <br>
+  <em>Figure : Distribution of psychological distances between subreddit pairs.</em>
+</p>
+
+The psychological distance distribution centers around **moderate values**, indicating that most interactions occur between subreddits whose emotional and cognitive signatures are neither identical nor opposed.
+
+Since these signatures are derived from **LIWC** and **VADER**, this pattern suggests that users interacting between different subreddits tend to display **loosely similar psychological traits**.
+
+---
+
+## <span style="color:#ff201e">Visualizing the Psychological Space</span>
+
+To better understand how signatures relate across communities, we can visualize the high-dimensional psychological space into two dimensions.  
+We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure).
+PCA identifies the 2D projection plane that captures the maximum possible variance from the psychological features. On the other hand, t-SNE is a tool that reveals local structures and potential clusters by creating a 2D map that preserves the neighborhood relationships from the original high-dimensional space. We use it here to see if the psychological profiles form distinct groups.
+
+<div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+
+  <p align="center" style="max-width:45%;">
+    <img src="assets/img/pca_psych.png" width="100%" alt="PCA of Psychological Signatures">
+    <br>
+    <em>PCA projection of psychological distances.</em>
+  </p>
+
+  <p align="center" style="max-width:45%;">
+    <img src="assets/img/tsne_psych.png" width="100%" alt="t-SNE of Psychological Signatures">
+    <br>
+    <em>t-SNE projection of psychological distances.</em>
+  </p>
+
+</div>
+
+---
+
+### **What does it all mean ?**
+
+#### **PCA**
+The first two principal components explain **24.07%** of the total variance. As the original data is of high dimension, this value is not inherently bad to grasp to main tendency.
+The resulting projection forms a **dense, continuous cloud** without sharp separations, suggesting that subreddits vary smoothly in their psychological tone.  
+
+#### **t-SNE**
+While t-SNE also reveals a large central mass, it uncovers **peripheral clusters**. 
+These clusters reflect **locally cohesive psychological communities**, even though the global landscape remains continuous.
+
+These insights set the context a deeper question:  
+**How does similarity in each space relate to negativity in cross-subreddit interactions?**
+
 
 
 

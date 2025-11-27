@@ -62,7 +62,7 @@ Two subreddits are close in this space **when many of the same users interact wi
 
 Mathematically, we compare two communities using **cosine similarity**:
 
-**cosine_sim(A, B) = (A · B) / (‖A‖ × ‖B‖)**
+`**cosine_sim(A, B) = (A · B) / (‖A‖ × ‖B‖)**`
 
 To turn similarity into a distance, we use:
 
@@ -87,7 +87,7 @@ To capture a community’s writing style, we compute a **stylometric signature**
 
 Because these features vary wildly in scale, we first apply **Z-score normalization**:
 
-**(x − μ) / σ**
+`**(x − μ) / σ**`
 
 This ensures that no single feature dominates simply because it has larger numerical values.
 
@@ -95,7 +95,7 @@ Once each subreddit has its stylometric signature, we again compare communities 
 
 The resulting distance is:
 
-**Stylometric Distance = 1 − cosine_sim(style_A, style_B)**
+`**Stylometric Distance = 1 − cosine_sim(style_A, style_B)**`
 
 ---
 
@@ -108,12 +108,18 @@ For each subreddit, we aggregate the normalized LIWC+VADER features of all its o
 
 As before, similarity is computed as a distance, using cosine similarity:
 
-**Psychological Distance = 1 − cosine_sim(psych_A, psych_B)**
+`**Psychological Distance = 1 − cosine_sim(psych_A, psych_B)**`
 
 This gives us a final observation angle:  
 **how similar communities are in what they feel and the emotions they display**.
 
 ---
+
+<p align="center">
+  <img src="assets/img/test.png" width="65%">
+  <br>
+  <em>random graph test.</em>
+</p>
 
 
 

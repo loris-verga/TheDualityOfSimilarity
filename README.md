@@ -166,6 +166,57 @@ Since these signatures are derived from **LIWC** and **VADER**, this pattern sug
 
 ---
 
+<span style="color:#ff201e">Embedding Distance & Link Sentiment</span>
+We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.
+Roughly 10% of all links in the dataset are negative — enough to notice patterns without making the graph look like Reddit’s civil war.
+Do positive and negative links “live” at different distances?
+Yes. Subreddit pairs with negative link sentiment have noticeably larger cosine distances than those with positive links.
+Positive links: mean ≈ 0.48, median ≈ 0.47
+Negative links: mean ≈ 0.58, median ≈ 0.60
+This already suggests that aligned communities tend to get along more (shocking, I know), while distant ones are more likely to throw shade.
+<div style="text-align:center;"> <p style="max-width:70%; margin:auto;"> <img src="plot_dist_cosine_by_link_sentiment.png" width="100%" alt="Distribution of cosine distances by link sentiment"> <br> <em>Distribution of cosine distances for positive vs. negative links.</em> </p> </div>
+Positive links show a small bump near cosine distance ~0.1, while negative links spike around ~0.6.
+The curves cross around 0.5 — below that, positive links dominate; above that, negative links take over.
+<span style="color:#ff201e">Are the Means Actually Different?</span>
+To double-check, we compared the mean cosine distances of the two sentiment groups. The barplot makes the gap visually obvious.
+<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="barplot_mean_cosine_by_sentiment.png" width="100%"> <br> <em>Mean embedding distance for positive vs. negative link sentiment.</em> </p> </div>
+A two-sample t-test (α = 0.05) confirms it:
+p ≤ 0.05, so we reject the null hypothesis.
+Communities with positive links are, on average, closer in embedding space than those with negative links.
+Not a huge surprise — but nice to have it statistically certified instead of just vibes.
+<span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span>
+We use a point-biserial correlation, since the distance is continuous and sentiment is binary.
+The result:
+r ≈ -0.11
+p < 0.05
+So yes, the relationship is statistically significant, but the linear effect is very weak.
+Think of it as: embedding distance nudges the sentiment, but it’s far from the whole story.
+<span style="color:#ff201e">Causal Analysis: Does Distance Cause Negativity?</span>
+Correlation ≠ causation (but you already know that).
+To test whether being “far apart” in embedding space actually changes the sentiment of links, we frame distance as a treatment.
+Binarizing distance
+There’s no natural cutoff in the cosine-distance distribution, so we split at the median — convenient, balanced, and scientifically acceptable (with the usual loss of granularity).
+Visualizing Close vs. Distant Groups
+<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="barplot_linksentiment_by_treatment.png" width="100%"> <br> <em>Proportion of positive/negative links in Close vs. Distant groups.</em> </p> </div>
+Before controlling for confounders, the Distant group has about twice as many negative links as the Close group.
+Promising signal — but we need to check whether something else is driving the effect.
+Controlling for Confounders
+We fit a logistic regression to estimate a propensity score using the hyperlink feature vector.
+One covariate stands out: compound_sentiment, which correlates with both distance and link sentiment.
+To handle it properly, we match pairs with a caliper of 0.2 × std of that feature.
+<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="dist_compound_sentiment_by_is_distant.png" width="100%"> <br> <em>Distribution of compound_sentiment after matching. Balance achieved.</em> </p> </div>
+Matching rebalances the covariate well — so we can now measure the treatment effect cleanly.
+ATE: The Final Verdict
+We compute the Average Treatment Effect (difference in mean link sentiment between the treated and control groups) and run a t-test.
+p > 0.05
+→ We cannot reject the null hypothesis.
+After controlling for confounders, we don’t find evidence that embedding distance causes changes in link sentiment.
+It correlates, yes.
+It differs across groups, yes.
+But causally? Not proven — at least with this setup.
+
+---
+
 ## <span style="color:#ff201e">Visualizing the Psychological Space</span>
 
 To better understand how signatures relate across communities, we can visualize the high-dimensional psychological space into two dimensions.  

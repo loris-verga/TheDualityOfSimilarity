@@ -174,12 +174,12 @@ Yes. Subreddit pairs with negative link sentiment have noticeably larger cosine 
 Positive links: mean ≈ 0.48, median ≈ 0.47
 Negative links: mean ≈ 0.58, median ≈ 0.60
 This already suggests that aligned communities tend to get along more (shocking, I know), while distant ones are more likely to throw shade.
-<div style="text-align:center;"> <p style="max-width:70%; margin:auto;"> <img src="plot_dist_cosine_by_link_sentiment.png" width="100%" alt="Distribution of cosine distances by link sentiment"> <br> <em>Distribution of cosine distances for positive vs. negative links.</em> </p> </div>
+<div style="text-align:center;"> <p style="max-width:70%; margin:auto;"> <img src="assets/img/plot_dist_cosine_by_link_sentiment.png" width="100%" alt="Distribution of cosine distances by link sentiment"> <br> <em>Distribution of cosine distances for positive vs. negative links.</em> </p> </div>
 Positive links show a small bump near cosine distance ~0.1, while negative links spike around ~0.6.
 The curves cross around 0.5 — below that, positive links dominate; above that, negative links take over.
 <span style="color:#ff201e">Are the Means Actually Different?</span>
 To double-check, we compared the mean cosine distances of the two sentiment groups. The barplot makes the gap visually obvious.
-<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="barplot_mean_cosine_by_sentiment.png" width="100%"> <br> <em>Mean embedding distance for positive vs. negative link sentiment.</em> </p> </div>
+<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="assets/img/barplot_mean_cosine_by_sentiment.png" width="100%"> <br> <em>Mean embedding distance for positive vs. negative link sentiment.</em> </p> </div>
 A two-sample t-test (α = 0.05) confirms it:
 p ≤ 0.05, so we reject the null hypothesis.
 Communities with positive links are, on average, closer in embedding space than those with negative links.
@@ -197,14 +197,14 @@ To test whether being “far apart” in embedding space actually changes the se
 Binarizing distance
 There’s no natural cutoff in the cosine-distance distribution, so we split at the median — convenient, balanced, and scientifically acceptable (with the usual loss of granularity).
 Visualizing Close vs. Distant Groups
-<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="barplot_linksentiment_by_treatment.png" width="100%"> <br> <em>Proportion of positive/negative links in Close vs. Distant groups.</em> </p> </div>
+<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="assets/img/barplot_linksentiment_by_treatment.png" width="100%"> <br> <em>Proportion of positive/negative links in Close vs. Distant groups.</em> </p> </div>
 Before controlling for confounders, the Distant group has about twice as many negative links as the Close group.
 Promising signal — but we need to check whether something else is driving the effect.
 Controlling for Confounders
 We fit a logistic regression to estimate a propensity score using the hyperlink feature vector.
 One covariate stands out: compound_sentiment, which correlates with both distance and link sentiment.
 To handle it properly, we match pairs with a caliper of 0.2 × std of that feature.
-<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="dist_compound_sentiment_by_is_distant.png" width="100%"> <br> <em>Distribution of compound_sentiment after matching. Balance achieved.</em> </p> </div>
+<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="assets/img/dist_compound_sentiment_by_is_distant.png" width="100%"> <br> <em>Distribution of compound_sentiment after matching. Balance achieved.</em> </p> </div>
 Matching rebalances the covariate well — so we can now measure the treatment effect cleanly.
 ATE: The Final Verdict
 We compute the Average Treatment Effect (difference in mean link sentiment between the treated and control groups) and run a t-test.
@@ -253,6 +253,13 @@ These clusters reflect **locally cohesive psychological communities**, even thou
 
 These insights set the context a deeper question:  
 **How does similarity in each space relate to negativity in cross-subreddit interactions?**
+
+
+
+
+
+
+
 
 
 

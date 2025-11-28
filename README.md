@@ -206,29 +206,6 @@ So yes, the relationship is statistically significant, but the linear effect is 
 A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
 
 ---
-
-### <span style="color:#ff201e">Causal Analysis: Does Distance Cause Negativity?</span>
-To test whether being “far apart” in embedding space actually changes the sentiment of links, we frame distance as a treatment.
-
-<ul> <li> <b>Binarizing distance</b><br> 
-There is no natural cutoff in the cosine-distance distribution, so we split at the <b>median</b> : convenient and balanced (with the usual loss of granularity). 
-
-</li> <li> <b>Visualizing Close vs. Distant Groups</b><br> 
-
-<div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="assets/img/barplot_linksentiment_by_treatment.png" width="100%" alt="Link sentiment by treatment"> 
-
-<em>Proportion of positive/negative links in Close vs. Distant groups.</em> </p> </div> Before controlling for confounders, the **Distant** group has about <b>twice as many negative links</b> as the Close group.
-
-A promising signal, but we need to check whether something else might be driving the effect. </li> <li> <b>Controlling for Confounders</b><br> We fit a logistic regression to estimate a <b>propensity score</b> using the hyperlink feature vector.<br> One covariate stands out: <b>compound_sentiment</b>, which correlates with both distance and link sentiment.<br> To handle it properly, we match pairs with a caliper of <code>0.2 × std</code> of that feature. <div style="text-align:center;"> <p style="max-width:55%; margin:auto;"> <img src="assets/img/dist_compound_sentiment_by_is_distant.png" width="100%" alt="Distribution of compound sentiment after matching"> <br> <em>Distribution of compound_sentiment after matching. Balance achieved.</em> </p> </div> Matching rebalances the covariate well — so we can now measure the treatment effect clearly. </li> <li> <b>ATE: The Final Verdict</b><br> We compute the <b>Average Treatment Effect</b> (difference in mean link sentiment between the treated and control groups) and run a t-test. <ul> <li><b>p &gt; 0.05</b></li> <li>→ We <b>cannot reject</b> the null hypothesis.</li> </ul> After controlling for confounders, we do not find evidence that embedding distance <em>causes</em> changes in link sentiment.
-
-It correlates, yes.
-
-It differs across groups, yes. But causally?
-
-Not shown — at least with this setup. </li> </ul>
-
----
----
 ### <span style="color:#ff201e">Causal Analysis: Does Distance Cause Negativity?</span>
 To test whether being “far apart” in embedding space actually changes the sentiment of links, we frame distance as a treatment.
 
@@ -282,6 +259,88 @@ To test whether being “far apart” in embedding space actually changes the se
   </li>
 
 </ul>
+
+#### <span style="color:#ff201e">Stylometric Distance & Link Sentiment</span>
+
+Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>.  
+Stylometric distance measures how similar two subreddits’ writing styles are—independent of topic or embedding semantics.
+
+As with embedding distance, we first compare how stylometric distances vary across the two sentiment groups.
+
+<div style="text-align:center;">
+  <img src="assets/img/plot_means_stylometric_by_sentiment.png" width="70%" alt="Mean stylometric distance by sentiment">
+  <div><em>Mean stylometric distance for positive vs. negative interactions (95% CI).</em></div>
+</div>
+
+The difference is statistically significant—negative interactions occur between slightly more stylometrically distant communities.  
+But the effect size is small: about <b>0.77 vs. 0.75</b>.  
+
+Even though the t-test returns <b>p ≤ 0.05</b> (allowing us to reject the null), the absolute difference (<b>≈ 0.017</b>) is minimal.  
+Similar writing styles align mildly with positivity, but the relationship remains weak.
+
+---
+
+### <span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span>
+
+Applying the same point-biserial correlation used earlier:
+
+<ul>
+  <li><b>r ≈ -0.009</b></li>
+  <li><b>p &lt; 0.05</b></li>
+</ul>
+
+The sign and significance mirror the embedding findings—but the strength is even weaker.  
+Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment.  
+While statistically detectable, it is far too small to matter in practice.
+
+---
+
+### <span style="color:#ff201e">Causal Analysis: Does Stylometric Distance Influence Negativity?</span>
+
+To parallel our earlier analysis, we test whether being stylometrically “far apart” actually causes shifts in link sentiment.  
+Because stylometric distance is continuous, we apply the same dichotomization strategy:
+
+<ul>
+  <li><b>Stylometric Distant (treated)</b>: distance > median</li>
+  <li><b>Stylometric Close (control)</b>: distance ≤ median</li>
+</ul>
+
+We begin by comparing sentiment outcomes in these two groups.
+
+<div style="text-align:center;">
+  <img src="assets/img/barplot_linksentiment_by_stylometric_treatment.png" width="55%" alt="Link sentiment by stylometric distance groups">
+  <div><em>Proportion of positive/negative links across Stylometric Close vs. Distant pairs.</em></div>
+</div>
+
+At first glance, the distributions look similar, with only mild shifts in negativity for stylometrically distant pairs.
+
+---
+
+### <span style="color:#ff201e">Propensity Score & Confounder Check</span>
+
+Following the same approach as in the embedding analysis, we estimate a <b>propensity score</b> from the hyperlink feature vector to detect potential confounders.
+
+Unlike before, no feature displays a strong correlation with both treatment (stylometric distance) and outcome (sentiment).  
+Thus, there is <b>no meaningful linear confounder</b> requiring targeted matching.
+
+As before, matching is performed on a sampled subset for computational efficiency.
+
+---
+
+### <span style="color:#ff201e">ATE: The Final Verdict</span>
+
+We estimate the <b>Average Treatment Effect</b> on the matched sample:  
+the difference in mean link sentiment between the Stylometric Distant and Stylometric Close groups.
+
+A t-test is used to confirm whether the observed effect is statistically reliable.
+
+
+<p class="ignore">
+    Overall, stylometric distance shows—at most—a <b>very weak</b> causal influence on sentiment.  
+    Even when statistically identifiable, the practical effect remains minimal.  
+    Communities that “write alike” interact slightly more positively, but the strength of this relationship is negligible compared to other factors.
+</p>
+
 
 
 ## <span style="color:#ff201e">Visualizing the Psychological Space</span>

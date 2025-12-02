@@ -1,2 +1,2 @@
 {% include test.md %}
-{% include README.md %}
+{% include intro.md %}

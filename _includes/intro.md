@@ -1,4 +1,4 @@
-# <span style="color:#ff201e">Birds of a Feather… Fight Together?</span>
+# <span style="color:#ff4500">Birds of a Feather… Fight Together?</span>
 ### Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
 
 We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes.

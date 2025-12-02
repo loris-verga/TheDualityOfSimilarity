@@ -1,2 +1,2 @@
-{% include_relative test.md %}
-{% include_relative README.md %}
+{% include test.md %}
+{% include README.md %}

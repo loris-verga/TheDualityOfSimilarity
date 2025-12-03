@@ -242,20 +242,19 @@ To test whether being “far apart” in embedding space actually changes the se
     </div>
 
     <br>
-    Matching rebalances the covariate well — so we can now measure the treatment effect clearly.
+    Matching rebalances the covariate well, so we can now measure the treatment effect clearly.
   </li>
 
   <li>
     <b>ATE: The Final Verdict</b><br>
-    We compute the <b>Average Treatment Effect</b> (difference in mean link sentiment between the treated and control groups) and run a t-test.
+    We compute the <b>Average Treatment Effect</b> (difference in mean link sentiment between the treated and control groups) and run a t-test.<br>
+    The <b>ATE : -0.07<b>
     <ul>
-      <li><b>p &gt; 0.05</b></li>
-      <li>→ We <b>cannot reject</b> the null hypothesis.</li>
+      <li><b>p < 0.05</b></li>
+      <li>→ We <b>can reject</b> the null hypothesis.</li>
     </ul>
-    After controlling for confounders, we do not find evidence that embedding distance <em>causes</em> changes in link sentiment.<br><br>
-    It correlates, yes.<br>
-    It differs across groups, yes.<br>
-    But causally? Not shown — at least with this setup.
+    After controlling for confounders, we do find evidence that a <b>higher embedding distance<b> <em>causes</em> more  negativity in link sentiment (hooray !).<br><br>
+    However, one must keep in mind that although this relation exists, it is week.
   </li>
 
 </ul>
@@ -352,8 +351,8 @@ As before, we begin by comparing distance values across the two sentiment groups
   <div><em>Mean psychological distance for positive vs. negative interactions (95% CI).</em></div>
 </div>
 
-The difference in sample means is small—only about <b>0.01</b>—yet the confidence intervals indicate that the gap is statistically significant.  
-With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur between psychologically more distant communities.
+The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant.  
+With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
 
 The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  
 This reflects a strong statistical signal, but the <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
@@ -369,7 +368,7 @@ We again use the <b>point-biserial correlation</b> to quantify the linear relati
   <li><b>p &lt; 0.05</b></li>
 </ul>
 
-The correlation is statistically significant and stronger than for stylometric distance, yet remains modest compared with shared authorship.  
+The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest compared with shared authorship.  
 Psychological distance therefore captures sentiment-relevant variation, but only partially.
 
 ---
@@ -402,19 +401,29 @@ At first glance, the distributions appear similar, with only a mild shift toward
 We estimate a <b>propensity score</b> using the hyperlink feature vector, following the same procedure as before.  
 To detect potential confounders, we inspect correlations between features, the treatment indicator, and the outcome.
 
-One feature—<b>compound_sentiment</b>, shows a strong link with both treatment and outcome, marking it as a key confounder.  
+One feature, <b>the compound_sentiment</b>, shows a strong link with both treatment and outcome, marking it as a key confounder.  
 To mitigate its influence, we enforce a matching constraint: matched pairs must differ by less than <b>0.2 ×</b> the feature’s standard deviation.
 
 As in previous analyses, matching is performed on a subsample for computational efficiency.
 
 ---
 
-### <span style="color:#ff201e">ATE: Final Estimation</span>
+### <span style="color:#ff201e">ATE: Final Verdict</span>
 
-We compute the <b>Average Treatment Effect (ATE)</b> as the difference in mean link sentiment between the Psycho Distant (treated) and Psycho Close (control) groups within the matched sample.  
+We compute the <b>Average Treatment Effect (ATE)</b> as the difference in mean link sentiment between the Psychologically Distant (treated) and Psychologically Close (control) groups within the matched sample.  
 A t-test will then assess the statistical significance of this difference.
 
-<i>(Results to be inserted once computed.)</i>
+  <li>
+    The <b>ATE : -0.08<b>
+    <ul>
+      <li><b>p < 0.05</b></li>
+      <li>→ We <b>can reject</b> the null hypothesis.</li>
+    </ul>
+    Great news! We find evidence that a <b>higher psychological distance</b> <em>causes</em> more negativity in link sentiment.<br>
+    In other words, users who interact from a relatively different emotional space show more negativity than those with similar emotional expressions.<br>
+    Once again, this relation exists but is weak.
+
+  </li>
 
 ---
 

@@ -253,7 +253,7 @@ To test whether being “far apart” in embedding space actually changes the se
       <li><b>p < 0.05</b></li>
       <li>→ We <b>can reject</b> the null hypothesis.</li>
     </ul>
-    After controlling for confounders, we do find evidence that a <b>higher embedding distance<b> <em>causes</em> more  negativity in link sentiment (hooray !).<br><br>
+    After controlling for confounders, we do find evidence that a <b>higher embedding distance</b> <em>causes</em> more  negativity in link sentiment (hooray !).<br><br>
     However, one must keep in mind that although this relation exists, it is week.
   </li>
 

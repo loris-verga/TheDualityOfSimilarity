@@ -254,7 +254,7 @@ To test whether being “far apart” in embedding space actually changes the se
       <li>→ We <b>can reject</b> the null hypothesis.</li>
     </ul>
     After controlling for confounders, we do find evidence that a <b>higher embedding distance</b> <em>causes</em> more  negativity in link sentiment (hooray !).<br><br>
-    However, one must keep in mind that although this relation exists, it is week.
+    However, one must keep in mind that although this relation exists, it is weak.
   </li>
 
 </ul>
@@ -414,7 +414,7 @@ We compute the <b>Average Treatment Effect (ATE)</b> as the difference in mean l
 A t-test will then assess the statistical significance of this difference.
 
   <li>
-    The <b>ATE : -0.08<b>
+    The <b>ATE : -0.08</b>
     <ul>
       <li><b>p < 0.05</b></li>
       <li>→ We <b>can reject</b> the null hypothesis.</li>

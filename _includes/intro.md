@@ -543,7 +543,7 @@ For stylometric and psychological distances, an extra step is required: we first
 ## <span style="color:#ff201e">a) Authorship Distance & Categories</span>
 
 <div style="text-align:center;">
-  <img src="assets/img/cluster/heatmap_embeddings.png" width="45%" style="margin-right:2%;" alt="Authorship centroid distances">
+  <img src="assets/img/cluster/heatmap_embeddings.png" width="70%" style="margin-right:2%;" alt="Authorship centroid distances">
   <div style="font-size:0.85rem;"><em>Embeddings centroid comparisons</em></div>
 </div>
 
@@ -559,36 +559,58 @@ The right heatmap shows that many subreddits are not especially close to their a
   <li>Reddit is inherently fluid: overlapping interests create overlapping clusters.</li>
 </ul>
 
-<h4>Silhouette score</h4>
+<p>
+  To evaluate how well our clustering separates subreddit groups, we use the 
+  <b>silhouette score</b>. It measures how similar a point is to its own cluster 
+  compared to points in other clusters.
+</p>
+
+<div style="
+  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  background:#fafafa;
+  text-align:center;
+  margin: 1rem 0;
+  font-size:1.1rem;
+">
+  <em>\( s = \frac{b - a}{\max(a,\, b)} \)</em>
+</div>
+
+<p>
+  where:<br>
+  • <b>a</b> = average distance to other points within the same cluster<br>
+  • <b>b</b> = lowest average distance to points in any <em>other</em> cluster<br><br>
+  The silhouette score ranges from -1 to 1, with higher values indicating 
+  more coherent and well-separated clusters.
+</p>
 
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
 <b>Silhouette score: -0.08</b>
 </div>
 
-A value near zero indicates overlapping clusters. This is exactly what we see: categories are not cleanly separated in the authorship (embedding) space.
-
-
+A silhouette score near 0 confirms that subreddit clusters overlap, reflecting the lack of clear category boundaries. Contrary to expectations of distinct, isolated clusters, Reddit’s broad ecosystem creates thousands of overlapping categories, resulting in a large and interconnected mass of subreddits rather than well-defined clusters.
 
 ---
 
 ## <span style="color:#ff201e">b) Stylometric Signatures & Categories</span>
 
 <div style="text-align:center;">
-  <img src="assets/img/cluster/heatmap_stylo.png" width="45%" style="margin-right:2%;" alt="Stylometric centroid distances">
+  <img src="assets/img/cluster/heatmap_stylo.png" width="70%" style="margin-right:2%;" alt="Stylometric centroid distances">
   <div style="font-size:0.85rem;"><em>Stylometric centroid comparisons.</em></div>
 </div>
 
-The left heatmap shows a different picture: stylometric centroids are **more separated**. Categories differ not only in what they talk about but also in *how* they talk.
+The left heatmap shows a different picture: stylometric centroids are **more separated** as the cosine distances are larger. Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
 
 For example:
 
 <div style="background:#eef7ff; padding:10px; border-left:4px solid #79a6d2; border-radius:4px; margin:12px 0; font-size:0.9rem;">
 <b>Gaming ↔ Technology stylometric distance: ~0.1</b><br>
-These two categories are close both in authorship and in writing style. Shared users and overlapping themes create similar syntax and phrasing.
+Such a small distance was expected, as Gaming and Technology subreddits share similar centers of interests, potentially leading similar syntactical structures.
 </div>
 
 <h4>Cohesion: still weak</h4>
-Despite well-separated centroids, the right heatmap shows that subreddits remain widely scattered. Averaging stylometric features smooths out differences, but not enough to create neat clusters.
+The right plot shows strong overlap between subreddit signatures. While stylometric clusters appear separated at first glance, they are not fully cohesive. This may be because users from one category borrow textual traits from related categories (e.g., gaming and technology). Additionally, averaging all stylometric features smooths out unique category characteristics.
 
 <h4>Silhouette score</h4>
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
@@ -604,14 +626,14 @@ Close to zero again. Categories differ in stylometric identity but overlap heavi
 ## <span style="color:#ff201e">c) Psychological Signatures & Categories</span>
 
 <div style="text-align:center;">
-  <img src="assets/img/cluster/heatmap_psy.png" width="45%" style="margin-right:2%;" alt="Psychological centroid distances">
+  <img src="assets/img/cluster/heatmap_psy.png" width="70%" style="margin-right:2%;" alt="Psychological centroid distances">
   <div style="font-size:0.85rem;"><em>Psychological centroid comparisons.</em></div>
 </div>
 
 The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  
-On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others.
+On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others, which can be deduced through the lower values on the diagonal.
 
-This suggests that categories carry a modest but detectable emotional identity. Put differently: communities with different themes tend to express themselves differently.
+Psychological signatures distinguish categories more clearly than stylometric signatures, as subreddits cluster closer to their own category. This suggests that different community clusters have distinct and well-separated “psychological” states.
 
 <h4>Silhouette score</h4>
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
@@ -639,11 +661,9 @@ We examined authorship, stylometric and psychological distances through the lens
 </ul>
 
 <div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px;">
-<b>All silhouette scores hover near zero.</b>  
-This confirms that Reddit categories heavily overlap across all distance types.  
+<b>All silhouette scores are near zero.</b>  
+This confirms that Reddit categories heavily overlap across all distance types.   
 Still, stylometric and psychological signatures show potential as light forms of category identity. They are not strong enough to define boundaries, but they do capture broad differences in how communities write and emotionally express themselves.
-</div>
-
 </div>
 
 

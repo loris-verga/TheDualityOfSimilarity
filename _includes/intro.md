@@ -248,7 +248,7 @@ To test whether being “far apart” in embedding space actually changes the se
   <li>
     <b>ATE: The Final Verdict</b><br>
     We compute the <b>Average Treatment Effect</b> (difference in mean link sentiment between the treated and control groups) and run a t-test.<br>
-    The <b>ATE : -0.07<b>
+    The <b>ATE : -0.07</b>
     <ul>
       <li><b>p < 0.05</b></li>
       <li>→ We <b>can reject</b> the null hypothesis.</li>

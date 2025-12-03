@@ -471,7 +471,180 @@ These clusters reflect **locally cohesive psychological communities**, even thou
 These insights set the context a deeper question:  
 **How does similarity in each space relate to negativity in cross-subreddit interactions?**
 
+---
 
+#### <span style="color:#ff201e">Within– and Inter-Category Analysis</span>
+
+<div class="section">
+
+<h4>Introduction</h4>
+
+We assigned each of the ~51'000 subreddits in our embeddings dataframe to one of thirteen categories using an LLM.  
+The list covers broad thematic areas:
+
+<ul>
+  <li>Lifestyle</li>
+  <li>Miscellaneous</li>
+  <li>Gaming</li>
+  <li>Humour &amp; Memes</li>
+  <li>Adult &amp; Pornography</li>
+  <li>Technology</li>
+  <li>Science, Nature &amp; Education</li>
+  <li>Music</li>
+  <li>Politics &amp; News</li>
+  <li>Countries &amp; Cities</li>
+  <li>Sport</li>
+  <li>Automobile</li>
+  <li>Cryptocurrencies</li>
+</ul>
+
+<div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem;">
+<b>Note on accuracy:</b> Subreddit names are often uninformative, and thirteen categories are far too few to reflect the true diversity of Reddit. Expect misclassifications and broad bins that act more like umbrellas than precise labels.
+</div>
+
+Our aim here is simpler: look for large-scale patterns. We do not need perfect labels to detect whether broad thematic groups behave differently, interact differently, or exhibit distinct “signatures.”
+
+<div style="text-align:center; margin-top:20px;">
+  <img src="assets/img/cluster/category_distribution.png" width="70%" alt="Distribution of subreddits per category">
+  <div style="font-size:0.85rem;"><em>Distribution of subreddits per category.</em></div>
+</div>
+
+As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate by sheer volume. To avoid being misled by this imbalance, we rely on confidence intervals and other measures of uncertainty throughout the analysis.
+
+</div>
+
+
+
+<hr style="margin:40px 0;">
+
+
+
+### <span style="color:#ff201e">1) Relating Distances and Categories</span>
+
+We work at the category level rather than at the individual subreddit level.  
+For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
+
+<ul>
+  <li><b>Alignment between categories</b> (how similar their centroids are)</li>
+  <li><b>Cohesion within categories</b> (how close individual subreddits are to their centroid)</li>
+</ul>
+
+The cosine distance scale remains the same:  
+<div style="text-align:center; margin-top:10px;">
+<span style="font-size:0.9rem; background:#eef1f5; padding:6px 10px; border-radius:6px;">0 = perfectly aligned, &nbsp; 2 = maximally different</span>
+</div>
+
+For stylometric and psychological distances, an extra step is required: we first compute a subreddit-level signature, then take the mean per category.
+
+
+
+---
+
+## <span style="color:#ff201e">a) Authorship Distance & Categories</span>
+
+<div style="text-align:center;">
+  <img src="assets/img/cluster/heatmap_embeddings.png" width="45%" style="margin-right:2%;" alt="Authorship centroid distances">
+  <div style="font-size:0.85rem;"><em>Embeddings centroid comparisons</em></div>
+</div>
+
+<h4>Centroid alignment: moderately similar</h4>
+Generalist categories like Miscellaneous, Lifestyle, and Humour &amp; Memes are all relatively close to each other. These categories spread widely in the embedding space and overlap heavily with others. Gaming and Technology, on the other hand, sit closer together for intuitive reasons: users often post in both, and the topics naturally relate.
+
+<h4>Subreddit cohesion: surprisingly weak</h4>
+The right heatmap shows that many subreddits are not especially close to their assigned category’s centroid. In some categories, they are nearly equidistant from several centroids. Why?
+
+<ul>
+  <li>LLM classification errors: misleading subreddit names produce noisy assignments.</li>
+  <li>Thirteen categories are too coarse for Reddit’s complexity.</li>
+  <li>Reddit is inherently fluid: overlapping interests create overlapping clusters.</li>
+</ul>
+
+<h4>Silhouette score</h4>
+
+<div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
+<b>Silhouette score: -0.08</b>
+</div>
+
+A value near zero indicates overlapping clusters. This is exactly what we see: categories are not cleanly separated in the authorship (embedding) space.
+
+
+
+---
+
+## <span style="color:#ff201e">b) Stylometric Signatures & Categories</span>
+
+<div style="text-align:center;">
+  <img src="assets/img/cluster/heatmap_stylo.png" width="45%" style="margin-right:2%;" alt="Stylometric centroid distances">
+  <div style="font-size:0.85rem;"><em>Stylometric centroid comparisons.</em></div>
+</div>
+
+The left heatmap shows a different picture: stylometric centroids are **more separated**. Categories differ not only in what they talk about but also in *how* they talk.
+
+For example:
+
+<div style="background:#eef7ff; padding:10px; border-left:4px solid #79a6d2; border-radius:4px; margin:12px 0; font-size:0.9rem;">
+<b>Gaming ↔ Technology stylometric distance: ~0.1</b><br>
+These two categories are close both in authorship and in writing style. Shared users and overlapping themes create similar syntax and phrasing.
+</div>
+
+<h4>Cohesion: still weak</h4>
+Despite well-separated centroids, the right heatmap shows that subreddits remain widely scattered. Averaging stylometric features smooths out differences, but not enough to create neat clusters.
+
+<h4>Silhouette score</h4>
+<div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
+<b>Silhouette score: -0.09</b>
+</div>
+
+Close to zero again. Categories differ in stylometric identity but overlap heavily in practice.
+
+
+
+---
+
+## <span style="color:#ff201e">c) Psychological Signatures & Categories</span>
+
+<div style="text-align:center;">
+  <img src="assets/img/cluster/heatmap_psy.png" width="45%" style="margin-right:2%;" alt="Psychological centroid distances">
+  <div style="font-size:0.85rem;"><em>Psychological centroid comparisons.</em></div>
+</div>
+
+The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  
+On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others.
+
+This suggests that categories carry a modest but detectable emotional identity. Put differently: communities with different themes tend to express themselves differently.
+
+<h4>Silhouette score</h4>
+<div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
+<b>Silhouette score: -0.05</b>
+</div>
+
+Still close to zero, but slightly better. Clusters remain overlapping, yet psychological signatures yield a bit more structure.
+
+
+
+<hr style="margin:40px 0;">
+
+
+
+## <span style="color:#ff201e">Categories & Distances: Conclusion</span>
+
+We examined authorship, stylometric and psychological distances through the lens of subreddit categories. The main findings:
+
+<ul>
+  <li><b>Authorship (embedding) distance:</b> Categories are weakly separated. Subreddits overlap widely in embedding space. With only thirteen categories, strong granularity is not possible.</li>
+
+  <li><b>Stylometric distance:</b> Centroids differ substantially in writing style, though subreddits within a category remain dispersed. Overlaps dominate.</li>
+
+  <li><b>Psychological distance:</b> Similar behavior to stylometric distance, but with slightly more cohesion within categories.</li>
+</ul>
+
+<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px;">
+<b>All silhouette scores hover near zero.</b>  
+This confirms that Reddit categories heavily overlap across all distance types.  
+Still, stylometric and psychological signatures show potential as light forms of category identity. They are not strong enough to define boundaries, but they do capture broad differences in how communities write and emotionally express themselves.
+</div>
+
+</div>
 
 
 

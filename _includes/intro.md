@@ -1081,8 +1081,18 @@ These communities behave almost like “commentary” or “parody” subreddits
   <div style="font-size:0.85rem;"><em>Bipartite representation of negative links from Humour &amp; Memes subreddits to their targets.</em></div>
 </div>
 
-This bipartite structure highlights a profound asymmetry:  
-<b>the negativity flows outward, not inward</b>.
+<p>
+The bipartite graph reveals that while <em>Humor & Memes</em> subreddits often emit negative links, they rarely target each other. Instead, the negativity is usually directed toward broader, more neutral subreddits outside the humor ecosystem.
+</p>
+
+<p>
+For instance, <strong>gamingcirclejerk</strong> shows strong negative linking toward general gaming communities like <em>pcgaming</em>, <em>ps4</em>, or <em>games</em>. Similarly, <strong>fitnesscirclejerk</strong> directs negativity toward mainstream fitness subreddits such as <em>fitness</em> and <em>bodybuilding</em>.
+</p>
+
+<p>
+Overall, one can search almost any topic within <em>Humor & Memes</em> and observe the same pattern: these subreddits tend to cast negative references toward topic-focused communities rather than toward other humor subreddits. Below is an example using <strong>nba</strong>.
+</p>
+
 
 
 
@@ -1122,7 +1132,7 @@ Again, we see the same structure:
 
 This case study reveals a facet of Reddit that would have been very difficult to uncover without:
 
-- the category taxonomy,  
+- the category classification,  
 - the hyperlink network,  
 - and the signature-based distance analysis.
 
@@ -1136,10 +1146,11 @@ Our analysis shows that:
 </ul>
 
 <div style="background:#eef1f5; padding:18px; border-radius:10px; margin-top:20px;">
-<b>Overall:</b>  
-although we began this case study motivated by unusual stylometric &amp; psychological signatures,  
-we ultimately uncovered a much broader phenomenon—an entire network of humour-driven subreddits that shape Reddit’s negativity landscape in profound ways.
+<b>Overall:</b><br>
+While this case study started with a focus on unusual stylometric and psychological signatures,  
+it ultimately revealed a broader pattern: a network of humor-oriented subreddits that plays a central role in shaping Reddit’s negativity dynamics.
 </div>
+
 
 
 

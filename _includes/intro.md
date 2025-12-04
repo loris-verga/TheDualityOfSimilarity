@@ -667,14 +667,200 @@ Still, stylometric and psychological signatures show potential as light forms of
 </div>
 
 
+<hr style="margin:40px 0;">
+
+
+### <span style="color:#ff201e">2) Negativity & Categories</span>
+
+We now take advantage of our hyperlink network—where each edge carries a sentiment from a <em>source</em> subreddit to a <em>target</em> subreddit—to understand how negativity circulates across categories.
+
+At this stage, we step beyond distances and look directly at how categories interact through negative links.
 
 
 
+#### Negative interactions between categories
+
+Before relating negativity to distances, we first inspect how negativity flows between categories at a global scale.
+
+<div style="text-align:center; margin-top:20px;">
+  <img src="assets/img/cluter/negativity_heatmap_categories.png" width="70%" alt="Negative links between categories">
+  <div style="font-size:0.85rem;"><em>Number of negative hyperlinks from each source to each target category.</em></div>
+</div>
+
+From the heatmap, two main observations emerge:
+
+<ul>
+  <li>
+    <b>1. Internal negativity is common.</b><br>
+    For many target categories, a substantial share of incoming negative links originates from the same category.  
+    Subreddits frequently criticize, mock, or conflict with others in their own thematic sphere.
+  </li>
+
+  <li>
+    <b>2. Some categories emit far more negativity than others.</b><br>
+    Categories such as <em>Politics &amp; News</em> or <em>Humour &amp; Memes</em> generate large amounts of negative interactions, reflecting high polarization or a tendency toward derision.
+  </li>
+</ul>
 
 
 
+<div style="text-align:center; margin-top:20px;">
+  <img src="assets/img/cluster/negativity_distribution_emitted_received.png" width="70%" alt="Negativity emitted vs received">
+  <div style="font-size:0.85rem;"><em>Distribution of negative links emitted and received per category.</em></div>
+</div>
+
+The distribution plot confirms this:
+
+<ul>
+  <li>
+    <b>Humour &amp; Memes</b> is the largest hub of negativity: it emits far more negative links than it receives.
+  </li>
+  <li>
+    Other categories behave asymmetrically: some attract negativity while emitting much less of it.
+  </li>
+</ul>
+
+This reinforces the idea that each thematic community on Reddit has its own relational “profile”: some attack, some are attacked, and some do both.
 
 
+
+<hr style="margin:40px 0;">
+
+
+
+### <span style="color:#ff201e">3) Negativity, Distances & Categories</span>
+
+Earlier , we established a key relationship:
+
+<div style="background:#eef1f5; padding:12px; border-radius:8px; width: fit-content; font-size:0.9rem;">
+<b>Negative links → larger cosine distances<br>
+Positive links → smaller cosine distances</b> (except for stylometric where the causal link could not be proved)
+</div>
+
+This was supported by a t-test and a causal analysis.
+
+We now extend this to incorporate categories and hyperlink types.
+
+
+
+#### Within-cluster vs inter-cluster hyperlinks
+
+To understand how category structure interacts with distances and sentiment, we separate two cases:
+
+<ul>
+  <li><b>Within-cluster links:</b> source and target subreddits belong to the same category.</li>
+  <li><b>Inter-cluster links:</b> source and target subreddits belong to different categories.</li>
+</ul>
+
+We then examine how the **mean cosine distance (authorship distance)** varies across:
+
+- link sentiment (negative or positive),
+- and hyperlink type (within vs inter cluster).
+
+
+
+<div style="text-align:center;">
+  <img src="assets/img/cluster/authorship_distance_within_inter_by_sentiment.png" width="70%" alt="Authorship cosine distance by link type and sentiment">
+  <div style="font-size:0.85rem;"><em>Mean authorship cosine distance by hyperlink type and link sentiment (95% CIs).</em></div>
+</div>
+
+
+
+#### Key insight
+
+From the plot, we observe—at high confidence (non-overlapping 95% CIs)—the following:
+
+<div style="background:#f7f7f7; padding:15px; border-radius:8px; margin:20px 0;">
+<b>1. Smaller distances → positive links (already established causally).</b><br>
+<b>2. Inter-cluster distances are larger than within-cluster distances.</b><br>
+<b>3. The trend holds for both positive and negative links.</b>
+</div>
+
+This pattern is a clear instance of  
+<a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox" target="_blank"><b>Simpson’s paradox</b></a>:  
+the global trend strengthens once we control for category structure.
+
+
+
+#### Category-level decomposition
+
+We further break down mean cosine distance by category and by sentiment:
+
+<div style="text-align:center;">
+  <img src="assets/img/cluster/authorship_distance_by_category_within_inter.png" width="70%" alt="Cosine distance by category and hyperlink type">
+  <div style="font-size:0.85rem;"><em>Top: within-cluster links. Bottom: inter-cluster links. (95% CI)</em></div>
+</div>
+
+The same structure emerges:
+
+<ul>
+  <li>Within each category, positive links consistently have smaller cosine distances.</li>
+  <li>Inter-cluster links have larger distances overall.</li>
+</ul>
+
+This strongly supports <b>Hypothesis n°7</b>:  
+<b>source and target subreddit pairs from the same category exhibit smaller mean cosine distances than pairs from different categories.</b>
+
+
+
+<hr style="margin:40px 0;">
+
+
+
+### <span style="color:#ff201e">Beyond Authorship Distance: Stylometric & Psychological Distances</span>
+
+We repeat the same decomposition for the other two signature-based distances.
+
+
+
+<div style="text-align:center;">
+  <img src="assets/img/cluster/psychological_and_stylometric_distance_plots.png" width="75%" alt="Stylometric and psychological distance by link type and sentiment">
+  <div style="font-size:0.85rem;"><em>Stylometric and psychological distances by hyperlink type and sentiment.</em></div>
+</div>
+
+#### Psychological distance
+
+<ul>
+  <li>The pattern mirrors authorship distance: positive links → smaller distances; negative → larger.</li>
+  <li>Within-cluster distances are smaller than inter-cluster distances.</li>
+</ul>
+
+This also supports Hypothesis n°7.
+
+
+
+#### Stylometric distance
+
+Stylometric distance behaves differently:
+
+<ul>
+  <li>Distances are nearly identical for positive and negative links.</li>
+  <li>Within-cluster and inter-cluster stylometric distances show only small differences.</li>
+</ul>
+
+This indicates that stylometric features are **less predictive of sentiment** than authorship or psychological distances, even though they still exhibit a mild within- vs inter-cluster difference (supporting Hypothesis n°7).
+
+
+
+<hr style="margin:40px 0;">
+
+
+
+### <span style="color:#ff201e">Overall Summary</span>
+
+Across authorship, psychological and stylometric distances, we find:
+
+<ul>
+  <li><b>Negative interactions → larger distances</b></li>
+  <li><b>Positive interactions → smaller distances</b></li>
+  <li><b>Distance gaps widen when moving from within-cluster to inter-cluster links</b></li>
+  <li><b>The effect is strongest for authorship distance, moderate for psychological distance, and weakest for stylometric distance</b></li>
+</ul>
+
+<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px;">
+Taken together, these results reveal how category structure shapes the relationship between semantic distance and negativity:  
+<b>communities that are closer in content tend to interact more positively, while distant communities interact more negatively—especially across category boundaries.</b>
+</div>
 
 
 # <span style="color: #ff201e">Quick.</span> The fastest and easiest way to&nbsp;create a&nbsp;GitHub Pages website for your project.

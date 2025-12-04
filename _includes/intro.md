@@ -672,7 +672,7 @@ Still, stylometric and psychological signatures show potential as light forms of
 
 ### <span style="color:#ff201e">2) Negativity & Categories</span>
 
-We now take advantage of our hyperlink network—where each edge carries a sentiment from a <em>source</em> subreddit to a <em>target</em> subreddit—to understand how negativity circulates across categories.
+We now take advantage of our hyperlink network, where each edge carries a sentiment from a <em>source</em> subreddit to a <em>target</em> subreddit, to understand how negativity circulates across categories.
 
 At this stage, we step beyond distances and look directly at how categories interact through negative links.
 
@@ -734,8 +734,9 @@ Earlier , we established a key relationship:
 
 <div style="background:#eef1f5; padding:12px; border-radius:8px; width: fit-content; font-size:0.9rem;">
 <b>Negative links → larger cosine distances<br>
-Positive links → smaller cosine distances</b> (except for stylometric where the causal link could not be proved)
+Positive links → smaller cosine distances</b> 
 </div>
+This causal relationship was found for both Authorship and Psychological Distances.
 
 This was supported by a t-test and a causal analysis.
 
@@ -754,8 +755,8 @@ To understand how category structure interacts with distances and sentiment, we 
 
 We then examine how the **mean cosine distance (authorship distance)** varies across:
 
-- link sentiment (negative or positive),
-- and hyperlink type (within vs inter cluster).
+- <b>Link sentiment</b> (negative or positive),
+- <b>Hyperlink type</b>  (within vs inter cluster).
 
 
 
@@ -859,7 +860,7 @@ Across authorship, psychological and stylometric distances, we find:
 
 <div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px;">
 Taken together, these results reveal how category structure shapes the relationship between semantic distance and negativity:  
-<b>communities that are closer in content tend to interact more positively, while distant communities interact more negatively—especially across category boundaries.</b>
+<b>communities that are closer in content tend to interact more positively, while distant communities interact more negatively, especially across category boundaries.</b>
 </div>
 
 
@@ -869,13 +870,13 @@ Taken together, these results reveal how category structure shapes the relations
 ### <span style="color:#ff201e">4) Case Study: Humour &amp; Memes</span>
 
 On the stylometric and psychological distance heatmaps (part 1), a clear pattern emerged:  
-the <b>“Humour &amp; Memes”</b> category appears well-separated from all others, with higher centroid cosine distances for both signatures.  
+the <b>“Humour &amp; Memes”</b> category appears well separated from all others, with higher centroid cosine distances for both signatures.  
 
 This naturally leads to the following speculation:
 
 <ul>
-  <li><b>Stylometric reasons:</b> meme culture often produces short, fragmented posts—frequent uppercase letters, minimal syntax, image-based humour, and text designed primarily for mockery.</li>
-  <li><b>Psychological reasons:</b> these communities tend to express negative, sarcastic, or hostile tones; LIWC features related to anger, negativity, or swearing may therefore be elevated.</li>
+  <li><b>Stylometric reasons:</b> meme culture often produces short, fragmented posts, frequent uppercase letters, minimal syntax, image-based humour, and text designed primarily for mockery.</li>
+  <li><b>Psychological reasons:</b> these communities tend to express negative, sarcastic, or hostile tones. LIWC features related to anger, negativity, or swearing may therefore be elevated.</li>
 </ul>
 
 These distinctive patterns may cause the “Humour &amp; Memes” centroid to be unusually distant from others: unlike most categories, these subreddits systematically make fun of other users, other subreddits, or entire topics.
@@ -890,7 +891,8 @@ Our goal is simple:
 <b>compare the stylometric and psychological centroids of “Humour &amp; Memes” to the median centroid of all other categories</b>.
 
 <div style="text-align:center;">
-  <img src="assets/img/cluster/humour_memes_deviation_stylometric_psychological.png" width="70%" alt="Humour & Memes deviation plot">
+  <img src="assets/img/cluster/humour_memes_deviation_stylometric.png" width="70%" alt="Humour & Memes deviation plot">
+  <img src="assets/img/cluster/humour_memes_deviation_psychological.png" width="70%" alt="Humour & Memes deviation plot">
   <div style="font-size:0.85rem;"><em>Deviation of stylometric (top) and psychological (bottom) features compared to the median centroid of all categories.</em></div>
 </div>
 

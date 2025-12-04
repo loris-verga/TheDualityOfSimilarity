@@ -1075,7 +1075,7 @@ These communities behave almost like “commentary” or “parody” subreddits
 
 
 <div style="text-align:center; margin-top:20px;">
-  <img src="assets/img/bipartite_humor_memes_negative_links.png" width="70%" alt="Bipartite graph of negative links">
+  <img src="assets/img/cluster/bipartite_humor_memes_negative_links.png" width="70%" alt="Bipartite graph of negative links">
   <div style="font-size:0.85rem;"><em>Bipartite representation of negative links from Humour &amp; Memes subreddits to their targets.</em></div>
 </div>
 

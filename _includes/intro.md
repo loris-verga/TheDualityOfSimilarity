@@ -890,7 +890,7 @@ Our goal is simple:
 <b>compare the stylometric and psychological centroids of “Humour &amp; Memes” to the median centroid of all other categories</b>.
 
 <div style="text-align:center;">
-  <img src="assets/img/humour_memes_deviation_stylometric_psychological.png" width="70%" alt="Humour & Memes deviation plot">
+  <img src="assets/img/cluster/humour_memes_deviation_stylometric_psychological.png" width="70%" alt="Humour & Memes deviation plot">
   <div style="font-size:0.85rem;"><em>Deviation of stylometric (top) and psychological (bottom) features compared to the median centroid of all categories.</em></div>
 </div>
 
@@ -946,7 +946,7 @@ This asymmetry is striking and begs the question:
 
 Below is the output from the analysis, displayed in a clean table:
 
-<div style="margin-top:20px;">
+<div style="margin-top:10px;">
 <table style="border-collapse:collapse; width:70%; font-size:0.9rem;">
   <thead>
     <tr style="background:#ffefef;">
@@ -975,7 +975,7 @@ Below is the output from the analysis, displayed in a clean table:
 
 Displayed below is the structured version of your output showing the main targets for each source.
 
-<div style="margin-top:20px;">
+<div style="margin-top:10px;">
 <table style="border-collapse:collapse; width:95%; font-size:0.88rem;">
   <thead>
     <tr style="background:#eef5ff;">

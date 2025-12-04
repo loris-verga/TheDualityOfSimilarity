@@ -683,7 +683,7 @@ At this stage, we step beyond distances and look directly at how categories inte
 Before relating negativity to distances, we first inspect how negativity flows between categories at a global scale.
 
 <div style="text-align:center; margin-top:20px;">
-  <img src="assets/img/cluter/negativity_heatmap_categories.png" width="70%" alt="Negative links between categories">
+  <img src="assets/img/cluster/negativity_heatmap_categories.png" width="70%" alt="Negative links between categories">
   <div style="font-size:0.85rem;"><em>Number of negative hyperlinks from each source to each target category.</em></div>
 </div>
 
@@ -861,6 +861,285 @@ Across authorship, psychological and stylometric distances, we find:
 Taken together, these results reveal how category structure shapes the relationship between semantic distance and negativity:  
 <b>communities that are closer in content tend to interact more positively, while distant communities interact more negatively—especially across category boundaries.</b>
 </div>
+
+
+<hr style="margin:40px 0;">
+
+
+### <span style="color:#ff201e">4) Case Study: Humour &amp; Memes</span>
+
+On the stylometric and psychological distance heatmaps (part 1), a clear pattern emerged:  
+the <b>“Humour &amp; Memes”</b> category appears well-separated from all others, with higher centroid cosine distances for both signatures.  
+
+This naturally leads to the following speculation:
+
+<ul>
+  <li><b>Stylometric reasons:</b> meme culture often produces short, fragmented posts—frequent uppercase letters, minimal syntax, image-based humour, and text designed primarily for mockery.</li>
+  <li><b>Psychological reasons:</b> these communities tend to express negative, sarcastic, or hostile tones; LIWC features related to anger, negativity, or swearing may therefore be elevated.</li>
+</ul>
+
+These distinctive patterns may cause the “Humour &amp; Memes” centroid to be unusually distant from others: unlike most categories, these subreddits systematically make fun of other users, other subreddits, or entire topics.
+
+We now evaluate whether this is true in the data.
+
+
+
+#### Comparing “Humour & Memes” centroids to all other categories
+
+Our goal is simple:  
+<b>compare the stylometric and psychological centroids of “Humour &amp; Memes” to the median centroid of all other categories</b>.
+
+<div style="text-align:center;">
+  <img src="assets/img/humour_memes_deviation_stylometric_psychological.png" width="70%" alt="Humour & Memes deviation plot">
+  <div style="font-size:0.85rem;"><em>Deviation of stylometric (top) and psychological (bottom) features compared to the median centroid of all categories.</em></div>
+</div>
+
+
+
+#### Stylometric deviations
+
+As expected:
+
+<ul>
+  <li><b>Uppercase fraction</b> is much higher than the median of all categories.</li>
+  <li><b>Characters, words, and sentences per post</b> are significantly smaller.</li>
+</ul>
+
+Even without inspecting the textual content, this aligns with our expectations about meme-style communication: short, intense, loud, and sharp.
+
+
+
+#### Psychological deviations
+
+Psychological signatures show an even stronger deviation:
+
+<ul>
+  <li><b>Swear words</b> dominate.</li>
+  <li><b>Anger</b>-related dimensions are clearly above typical levels.</li>
+  <li><b>General negative emotion</b> signals are significantly elevated.</li>
+</ul>
+
+This reinforces the idea that “Humour &amp; Memes” communities contribute disproportionately to negative content on Reddit.
+
+
+
+<hr style="margin:40px 0;">
+
+
+
+### <span style="color:#ff201e">Where does the negativity go?</span>
+
+Earlier (section 2), we observed that:
+
+<div style="background:#f7f7f7; padding:15px; border-radius:10px; width:fit-content;">
+<b>“Humour &amp; Memes” emits more than 25,000 negative hyperlinks.</b><br>
+Yet it does <b>not</b> receive an unusually high number of negative links in return.
+</div>
+
+This asymmetry is striking and begs the question:
+
+<b>Which subreddits are responsible for emitting this negativity, and where do they send it?</b>
+
+
+
+### Subreddits emitting the most negative links
+
+Below is the output from the analysis, displayed in a clean table:
+
+<div style="margin-top:20px;">
+<table style="border-collapse:collapse; width:70%; font-size:0.9rem;">
+  <thead>
+    <tr style="background:#ffefef;">
+      <th style="padding:8px; border:1px solid #ccc;">Source Subreddit</th>
+      <th style="padding:8px; border:1px solid #ccc;">Negative Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="padding:8px; border:1px solid #ccc;">circlebroke2</td><td style="padding:8px; border:1px solid #ccc;">1768</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">shitpost</td><td style="padding:8px; border:1px solid #ccc;">1307</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">shitredditsays</td><td style="padding:8px; border:1px solid #ccc;">1034</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">shitstatistssay</td><td style="padding:8px; border:1px solid #ccc;">982</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">shitamericanssay</td><td style="padding:8px; border:1px solid #ccc;">792</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">circlebroke</td><td style="padding:8px; border:1px solid #ccc;">774</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">evenwithcontext</td><td style="padding:8px; border:1px solid #ccc;">771</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">shitliberalssay</td><td style="padding:8px; border:1px solid #ccc;">765</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">gamingcirclejerk</td><td style="padding:8px; border:1px solid #ccc;">624</td></tr>
+    <tr><td style="padding:8px; border:1px solid #ccc;">fitnesscirclejerk</td><td style="padding:8px; border:1px solid #ccc;">599</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+### Which subreddits do they target?
+
+Displayed below is the structured version of your output showing the main targets for each source.
+
+<div style="margin-top:20px;">
+<table style="border-collapse:collapse; width:95%; font-size:0.88rem;">
+  <thead>
+    <tr style="background:#eef5ff;">
+      <th style="padding:8px; border:1px solid #ccc;">Source Subreddit</th>
+      <th style="padding:8px; border:1px solid #ccc;">Target Subreddit</th>
+      <th style="padding:8px; border:1px solid #ccc;"># Negative Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- shitstatistssay -->
+    <tr><td>shitstatistssay</td><td>news</td><td>56</td></tr>
+    <tr><td>shitstatistssay</td><td>politics</td><td>48</td></tr>
+    <tr><td>shitstatistssay</td><td>worldnews</td><td>39</td></tr>
+    <tr><td>shitstatistssay</td><td>libertarian</td><td>37</td></tr>
+    <tr><td>shitstatistssay</td><td>todayilearned</td><td>36</td></tr>
+
+    <!-- shitredditsays -->
+    <tr><td>shitredditsays</td><td>twoxchromosomes</td><td>120</td></tr>
+    <tr><td>shitredditsays</td><td>worldnews</td><td>41</td></tr>
+    <tr><td>shitredditsays</td><td>todayilearned</td><td>33</td></tr>
+    <tr><td>shitredditsays</td><td>wtf</td><td>30</td></tr>
+    <tr><td>shitredditsays</td><td>videos</td><td>29</td></tr>
+
+    <!-- shitpost -->
+    <tr><td>shitpost</td><td>showerthoughts</td><td>54</td></tr>
+    <tr><td>shitpost</td><td>adviceanimals</td><td>50</td></tr>
+    <tr><td>shitpost</td><td>videos</td><td>46</td></tr>
+    <tr><td>shitpost</td><td>tifu</td><td>45</td></tr>
+    <tr><td>shitpost</td><td>askreddit</td><td>43</td></tr>
+
+    <!-- shitliberalssay -->
+    <tr><td>shitliberalssay</td><td>socialism</td><td>29</td></tr>
+    <tr><td>shitliberalssay</td><td>askreddit</td><td>28</td></tr>
+    <tr><td>shitliberalssay</td><td>worldnews</td><td>28</td></tr>
+    <tr><td>shitliberalssay</td><td>news</td><td>22</td></tr>
+    <tr><td>shitliberalssay</td><td>todayilearned</td><td>21</td></tr>
+
+    <!-- shitamericanssay -->
+    <tr><td>shitamericanssay</td><td>todayilearned</td><td>39</td></tr>
+    <tr><td>shitamericanssay</td><td>news</td><td>32</td></tr>
+    <tr><td>shitamericanssay</td><td>pics</td><td>26</td></tr>
+    <tr><td>shitamericanssay</td><td>videos</td><td>26</td></tr>
+    <tr><td>shitamericanssay</td><td>worldnews</td><td>26</td></tr>
+
+    <!-- gamingcirclejerk -->
+    <tr><td>gamingcirclejerk</td><td>gaming</td><td>48</td></tr>
+    <tr><td>gamingcirclejerk</td><td>games</td><td>46</td></tr>
+    <tr><td>gamingcirclejerk</td><td>pcmasterrace</td><td>36</td></tr>
+    <tr><td>gamingcirclejerk</td><td>ps4</td><td>35</td></tr>
+    <tr><td>gamingcirclejerk</td><td>pcgaming</td><td>33</td></tr>
+
+    <!-- fitnesscirclejerk -->
+    <tr><td>fitnesscirclejerk</td><td>bodybuilding</td><td>37</td></tr>
+    <tr><td>fitnesscirclejerk</td><td>fitness</td><td>25</td></tr>
+    <tr><td>fitnesscirclejerk</td><td>weightroom</td><td>22</td></tr>
+    <tr><td>fitnesscirclejerk</td><td>pics</td><td>18</td></tr>
+    <tr><td>fitnesscirclejerk</td><td>adviceanimals</td><td>14</td></tr>
+
+    <!-- evenwithcontext -->
+    <tr><td>evenwithcontext</td><td>askreddit</td><td>97</td></tr>
+    <tr><td>evenwithcontext</td><td>wtf</td><td>39</td></tr>
+    <tr><td>evenwithcontext</td><td>funny</td><td>34</td></tr>
+    <tr><td>evenwithcontext</td><td>pics</td><td>28</td></tr>
+    <tr><td>evenwithcontext</td><td>gifs</td><td>27</td></tr>
+
+    <!-- circlebroke2 -->
+    <tr><td>circlebroke2</td><td>pics</td><td>77</td></tr>
+    <tr><td>circlebroke2</td><td>funny</td><td>74</td></tr>
+    <tr><td>circlebroke2</td><td>videos</td><td>73</td></tr>
+    <tr><td>circlebroke2</td><td>news</td><td>68</td></tr>
+    <tr><td>circlebroke2</td><td>adviceanimals</td><td>65</td></tr>
+
+    <!-- circlebroke -->
+    <tr><td>circlebroke</td><td>pics</td><td>51</td></tr>
+    <tr><td>circlebroke</td><td>videos</td><td>43</td></tr>
+    <tr><td>circlebroke</td><td>news</td><td>42</td></tr>
+    <tr><td>circlebroke</td><td>askreddit</td><td>41</td></tr>
+    <tr><td>circlebroke</td><td>funny</td><td>36</td></tr>
+  </tbody>
+</table>
+</div>
+
+
+
+#### What do we learn from this?
+
+A key pattern stands out:
+
+<div style="background:#fff4db; padding:15px; border-radius:10px;">
+<b>The subreddits emitting the most negativity within “Humour &amp; Memes” almost never target each other.</b><br><br>
+Instead, they target <b>general-purpose</b> or <b>topic-specific</b> communities such as<br>
+<em>askreddit, todayilearned, gaming, worldnews, pics, funny, fitness, movies…</em>
+</div>
+
+These communities behave almost like “commentary” or “parody” subreddits that take aim at mainstream Reddit spaces, not at humour-oriented neighbours.
+
+
+
+<div style="text-align:center; margin-top:20px;">
+  <img src="assets/img/bipartite_humor_memes_negative_links.png" width="70%" alt="Bipartite graph of negative links">
+  <div style="font-size:0.85rem;"><em>Bipartite representation of negative links from Humour &amp; Memes subreddits to their targets.</em></div>
+</div>
+
+This bipartite structure highlights a profound asymmetry:  
+<b>the negativity flows outward, not inward</b>.
+
+
+
+### Additional example: the “nbacirclejerk” pattern
+
+To illustrate how general this behaviour is, here is the table generated for the topic “NBA”:
+
+<div style="margin-top:20px;">
+<table style="border-collapse:collapse; width:60%; font-size:0.88rem;">
+  <thead>
+    <tr style="background:#f0f7ff;">
+      <th style="padding:8px; border:1px solid #ccc;">Source Subreddit</th>
+      <th style="padding:8px; border:1px solid #ccc;">Target Subreddit</th>
+      <th style="padding:8px; border:1px solid #ccc;"># Negative Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>nbacirclejerk</td><td>nba</td><td>31</td></tr>
+    <tr><td>nbacirclejerk</td><td>torontoraptors</td><td>5</td></tr>
+    <tr><td>nbacirclejerk</td><td>bostonceltics</td><td>4</td></tr>
+    <tr><td>nbacirclejerk</td><td>warriors</td><td>3</td></tr>
+    <tr><td>nbacirclejerk</td><td>chicagobulls</td><td>2</td></tr>
+  </tbody>
+</table>
+</div>
+
+Again, we see the same structure:  
+<b>a humour-oriented circlejerk subreddit mocking the “serious” version of the topic.</b>
+
+
+
+<hr style="margin:40px 0;">
+
+
+
+### <span style="color:#ff201e">Conclusion of the Case Study</span>
+
+This case study reveals a facet of Reddit that would have been very difficult to uncover without:
+
+- the category taxonomy,  
+- the hyperlink network,  
+- and the signature-based distance analysis.
+
+Our analysis shows that:
+
+<ul>
+  <li>“Humour &amp; Memes” subreddits have <b>distinct stylometric and psychological profiles</b>, far from the Reddit norm.</li>
+  <li>They generate a <b>massive amount of negativity</b>, yet do not receive much of it.</li>
+  <li>They do <b>not</b> primarily target each other, but rather general or topic-oriented communities.</li>
+  <li>This reveals an ecosystem of subreddits dedicated to <b>mocking entire topics</b> and the communities built around them.</li>
+</ul>
+
+<div style="background:#eef1f5; padding:18px; border-radius:10px; margin-top:20px;">
+<b>Overall:</b>  
+although we began this case study motivated by unusual stylometric &amp; psychological signatures,  
+we ultimately uncovered a much broader phenomenon—an entire network of humour-driven subreddits that shape Reddit’s negativity landscape in profound ways.
+</div>
+
+
 
 
 # <span style="color: #ff201e">Quick.</span> The fastest and easiest way to&nbsp;create a&nbsp;GitHub Pages website for your project.

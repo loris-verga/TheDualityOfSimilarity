@@ -6,6 +6,4 @@ $$1+1=2$$
 
 <iframe src="assets/heatmap_nbr_negative_links.html" width="1000" height="400"></iframe>
 
-{% raw %}
 {% include plots/distrib_category.html %}
-{% endraw %}

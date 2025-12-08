@@ -673,10 +673,6 @@ From the heatmap, two main observations emerge:
 
 
 The distribution plot confirms this:
-<div style="text-align:center; margin-top:20px;">
-  <img src="assets/img/cluster/negativity_distribution_emitted_received.png" width="70%" alt="Negativity emitted vs received">
-  <div style="font-size:0.85rem;"><em>Distribution of negative links emitted and received per category.</em></div>
-</div>
 {% include basic_plots/distrib_negative_links_categories.html %}
 
 <ul>
@@ -726,12 +722,6 @@ We then examine how the **mean cosine distance (authorship distance)** varies ac
 - <b>Link sentiment</b> (negative or positive),
 - <b>Hyperlink type</b>  (within vs inter cluster).
 
-
-
-<div style="text-align:center;">
-  <img src="assets/img/cluster/authorship_distance_within_inter_by_sentiment.png" width="70%" alt="Authorship cosine distance by link type and sentiment">
-  <div style="font-size:0.85rem;"><em>Mean authorship cosine distance by hyperlink type and link sentiment (95% CIs).</em></div>
-</div>
 {% include basic_plots/mean_authorship_dist_for_type_of_links.html %}
 
 
@@ -761,15 +751,8 @@ We further break down mean cosine distance by category and by sentiment:
   <div style="font-size:0.85rem;"><em>Top: within-cluster links. Bottom: inter-cluster links. (95% CI)</em></div>
 </div>
 
-<div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
-    <div style="flex:1; min-width:0;">
-        {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_within.html %}
-    </div>
-
-    <div style="flex:1; min-width:0;">
-        {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_inter.html %}
-    </div>
-</div>
+{% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_within.html %}
+{% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_inter.html %}
 
 
 The same structure emerges:
@@ -800,14 +783,21 @@ We repeat the same decomposition for the other two signature-based distances.
 </div>
 
 <div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
+    
     <div style="flex:1; min-width:0;">
-        {% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
+        <div style="width:100% !important; height:auto !important; overflow:hidden;">
+            {% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
+        </div>
     </div>
 
     <div style="flex:1; min-width:0;">
-        {% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
+        <div style="width:100% !important; height:auto !important; overflow:hidden;">
+            {% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
+        </div>
     </div>
+
 </div>
+
 
 #### Psychological distance
 

@@ -16,24 +16,11 @@ blabla
 
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">
-	<iframe src="plots/heatmap_stylo_centroids.html" style="width: 100%; height: 100%;"></iframe>
-	</div>
-	<div class="heatmap-container">
-	<iframe src="plots/heatmap_stylo_centroids_2.html" style="width: 100%; height: 100%;"></iframe>
-	</div>
-</div>
-
-<div class="two-heatmaps-container">
-	<div class="heatmap-container">
 	<iframe src="plots/heatmap_psycho_centroids.html" style="width: 100%; height: 100%;"></iframe>
 	</div>
 	<div class="heatmap-container">
 	<iframe src="plots/heatmap_psycho_centroids_2.html" style="width: 100%; height: 100%;"></iframe>
 	</div>
-</div>
-
-<div class="heatmap-container">
-<iframe src="plots/heatmap_nbr_negative_links.html" style="width: 100%; height: 100%;"></iframe>
 </div>
 
 {% include basic_plots/distrib_negative_links_categories.html %}

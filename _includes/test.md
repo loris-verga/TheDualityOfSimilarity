@@ -3,6 +3,7 @@ Hello
 $$1+1=2$$
 
 {% include basic_plots/distrib_category.html %}
+blabla
 {% include basic_plots/distrib_category.html %}
 
 

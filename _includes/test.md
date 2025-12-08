@@ -3,6 +3,7 @@ Hello
 $$1+1=2$$
 
 {% include basic_plots/distrib_category.html %}
+{% include basic_plots/distrib_category.html %}
 
 
 <div class="two-heatmaps-container">

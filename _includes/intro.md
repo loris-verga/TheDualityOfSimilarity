@@ -414,7 +414,7 @@ To better understand how signatures relate across communities, we can visualize 
 We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure).
 PCA identifies the 2D projection plane that captures the maximum possible variance from the psychological features. On the other hand, t-SNE is a tool that reveals local structures and potential clusters by creating a 2D map that preserves the neighborhood relationships from the original high-dimensional space. We use it here to see if the psychological profiles form distinct groups.
 
-<div style="display:flex; gap:20px; justify-content:center;">
+<div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
     <div style="flex:1; min-width:0;">
         {% include basic_plots/tsne_stylo.html %}
     </div>

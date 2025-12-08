@@ -1,0 +1,34 @@
+<p class="ignore">
+    put all plot includes here (this file is not linked to website) to avoid ID conflicts
+</p>
+
+{% include basic_plots/distrib_cosine_dist_embeddings.html %}
+{% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
+{% include basic_plots/mean_cosine_dist_across_groups_of_link_sentiment.html %}
+{% include basic_plots/number_link_sentiment_distant_groups.html %}
+{% include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
+
+{% include basic_plots/distrib_cosine_dist_stylo.html %}
+
+
+<div class="heatmap-container">
+<iframe src="plots/correl_matrix_stylo.html" style="width: 100%; height: 100%;"></iframe>
+</div>
+
+{% include basic_plots/pca_stylo.html %}
+{% include basic_plots/tsne_stylo.html %}
+
+{% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
+{% include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
+
+
+{% include basic_plots/distrib_cosine_dist_psycho.html %}
+
+<div class="heatmap-container">
+<iframe src="plots/correl_matrix_psycho.html" style="width: 100%; height: 100%;"></iframe>
+</div>
+
+{% include basic_plots/pca_psycho.html %}
+{% include basic_plots/tsne_psycho.html %}
+{% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
+{% include basic_plots/number_link_sentiment_distant_groups_psycho.html %}    

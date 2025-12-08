@@ -746,11 +746,6 @@ the global trend strengthens once we control for category structure.
 
 We further break down mean cosine distance by category and by sentiment:
 
-<div style="text-align:center;">
-  <img src="assets/img/cluster/authorship_distance_by_category_within_inter.png" width="70%" alt="Cosine distance by category and hyperlink type">
-  <div style="font-size:0.85rem;"><em>Top: within-cluster links. Bottom: inter-cluster links. (95% CI)</em></div>
-</div>
-
 {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_within.html %}
 {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_inter.html %}
 
@@ -774,13 +769,6 @@ This strongly supports <b>Hypothesis n°7</b>:
 ### <span style="color:#ff201e">Beyond Authorship Distance: Stylometric & Psychological Distances</span>
 
 We repeat the same decomposition for the other two signature-based distances.
-
-
-
-<div style="text-align:center;">
-  <img src="assets/img/cluster/psychological_and_stylometric_distance_plots.png" width="75%" alt="Stylometric and psychological distance by link type and sentiment">
-  <div style="font-size:0.85rem;"><em>Stylometric and psychological distances by hyperlink type and sentiment.</em></div>
-</div>
 
 <div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
     
@@ -875,7 +863,8 @@ Our goal is simple:
   <img src="assets/img/cluster/humour_memes_deviation_psychological.png" width="70%" alt="Humour & Memes deviation plot">
   <div style="font-size:0.85rem;"><em>Deviation of stylometric (top) and psychological (bottom) features compared to the median centroid of all categories.</em></div>
 </div>
-
+{% include basic_plots/deviation_stylometric_features.html %}
+{% include basic_plots/deviation_psychological_features.html %}
 
 
 #### Stylometric deviations

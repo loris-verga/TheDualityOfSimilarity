@@ -57,3 +57,6 @@
 
 {% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
 {% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
+
+{% include basic_plots/deviation_stylometric_features.html %}
+{% include basic_plots/deviation_psychological_features.html %}

@@ -858,11 +858,6 @@ We now evaluate whether this is true in the data.
 Our goal is simple:  
 <b>compare the stylometric and psychological centroids of “Humour &amp; Memes” to the median centroid of all other categories</b>.
 
-<div style="text-align:center;">
-  <img src="assets/img/cluster/humour_memes_deviation_stylometric.png" width="70%" alt="Humour & Memes deviation plot">
-  <img src="assets/img/cluster/humour_memes_deviation_psychological.png" width="70%" alt="Humour & Memes deviation plot">
-  <div style="font-size:0.85rem;"><em>Deviation of stylometric (top) and psychological (bottom) features compared to the median centroid of all categories.</em></div>
-</div>
 {% include basic_plots/deviation_stylometric_features.html %}
 {% include basic_plots/deviation_psychological_features.html %}
 

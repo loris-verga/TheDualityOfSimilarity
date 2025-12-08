@@ -163,7 +163,6 @@ We first look at how subreddit embedding distances relate to the sentiment of th
 Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
 
 **Are positive and negative links present at different distances?**
-<div style="text-align:center;"> <p style="max-width:70%; margin:auto;"> <img src="assets/img/plot_dist_cosine_by_link_sentiment.png" width="100%" alt="Distribution of cosine distances by link sentiment"> <br> <em>Distribution of cosine distances for positive vs. negative links.</em> </p> </div>
 {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
 
 Yes. Subreddit pairs with **negative** link sentiment have noticeably **larger cosine distances** than those with positive links.
@@ -222,10 +221,11 @@ To test whether being “far apart” in embedding space actually changes the se
   <li>
     <b>Controlling for Confounders</b><br>
     We fit a logistic regression to estimate a <b>propensity score</b> using the hyperlink feature vector.<br>
-    One covariate stands out: <b>compound_sentiment</b>, which correlates with both distance and link sentiment.<br>
+    One covariate stands out: <b>compound_sentiment</b>, which correlates with both distance and link sentiment, as we can see :<br>
+    {% include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
+
     To handle it properly, we match pairs with a caliper of <code>0.2 × std</code> of that feature.<br><br>
 
-    {% include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
 
     <br>
     Matching rebalances the covariate well, so we can now measure the treatment effect clearly.
@@ -416,17 +416,8 @@ PCA identifies the 2D projection plane that captures the maximum possible varian
 
 <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
 
-  <p align="center" style="max-width:45%;">
-    <img src="assets/img/pca_psych.png" width="100%" alt="PCA of Psychological Signatures">
-    <br>
-    <em>PCA projection of psychological distances.</em>
-  </p>
-
-  <p align="center" style="max-width:45%;">
-    <img src="assets/img/tsne_psych.png" width="100%" alt="t-SNE of Psychological Signatures">
-    <br>
-    <em>t-SNE projection of psychological distances.</em>
-  </p>
+  {% include basic_plots/pca_psycho.html %}
+  {% include basic_plots/tsne_psycho.html %}
 
 </div>
 

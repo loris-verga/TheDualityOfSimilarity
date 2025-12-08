@@ -364,7 +364,7 @@ As before, we convert the continuous distance into a binary treatment:
 
 We begin by visualizing sentiment distributions across these two groups.
 
-{% include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
+{% include basic_plots/number_link_sentiment_distant_groups_psycho.html %}
 
 At first glance, the distributions appear similar, with only a mild shift toward negativity for psychologically distant communities.
 

@@ -561,11 +561,6 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
 
 ## <span style="color:#ff201e">b) Stylometric Signatures & Categories</span>
 
-<div style="text-align:center;">
-  <img src="assets/img/cluster/heatmap_stylo.png" width="70%" style="margin-right:2%;" alt="Stylometric centroid distances">
-  <div style="font-size:0.85rem;"><em>Stylometric centroid comparisons.</em></div>
-</div>
-
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">
 	<iframe src="plots/heatmap_stylo_centroids.html" style="width: 100%; height: 100%;"></iframe>
@@ -657,10 +652,6 @@ At this stage, we step beyond distances and look directly at how categories inte
 
 Before relating negativity to distances, we first inspect how negativity flows between categories at a global scale.
 
-<div style="text-align:center; margin-top:20px;">
-  <img src="assets/img/cluster/negativity_heatmap_categories.png" width="70%" alt="Negative links between categories">
-  <div style="font-size:0.85rem;"><em>Number of negative hyperlinks from each source to each target category.</em></div>
-</div>
 <div class="heatmap-container">
 <iframe src="plots/heatmap_nbr_negative_links.html" style="width: 100%; height: 100%;"></iframe>
 </div>
@@ -681,13 +672,12 @@ From the heatmap, two main observations emerge:
 </ul>
 
 
-
+The distribution plot confirms this:
 <div style="text-align:center; margin-top:20px;">
   <img src="assets/img/cluster/negativity_distribution_emitted_received.png" width="70%" alt="Negativity emitted vs received">
   <div style="font-size:0.85rem;"><em>Distribution of negative links emitted and received per category.</em></div>
 </div>
-
-The distribution plot confirms this:
+{% include basic_plots/distrib_negative_links_categories.html %}
 
 <ul>
   <li>
@@ -742,6 +732,7 @@ We then examine how the **mean cosine distance (authorship distance)** varies ac
   <img src="assets/img/cluster/authorship_distance_within_inter_by_sentiment.png" width="70%" alt="Authorship cosine distance by link type and sentiment">
   <div style="font-size:0.85rem;"><em>Mean authorship cosine distance by hyperlink type and link sentiment (95% CIs).</em></div>
 </div>
+{% include basic_plots/mean_authorship_dist_for_type_of_links.html %}
 
 
 
@@ -770,6 +761,17 @@ We further break down mean cosine distance by category and by sentiment:
   <div style="font-size:0.85rem;"><em>Top: within-cluster links. Bottom: inter-cluster links. (95% CI)</em></div>
 </div>
 
+<div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
+    <div style="flex:1; min-width:0;">
+        {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_within.html %}
+    </div>
+
+    <div style="flex:1; min-width:0;">
+        {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_inter.html %}
+    </div>
+</div>
+
+
 The same structure emerges:
 
 <ul>
@@ -795,6 +797,16 @@ We repeat the same decomposition for the other two signature-based distances.
 <div style="text-align:center;">
   <img src="assets/img/cluster/psychological_and_stylometric_distance_plots.png" width="75%" alt="Stylometric and psychological distance by link type and sentiment">
   <div style="font-size:0.85rem;"><em>Stylometric and psychological distances by hyperlink type and sentiment.</em></div>
+</div>
+
+<div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
+    <div style="flex:1; min-width:0;">
+        {% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
+    </div>
+
+    <div style="flex:1; min-width:0;">
+        {% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
+    </div>
 </div>
 
 #### Psychological distance

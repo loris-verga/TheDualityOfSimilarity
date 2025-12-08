@@ -23,16 +23,6 @@ blabla
 	</div>
 </div>
 
-{% include basic_plots/distrib_negative_links_categories.html %}
-
-{% include basic_plots/mean_authorship_dist_for_type_of_links.html %}
-
-{% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_within.html %}
-{% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_inter.html %}
-
-{% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
-{% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
-
 {% include basic_plots/deviation_stylometric_features.html %}
 {% include basic_plots/deviation_psychological_features.html %}
 

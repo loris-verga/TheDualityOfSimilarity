@@ -275,6 +275,7 @@ As with embedding distance, we first compare how stylometric distances vary acro
   <img src="assets/img/plot_means_stylometric_by_sentiment.png" width="70%" alt="Mean stylometric distance by sentiment">
   <div><em>Mean stylometric distance for positive vs. negative interactions (95% CI).</em></div>
 </div>
+{% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
 
 The difference is statistically significant—negative interactions occur between slightly more stylometrically distant communities.  
 But the effect size is small: about <b>0.77 vs. 0.75</b>.  
@@ -315,6 +316,7 @@ We begin by comparing sentiment outcomes in these two groups.
   <img src="assets/img/barplot_linksentiment_by_stylometric_treatment.png" width="55%" alt="Link sentiment by stylometric distance groups">
   <div><em>Proportion of positive/negative links across Stylometric Close vs. Distant pairs.</em></div>
 </div>
+{% include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
 
 At first glance, the distributions look similar, with only mild shifts in negativity for stylometrically distant pairs.
 
@@ -355,6 +357,7 @@ As before, we begin by comparing distance values across the two sentiment groups
   <img src="assets/img/plot_means_psychological_by_sentiment.png" width="70%" alt="Mean psychological distance by sentiment">
   <div><em>Mean psychological distance for positive vs. negative interactions (95% CI).</em></div>
 </div>
+{% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
 
 The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant.  
 With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
@@ -396,6 +399,7 @@ We begin by visualizing sentiment distributions across these two groups.
   <img src="assets/img/barplot_linksentiment_by_psychological_treatment.png" width="55%" alt="Link sentiment by psychological distance groups">
   <div><em>Proportion of positive/negative links across Psycho Close vs. Psycho Distant pairs.</em></div>
 </div>
+{% include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
 
 At first glance, the distributions appear similar, with only a mild shift toward negativity for psychologically distant communities.
 

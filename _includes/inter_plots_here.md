@@ -28,7 +28,9 @@
 <iframe src="plots/correl_matrix_psycho.html" style="width: 100%; height: 100%;"></iframe>
 </div>
 
-{% include basic_plots/pca_psycho.html %}
-{% include basic_plots/tsne_psycho.html %}
+{% include basic_plots/pca_psycho.html %} #
+{% include basic_plots/tsne_psycho.html %} #
 {% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
 {% include basic_plots/number_link_sentiment_distant_groups_psycho.html %}    
+
+{% include basic_plots/distrib_category.html %}

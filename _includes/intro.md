@@ -416,8 +416,13 @@ PCA identifies the 2D projection plane that captures the maximum possible varian
 
 <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
 
-  {% include basic_plots/pca_psycho.html %}
-  {% include basic_plots/tsne_psycho.html %}
+  <p align="center" style="max-width:45%;">
+    {% include basic_plots/pca_stylo.html %}
+  </p>
+
+  <p align="center" style="max-width:45%;">
+    {% include basic_plots/tsne_stylo.html %}
+  </p>
 
 </div>
 
@@ -473,6 +478,7 @@ Our aim here is simpler: look for large-scale patterns. We do not need perfect l
   <img src="assets/img/cluster/category_distribution.png" width="70%" alt="Distribution of subreddits per category">
   <div style="font-size:0.85rem;"><em>Distribution of subreddits per category.</em></div>
 </div>
+{% include basic_plots/distrib_category.html %}
 
 As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate by sheer volume. To avoid being misled by this imbalance, we rely on confidence intervals and other measures of uncertainty throughout the analysis.
 

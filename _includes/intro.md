@@ -131,6 +131,7 @@ These distributions reveal the shape of each similarity space and provide intuit
   <br>
   <em>Figure : Distribution of shared authorship distances between subreddit pairs.</em>
 </p>
+{% include basic_plots/distrib_cosine_dist_embeddings.html %}
  
 The right-skewed distribution indicates that subreddits tend to be **moderately aligned** in structural space: they share enough authorship to be related, but rarely enough to be almost identical.  
 Only a small fraction of pairs reach very high distances, meaning interactions between structurally opposite communities are uncommon.
@@ -144,6 +145,7 @@ Only a small fraction of pairs reach very high distances, meaning interactions b
   <br>
   <em>Figure : Distribution of stylometric distances between subreddit pairs.</em>
 </p>
+{% include basic_plots/distrib_cosine_dist_stylo.html %}
 
 In contrast to the embeddings distribution, stylometric distances are typically **lower**.  
 This means that the **writing styles** used in cross-subreddit interactions often share structural similarities.
@@ -159,6 +161,7 @@ This suggests that users often have matching textual habits when dicussing acros
   <br>
   <em>Figure : Distribution of psychological distances between subreddit pairs.</em>
 </p>
+{% include basic_plots/distrib_cosine_dist_psycho.html %}
 
 The psychological distance distribution centers around **moderate values**, indicating that most interactions occur between subreddits whose emotional and cognitive signatures are neither identical nor opposed.
 
@@ -173,6 +176,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 
 **Are positive and negative links present at different distances?**
 <div style="text-align:center;"> <p style="max-width:70%; margin:auto;"> <img src="assets/img/plot_dist_cosine_by_link_sentiment.png" width="100%" alt="Distribution of cosine distances by link sentiment"> <br> <em>Distribution of cosine distances for positive vs. negative links.</em> </p> </div>
+{% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
 
 Yes. Subreddit pairs with **negative** link sentiment have noticeably **larger cosine distances** than those with positive links.
 
@@ -223,6 +227,7 @@ To test whether being “far apart” in embedding space actually changes the se
       <img src="assets/img/barplot_linksentiment_by_treatment.png" width="55%" alt="Link sentiment by treatment">
       <div><em>Proportion of positive/negative links in Close vs. Distant groups.</em></div>
     </div>
+    {% include basic_plots/number_link_sentiment_distant_groups.html %}
 
     <br>
     Before controlling for confounders, the <b>Distant</b> group has about <b>twice as many negative links</b> as the Close group.

@@ -19,5 +19,15 @@ li {
 
 .heatmap-container {
 	width: 100%;
-	aspect-ratio: 6/5;
+	aspect-ratio: 1.2;
+}
+
+.two-heatmaps-container {
+	display: flex;
+	width: 150%;
+	margin-left: -25%;
+}
+
+.two-heatmaps-container .heatmap-container {
+	aspect-ratio: 1.15;
 }

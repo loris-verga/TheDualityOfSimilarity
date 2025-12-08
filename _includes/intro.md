@@ -473,10 +473,6 @@ The list covers broad thematic areas:
 
 Our aim here is simpler: look for large-scale patterns. We do not need perfect labels to detect whether broad thematic groups behave differently, interact differently, or exhibit distinct “signatures.”
 
-<div style="text-align:center; margin-top:20px;">
-  <img src="assets/img/cluster/category_distribution.png" width="70%" alt="Distribution of subreddits per category">
-  <div style="font-size:0.85rem;"><em>Distribution of subreddits per category.</em></div>
-</div>
 {% include basic_plots/distrib_category.html %}
 
 As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate by sheer volume. To avoid being misled by this imbalance, we rely on confidence intervals and other measures of uncertainty throughout the analysis.
@@ -570,6 +566,15 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
   <div style="font-size:0.85rem;"><em>Stylometric centroid comparisons.</em></div>
 </div>
 
+<div class="two-heatmaps-container">
+	<div class="heatmap-container">
+	<iframe src="plots/heatmap_stylo_centroids.html" style="width: 100%; height: 100%;"></iframe>
+	</div>
+	<div class="heatmap-container">
+	<iframe src="plots/heatmap_stylo_centroids_2.html" style="width: 100%; height: 100%;"></iframe>
+	</div>
+</div>
+
 The left heatmap shows a different picture: stylometric centroids are **more separated** as the cosine distances are larger. Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
 
 For example:
@@ -655,6 +660,9 @@ Before relating negativity to distances, we first inspect how negativity flows b
 <div style="text-align:center; margin-top:20px;">
   <img src="assets/img/cluster/negativity_heatmap_categories.png" width="70%" alt="Negative links between categories">
   <div style="font-size:0.85rem;"><em>Number of negative hyperlinks from each source to each target category.</em></div>
+</div>
+<div class="heatmap-container">
+<iframe src="plots/heatmap_nbr_negative_links.html" style="width: 100%; height: 100%;"></iframe>
 </div>
 
 From the heatmap, two main observations emerge:

@@ -34,3 +34,16 @@
 {% include basic_plots/number_link_sentiment_distant_groups_psycho.html %}    
 
 {% include basic_plots/distrib_category.html %}
+
+<div class="two-heatmaps-container">
+	<div class="heatmap-container">
+	<iframe src="plots/heatmap_stylo_centroids.html" style="width: 100%; height: 100%;"></iframe>
+	</div>
+	<div class="heatmap-container">
+	<iframe src="plots/heatmap_stylo_centroids_2.html" style="width: 100%; height: 100%;"></iframe>
+	</div>
+</div>
+
+<div class="heatmap-container">
+<iframe src="plots/heatmap_nbr_negative_links.html" style="width: 100%; height: 100%;"></iframe>
+</div>

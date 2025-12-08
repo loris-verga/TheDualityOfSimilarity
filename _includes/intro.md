@@ -126,11 +126,6 @@ These distributions reveal the shape of each similarity space and provide intuit
 
 ### **Shared Authorship Distance**
 
-<p align="center">
-  <img src="assets/img/distrib_embeddings.png" width="70%" alt="Histogram of Shared Authorship Distances">
-  <br>
-  <em>Figure : Distribution of shared authorship distances between subreddit pairs.</em>
-</p>
 {% include basic_plots/distrib_cosine_dist_embeddings.html %}
  
 The right-skewed distribution indicates that subreddits tend to be **moderately aligned** in structural space: they share enough authorship to be related, but rarely enough to be almost identical.  
@@ -140,11 +135,6 @@ Only a small fraction of pairs reach very high distances, meaning interactions b
 
 ### **Stylometric Distance**
 
-<p align="center">
-  <img src="assets/img/distrib_stylo.png" width="70%" alt="Histogram of Stylometric Distances">
-  <br>
-  <em>Figure : Distribution of stylometric distances between subreddit pairs.</em>
-</p>
 {% include basic_plots/distrib_cosine_dist_stylo.html %}
 
 In contrast to the embeddings distribution, stylometric distances are typically **lower**.  
@@ -157,9 +147,7 @@ This suggests that users often have matching textual habits when dicussing acros
 ### **Psychological Distance**
 
 <p align="center">
-  <img src="assets/img/distrib_psych.png" width="70%" alt="Histogram of Psychological Distances">
-  <br>
-  <em>Figure : Distribution of psychological distances between subreddit pairs.</em>
+  {% include basic_plots/distrib_cosine_dist_psycho.html %}
 </p>
 {% include basic_plots/distrib_cosine_dist_psycho.html %}
 
@@ -223,10 +211,6 @@ To test whether being “far apart” in embedding space actually changes the se
   <li>
     <b>Visualizing Close vs. Distant Groups</b><br><br>
 
-    <div style="text-align:center;">
-      <img src="assets/img/barplot_linksentiment_by_treatment.png" width="55%" alt="Link sentiment by treatment">
-      <div><em>Proportion of positive/negative links in Close vs. Distant groups.</em></div>
-    </div>
     {% include basic_plots/number_link_sentiment_distant_groups.html %}
 
     <br>
@@ -241,10 +225,7 @@ To test whether being “far apart” in embedding space actually changes the se
     One covariate stands out: <b>compound_sentiment</b>, which correlates with both distance and link sentiment.<br>
     To handle it properly, we match pairs with a caliper of <code>0.2 × std</code> of that feature.<br><br>
 
-    <div style="text-align:center;">
-      <img src="assets/img/dist_compound_sentiment_by_is_distant.png" width="55%" alt="Distribution of compound sentiment after matching">
-      <div><em>Distribution of compound_sentiment after matching. Balance achieved.</em></div>
-    </div>
+    {% include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
 
     <br>
     Matching rebalances the covariate well, so we can now measure the treatment effect clearly.
@@ -271,10 +252,6 @@ Stylometric distance measures how similar two subreddits’ writing styles are.
 
 As with embedding distance, we first compare how stylometric distances vary across the two sentiment groups.
 
-<div style="text-align:center;">
-  <img src="assets/img/plot_means_stylometric_by_sentiment.png" width="70%" alt="Mean stylometric distance by sentiment">
-  <div><em>Mean stylometric distance for positive vs. negative interactions (95% CI).</em></div>
-</div>
 {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
 
 The difference is statistically significant—negative interactions occur between slightly more stylometrically distant communities.  
@@ -312,10 +289,6 @@ Because stylometric distance is continuous, we apply the same dichotomization st
 
 We begin by comparing sentiment outcomes in these two groups.
 
-<div style="text-align:center;">
-  <img src="assets/img/barplot_linksentiment_by_stylometric_treatment.png" width="55%" alt="Link sentiment by stylometric distance groups">
-  <div><em>Proportion of positive/negative links across Stylometric Close vs. Distant pairs.</em></div>
-</div>
 {% include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
 
 At first glance, the distributions look similar, with only mild shifts in negativity for stylometrically distant pairs.
@@ -353,10 +326,6 @@ The **Average Treatment Effect** reaches **-0.19**. However, the p-value is equa
 We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  
 As before, we begin by comparing distance values across the two sentiment groups.
 
-<div style="text-align:center;">
-  <img src="assets/img/plot_means_psychological_by_sentiment.png" width="70%" alt="Mean psychological distance by sentiment">
-  <div><em>Mean psychological distance for positive vs. negative interactions (95% CI).</em></div>
-</div>
 {% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
 
 The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant.  
@@ -395,10 +364,6 @@ As before, we convert the continuous distance into a binary treatment:
 
 We begin by visualizing sentiment distributions across these two groups.
 
-<div style="text-align:center;">
-  <img src="assets/img/barplot_linksentiment_by_psychological_treatment.png" width="55%" alt="Link sentiment by psychological distance groups">
-  <div><em>Proportion of positive/negative links across Psycho Close vs. Psycho Distant pairs.</em></div>
-</div>
 {% include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
 
 At first glance, the distributions appear similar, with only a mild shift toward negativity for psychologically distant communities.

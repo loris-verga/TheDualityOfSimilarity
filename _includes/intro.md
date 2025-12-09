@@ -62,11 +62,11 @@ Two subreddits are close in this space **when many of the same users interact wi
 
 Mathematically, we compare two communities using **cosine similarity**:
 
-`cosine_sim(A, B) = (A · B) / (‖A‖ × ‖B‖)`
+<div> $$ \text{cosine\_sim}(A, B) = \frac{A \cdot B}{\left\lVert A \right\rVert \cdot \left\lVert B \right\rVert} $$ </div>
 
 To turn similarity into a distance, we use:
 
-**Shared Authorship Distance = 1 − cosine_sim(A, B)**
+<p> \( \text{Shared Authorship Distance} = 1 − \text{cosine\_sim(A, B)} \) </p>
 
 - **0** → communities whose authorship overlaps
 - **2** → communities with no shared authorship
@@ -87,7 +87,7 @@ To capture a community’s writing style, we compute a **stylometric signature**
 
 Because these features vary wildly in scale, we first apply **Z-score normalization**:
 
-`(x − μ) / σ`
+<div> $$ \frac{x - \mu}{\sigma} $$ </div>
 
 This ensures that no single feature dominates simply because it has larger numerical values.
 
@@ -95,7 +95,7 @@ Once each subreddit has its stylometric signature, we again compare communities 
 
 The resulting distance is:
 
-`Stylometric Distance = 1 − cosine_sim(style_A, style_B)`
+<p> \( \text{Stylometric Distance} = 1 − \text{cosine\_sim(style\_A, style\_B)} \) </p>
 
 ---
 
@@ -414,14 +414,9 @@ To better understand how signatures relate across communities, we can visualize 
 We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure).
 PCA identifies the 2D projection plane that captures the maximum possible variance from the psychological features. On the other hand, t-SNE is a tool that reveals local structures and potential clusters by creating a 2D map that preserves the neighborhood relationships from the original high-dimensional space. We use it here to see if the psychological profiles form distinct groups.
 
-<div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
-    <div style="flex:1; min-width:0;">
+<div class="two-heatmaps-container">
         {% include basic_plots/tsne_stylo.html %}
-    </div>
-
-    <div style="flex:1; min-width:0;">
         {% include basic_plots/pca_psycho.html %}
-    </div>
 </div>
 
 
@@ -442,15 +437,14 @@ These insights set the context a deeper question:
 
 ---
 
-#### <span style="color:#ff201e">Within– and Inter-Category Analysis</span>
+#### <span style="color:#ff201e">Within and Inter-Category Analysis</span>
 
 <div class="section">
 
 <h4>Introduction</h4>
 
 We assigned each of the ~51'000 subreddits in our embeddings dataframe to one of thirteen categories using an LLM.  
-The list covers broad thematic areas:
-
+The list covers broad thematic areas:<br><br>
 <ul>
   <li>Lifestyle</li>
   <li>Miscellaneous</li>
@@ -468,8 +462,8 @@ The list covers broad thematic areas:
 </ul>
 
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem;">
-<b>Note on accuracy:</b> Subreddit names are often uninformative, and thirteen categories are far too few to reflect the true diversity of Reddit. Expect misclassifications and broad bins that act more like umbrellas than precise labels.
-</div>
+<b>Note on accuracy:</b> Subreddit names are often uninformative, and thirteen categories are far too few to reflect the true diversity of Reddit. Expect misclassifications and broad bins that act more like umbrellas than precise labels.</div>
+
 
 Our aim here is simpler: look for large-scale patterns. We do not need perfect labels to detect whether broad thematic groups behave differently, interact differently, or exhibit distinct “signatures.”
 

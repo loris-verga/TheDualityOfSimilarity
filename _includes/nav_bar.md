@@ -1,104 +1,73 @@
-<!-- NAVBAR -->
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .navbar {
-    background-color: #222;
-    overflow: hidden;
-    position: fixed;       /* stays at top */
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 16px;
-  }
-
-  .navbar a:hover {
-    background-color: #575757;
-  }
-
-  /* Add spacing so content isn't hidden behind navbar */
-  .content {
-    padding-top: 70px;
-  }
-</style>
-
-<div class="navbar">
-  <a href="#section1">Intro</a>
-  <a href="#section2">Methodology</a>
-  <a href="#section3">Results</a>
-  <a href="#section4">Conclusion</a>
-</div>
+<nav class="glass-nav">
+  <ul>
+    <li><a href="#section1">Overview</a></li>
+    <li><a href="#section2">Methods</a></li>
+    <li><a href="#section3">Results</a></li>
+    <li><a href="#section4">Discussion</a></li>
+  </ul>
+</nav>
 
 
-<div class="content">
-  <h2 id="section1">Intro</h2>
-  <p>test1</p>
+/* Smooth scroll for the whole page */
+html {
+  scroll-behavior: smooth;
+}
 
-jei
-  <h2 id="section2">Methodology</h2>
-  <p>test2</p>
-vevfe
-  <h2 id="section3">Results</h2>
-  <p>test3</p>
-vefevf
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-vv
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-v
-vv
-v
+/* Glassy navbar */
+.glass-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 
-  <h2 id="section4">Conclusion</h2>
-  <p>test4</p>
-</div>
+  background: rgba(255, 115, 0, 0.15); /* soft orange glass */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 12px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Center content */
+.glass-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base link style */
+.glass-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+
+  color: #fafafa;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.25s ease;
+}
+
+/* Hover */
+.glass-nav a:hover {
+  background: rgba(255, 115, 0, 0.25);
+  color: white;
+}
+
+/* Active state when user clicks (optional) */
+.glass-nav a:active {
+  background: rgba(255, 115, 0, 0.35);
+}
 
 
+.glass-nav {
+  opacity: 0;
+  animation: fadeInNav 0.8s both;
+}
 
-
-
+@keyframes fadeInNav {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

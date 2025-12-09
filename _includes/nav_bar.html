@@ -1,125 +1,136 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Glassy Navbar Example</title>
-<style>
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with Navbar</title>
 
-/* Glassy navbar */
-.glass-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(255, 69, 0, 0.85); /* Reddit orange, slightly transparent */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 6px 0;       /* thin bar */
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  justify-content: center; /* center tabs */
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+  <style>
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
 
-/* Tabs */
-.glass-nav ul {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    /* Glassy navbar */
+    .glass-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 80, 50, 0.75); /* softer Reddit orange */
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 7px 0; /* 10% thinner */
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 
-.glass-nav a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 16px;
-  color: #fafafa;
-  padding: 6px 14px;
-  border-radius: 8px;
-  transition: 0.25s ease;
-}
+    /* Tabs */
+    .glass-nav ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.glass-nav a:hover {
-  background: rgba(255, 69, 0, 0.5);
-  color: white;
-}
+    .glass-nav a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 17.6px; /* 10% bigger than 16px */
+      color: #fafafa;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: 0.25s ease;
+    }
 
-/* Sections */
-section {
-  padding: 0;          /* no extra padding */
-  min-height: 100vh;   /* full viewport height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: sans-serif;
-  font-size: 1.5rem;
-  scroll-margin-top: 60px; /* adjust for navbar height */
-}
+    .glass-nav a:hover {
+      background: rgba(255, 80, 50, 0.4);
+      color: white;
+    }
 
-/* Optional: alternate background colors for visibility */
-#section1 { background: #fff8f0; }
-#section2 { background: #fff0e0; }
-#section3 { background: #ffe8d0; }
-#section4 { background: #ffdfc0; }
-</style>
+    /* Sections */
+    section {
+      padding: 0;          /* remove padding */
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* align titles to the left */
+      justify-content: flex-start;
+      box-sizing: border-box;
+    }
+
+    section h2 {
+      margin: 0;
+      padding: 16px 24px 8px 24px; /* some space for title */
+    }
+
+    section p {
+      margin: 0;
+      padding: 0 24px 24px 24px;
+    }
+
+  </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="glass-nav">
-  <ul>
-    <li><a href="#section1">Overview</a></li>
-    <li><a href="#section2">Methods</a></li>
-    <li><a href="#section3">Results</a></li>
-    <li><a href="#section4">Discussion</a></li>
-  </ul>
-</nav>
+  <!-- Navbar -->
+  <nav class="glass-nav">
+    <ul>
+      <li><a href="#section1">Overview</a></li>
+      <li><a href="#section2">Methods</a></li>
+      <li><a href="#section3">Results</a></li>
+      <li><a href="#section4">Discussion</a></li>
+    </ul>
+  </nav>
 
-<!-- Sections -->
-<section id="section1">
-  <div>Overview Content</div>
-</section>
+  <!-- Sections -->
+  <section id="section1">
+    <h2>Overview</h2>
+    <p>Content for Overview...</p>
+  </section>
 
-<section id="section2">
-  <div>Methods Content</div>
-</section>
+  <section id="section2">
+    <h2>Methods</h2>
+    <p>Content for Methods...</p>
+  </section>
 
-<section id="section3">
-  <div>Results Content</div>
-</section>
+  <section id="section3">
+    <h2>Results</h2>
+    <p>Content for Results...</p>
+  </section>
 
-<section id="section4">
-  <div>Discussion Content</div>
-</section>
+  <section id="section4">
+    <h2>Discussion</h2>
+    <p>Content for Discussion...</p>
+  </section>
 
-<!-- JS for scroll-hide navbar -->
-<script>
-let lastScrollTop = 0;
-const navbar = document.querySelector('.glass-nav');
+  <!-- JS: Scroll up/down navbar -->
+  <script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.glass-nav');
 
-window.addEventListener('scroll', function() {
-  const st = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener('scroll', function() {
+      const st = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (st > lastScrollTop) {
-    // scrolling down → hide navbar completely
-    navbar.style.transform = 'translateY(-100%)';
-  } else {
-    // scrolling up → show navbar
-    navbar.style.transform = 'translateY(0)';
-  }
+      if (st > lastScrollTop) {
+        // scrolling down → hide navbar
+        navbar.style.transform = 'translateY(-100%)';
+      } else {
+        // scrolling up → show navbar
+        navbar.style.transform = 'translateY(0)';
+      }
 
-  lastScrollTop = st <= 0 ? 0 : st; // for mobile or negative scrolling
-});
-</script>
+      lastScrollTop = st <= 0 ? 0 : st;
+    });
+  </script>
 
 </body>
 </html>

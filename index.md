@@ -1,4 +1,4 @@
-{% include nav_bar.md %}
+{% include nav_bar.html %}
 {% include tabs_test.md %}
 {% include test.md %}
 {% include intro.md %}

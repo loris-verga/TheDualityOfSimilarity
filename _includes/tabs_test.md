@@ -1,9 +1,3 @@
-test
-<section id="section4">
-  <h2>Discussion</h2>
-</section>
-
-
 <ul data-tabs>
 	<li><a data-tabby-default href="#shared" style="color: #FF4500;">Shared authorship</a></li>
 	<li><a href="#stylo" style="color: #FF4500;">Stylometric</a></li>

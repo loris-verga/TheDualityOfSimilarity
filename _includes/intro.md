@@ -730,10 +730,7 @@ From the plot, we observe—at high confidence (non-overlapping 95% CIs)—the f
 <b>3. The trend holds for both positive and negative links.</b>
 </div>
 
-This pattern is a clear instance of  
-<a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox" target="_blank"><b>Simpson’s paradox</b></a>:  
-the global trend strengthens once we control for category structure.
-
+This pattern is a clear instance of <a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox" target="_blank"><b>Simpson’s paradox</b></a>: the global trend strengthens once we control for category structure.
 
 
 #### Category-level decomposition
@@ -764,20 +761,9 @@ This strongly supports <b>Hypothesis n°7</b>:
 
 We repeat the same decomposition for the other two signature-based distances.
 
-<div style="display:flex; gap:20px; justify-content:center; max-width:1200px; margin:auto;">
-    
-    <div style="flex:1; min-width:0;">
-        <div style="width:100% !important; height:auto !important; overflow:hidden;">
-            {% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
-        </div>
-    </div>
-
-    <div style="flex:1; min-width:0;">
-        <div style="width:100% !important; height:auto !important; overflow:hidden;">
-            {% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
-        </div>
-    </div>
-
+<div class="two-heatmaps-container">
+	{% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
+	{% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
 </div>
 
 

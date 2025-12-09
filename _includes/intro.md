@@ -157,7 +157,7 @@ Since these signatures are derived from **LIWC** and **VADER**, this pattern sug
 
 ---
 
-#### <span style="color:#ff201e">Embedding Distance & Link Sentiment</span>
+#### <span style="color:#ff4500">Embedding Distance & Link Sentiment</span>
 
 We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
 Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
@@ -175,7 +175,7 @@ The curves cross around <strong>0.5</strong>, below that, positive links dominat
 
 ---
 
-<span style="color:#ff201e">Are the Means Actually Different?</span>
+<span style="color:#ff4500">Are the Means Actually Different?</span>
 
 To double-check, we compared the mean cosine distances of the two sentiment groups.
 
@@ -188,7 +188,7 @@ Not a huge surprise ! but good to have statistical confirmation rather than intu
 
 ---
 
-<span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span>
+<span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span>
 
 We use a <strong>point-biserial correlation</strong>, since the distance is continuous and sentiment is binary.<br>
 The result:
@@ -197,7 +197,7 @@ So yes, the relationship is statistically significant, but the linear effect is 
 A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
 
 ---
-### <span style="color:#ff201e">Causal Analysis: Does Distance Cause Negativity?</span>
+### <span style="color:#ff4500">Causal Analysis: Does Distance Cause Negativity?</span>
 To test whether being “far apart” in embedding space actually changes the sentiment of links, we frame distance as a treatment.
 
 <ul>
@@ -245,7 +245,7 @@ To test whether being “far apart” in embedding space actually changes the se
 
 </ul>
 
-#### <span style="color:#ff201e">Stylometric Distance & Link Sentiment</span>
+#### <span style="color:#ff4500">Stylometric Distance & Link Sentiment</span>
 
 Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>.  
 Stylometric distance measures how similar two subreddits’ writing styles are.
@@ -262,7 +262,7 @@ Similar writing styles align mildly with positivity, but the relationship remain
 
 ---
 
-### <span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span>
+### <span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span>
 
 Applying the same point-biserial correlation used earlier:
 
@@ -277,7 +277,7 @@ While statistically detectable, it is far too small to matter in practice.
 
 ---
 
-### <span style="color:#ff201e">Causal Analysis: Does Stylometric Distance Influence Negativity?</span>
+### <span style="color:#ff4500">Causal Analysis: Does Stylometric Distance Influence Negativity?</span>
 
 To parallel our earlier analysis, we test whether being stylometrically “far apart” actually causes shifts in link sentiment.  
 Because stylometric distance is continuous, we apply the same dichotomization strategy:
@@ -295,7 +295,7 @@ At first glance, the distributions look similar, with only mild shifts in negati
 
 ---
 
-### <span style="color:#ff201e">Propensity Score & Confounder Check</span>
+### <span style="color:#ff4500">Propensity Score & Confounder Check</span>
 
 Following the same approach as in the embedding analysis, we estimate a <b>propensity score</b> from the hyperlink feature vector to detect potential confounders.
 
@@ -306,7 +306,7 @@ As before, matching is performed on a sampled subset for computational efficienc
 
 ---
 
-### <span style="color:#ff201e">ATE: The Final Verdict</span>
+### <span style="color:#ff4500">ATE: The Final Verdict</span>
 
 We estimate the <b>Average Treatment Effect</b> on the matched sample:  
 the difference in mean link sentiment between the Stylometrically Distant and Stylometrically Close groups.
@@ -321,7 +321,7 @@ The **Average Treatment Effect** reaches **-0.19**. However, the p-value is equa
     Communities that “write alike” interact slightly more positively, but the strength of this relationship is negligible compared to other factors.
 </p>
 
-#### <span style="color:#ff201e">Psychological Distance & Link Sentiment</span>
+#### <span style="color:#ff4500">Psychological Distance & Link Sentiment</span>
 
 We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  
 As before, we begin by comparing distance values across the two sentiment groups.
@@ -336,7 +336,7 @@ This reflects a strong statistical signal, but the <b>practical</b> impact remai
 
 ---
 
-### <span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span>
+### <span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span>
 
 We again use the <b>point-biserial correlation</b> to quantify the linear relationship between psychological distance and link sentiment.
 
@@ -350,7 +350,7 @@ Psychological distance therefore captures sentiment-relevant variation, but only
 
 ---
 
-### <span style="color:#ff201e">Causal Analysis: Does Psychological Distance Influence Negativity?</span>
+### <span style="color:#ff4500">Causal Analysis: Does Psychological Distance Influence Negativity?</span>
 
 To determine whether psychological distance <i>causally</i> affects link sentiment, we apply the same causal framework used in the previous distance analyses.  
 Even though the linear correlation is small, causal effects may still exist, possibly non-linear or shaped by confounders, so we use propensity score matching.
@@ -370,7 +370,7 @@ At first glance, the distributions appear similar, with only a mild shift toward
 
 ---
 
-### <span style="color:#ff201e">Propensity Score & Confounder Check</span>
+### <span style="color:#ff4500">Propensity Score & Confounder Check</span>
 
 We estimate a <b>propensity score</b> using the hyperlink feature vector, following the same procedure as before.  
 To detect potential confounders, we inspect correlations between features, the treatment indicator, and the outcome.
@@ -382,7 +382,7 @@ As in previous analyses, matching is performed on a subsample for computational 
 
 ---
 
-### <span style="color:#ff201e">ATE: Final Verdict</span>
+### <span style="color:#ff4500">ATE: Final Verdict</span>
 
 We compute the <b>Average Treatment Effect (ATE)</b> as the difference in mean link sentiment between the Psychologically Distant (treated) and Psychologically Close (control) groups within the matched sample.  
 A t-test will then assess the statistical significance of this difference.
@@ -408,7 +408,7 @@ A t-test will then assess the statistical significance of this difference.
 
 
 
-## <span style="color:#ff201e">Visualizing the Psychological Space</span>
+## <span style="color:#ff4500">Visualizing the Psychological Space</span>
 
 To better understand how signatures relate across communities, we can visualize the high-dimensional psychological space into two dimensions.  
 We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure).
@@ -437,7 +437,7 @@ These insights set the context a deeper question:
 
 ---
 
-#### <span style="color:#ff201e">Within and Inter-Category Analysis</span>
+#### <span style="color:#ff4500">Within and Inter-Category Analysis</span>
 
 <div class="section">
 
@@ -479,7 +479,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 
 
-### <span style="color:#ff201e">1) Relating Distances and Categories</span>
+### <span style="color:#ff4500">1) Relating Distances and Categories</span>
 
 We work at the category level rather than at the individual subreddit level.  
 For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
@@ -500,7 +500,7 @@ For stylometric and psychological distances, an extra step is required: we first
 
 ---
 
-## <span style="color:#ff201e">a) Authorship Distance & Categories</span>
+## <span style="color:#ff4500">a) Authorship Distance & Categories</span>
 
 <div style="text-align:center;">
   <img src="assets/img/cluster/heatmap_embeddings.png" width="70%" style="margin-right:2%;" alt="Authorship centroid distances">
@@ -553,7 +553,7 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
 
 ---
 
-## <span style="color:#ff201e">b) Stylometric Signatures & Categories</span>
+## <span style="color:#ff4500">b) Stylometric Signatures & Categories</span>
 
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">
@@ -587,7 +587,7 @@ Close to zero again. Categories differ in stylometric identity but overlap heavi
 
 ---
 
-## <span style="color:#ff201e">c) Psychological Signatures & Categories</span>
+## <span style="color:#ff4500">c) Psychological Signatures & Categories</span>
 
 <div style="text-align:center;">
   <img src="assets/img/cluster/heatmap_psy.png" width="70%" style="margin-right:2%;" alt="Psychological centroid distances">
@@ -612,7 +612,7 @@ Still close to zero, but slightly better. Clusters remain overlapping, yet psych
 
 
 
-## <span style="color:#ff201e">Categories & Distances: Conclusion</span>
+## <span style="color:#ff4500">Categories & Distances: Conclusion</span>
 
 We examined authorship, stylometric and psychological distances through the lens of subreddit categories. The main findings:
 
@@ -634,7 +634,7 @@ Still, stylometric and psychological signatures show potential as light forms of
 <hr style="margin:40px 0;">
 
 
-### <span style="color:#ff201e">2) Negativity & Categories</span>
+### <span style="color:#ff4500">2) Negativity & Categories</span>
 
 We now take advantage of our hyperlink network, where each edge carries a sentiment from a <em>source</em> subreddit to a <em>target</em> subreddit, to understand how negativity circulates across categories.
 
@@ -686,7 +686,7 @@ This reinforces the idea that each thematic community on Reddit has its own rela
 
 
 
-### <span style="color:#ff201e">3) Negativity, Distances & Categories</span>
+### <span style="color:#ff4500">3) Negativity, Distances & Categories</span>
 
 Earlier , we established a key relationship:
 
@@ -757,7 +757,7 @@ This strongly supports <b>Hypothesis n°7</b>:
 
 
 
-### <span style="color:#ff201e">Beyond Authorship Distance: Stylometric & Psychological Distances</span>
+### <span style="color:#ff4500">Beyond Authorship Distance: Stylometric & Psychological Distances</span>
 
 We repeat the same decomposition for the other two signature-based distances.
 
@@ -795,7 +795,7 @@ This indicates that stylometric features are **less predictive of sentiment** th
 
 
 
-### <span style="color:#ff201e">Overall Summary</span>
+### <span style="color:#ff4500">Overall Summary</span>
 
 Across authorship, psychological and stylometric distances, we find:
 
@@ -815,7 +815,7 @@ Taken together, these results reveal how category structure shapes the relations
 <hr style="margin:40px 0;">
 
 
-### <span style="color:#ff201e">4) Case Study: Humour &amp; Memes</span>
+### <span style="color:#ff4500">4) Case Study: Humour &amp; Memes</span>
 
 On the stylometric and psychological distance heatmaps (part 1), a clear pattern emerged:  
 the <b>“Humour &amp; Memes”</b> category appears well separated from all others, with higher centroid cosine distances for both signatures.  
@@ -873,7 +873,7 @@ This reinforces the idea that “Humour &amp; Memes” communities contribute di
 
 
 
-### <span style="color:#ff201e">Where does the negativity go?</span>
+### <span style="color:#ff4500">Where does the negativity go?</span>
 
 Earlier (section 2), we observed that:
 
@@ -1072,7 +1072,7 @@ Again, we see the same structure:
 
 
 
-### <span style="color:#ff201e">Conclusion of the Case Study</span>
+### <span style="color:#ff4500">Conclusion of the Case Study</span>
 
 This case study reveals a facet of Reddit that would have been very difficult to uncover without:
 

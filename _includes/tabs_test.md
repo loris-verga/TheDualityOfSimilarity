@@ -1,5 +1,5 @@
 test
-<section id="section4" style="padding:100px 20px; min-height:100vh; background:#eaeaea;">
+<section id="section4">
   <h2>Discussion</h2>
 </section>
 

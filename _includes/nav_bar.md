@@ -12,81 +12,81 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Glassmorphic Reddit-orange navbar */
+/* Glassy Reddit-orange navbar */
 .glass-nav {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100vw;               /* span entire screen */
-  z-index: 2000;
+  left: 50%;
+  transform: translateX(-50%);   /* perfectly centered */
   
-  background: rgba(255, 69, 0, 0.15); /* #FF4500 but softened */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  width: 95vw;                   /* slightly inset from edges */
+  max-width: 1200px;
+  z-index: 2000;
 
-  padding: 14px 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  background: rgba(255, 69, 0, 0.25); /* stronger Reddit orange glass */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-  transition: transform 0.35s ease, background 0.25s ease;
-  animation: fadeInNav 0.8s ease both;
+  padding: 8px 0;                /* thinner bar */
+  border-radius: 14px;           /* rounded corners */
+  margin-top: 10px;
+
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hide the navbar (scroll down) */
+/* Hide the whole navbar on scroll down */
 .glass-nav.hidden {
-  transform: translateY(-100%);
+  transform: translate(-50%, -120%);
+  opacity: 0;
 }
 
-/* List layout */
+/* Centered list */
 .glass-nav ul {
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  gap: 36px;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
+
+  display: flex;
+  justify-content: center;
+  gap: 28px;
 }
 
-/* Link appearance */
+/* Link styling */
 .glass-nav a {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 15px;
 
-  padding: 8px 16px;
-  border-radius: 10px;
-  transition: 0.25s ease;
+  padding: 6px 14px;
+  border-radius: 8px;
+
+  transition: background 0.25s, box-shadow 0.25s;
 }
 
 /* Hover glow */
 .glass-nav a:hover {
-  background: rgba(255, 69, 0, 0.27);
-  box-shadow: 0 0 10px rgba(255, 69, 0, 0.4);
+  background: rgba(255, 69, 0, 0.35);
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.5);
 }
 
-/* Click */
+/* Active (clicked) */
 .glass-nav a:active {
-  background: rgba(255, 69, 0, 0.4);
-}
-
-/* Fade-in animation */
-@keyframes fadeInNav {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  background: rgba(255, 69, 0, 0.45);
 }
 </style>
 
 <script>
-// Smooth hide on scroll down, show on scroll up
+// Hide on scroll down, show on scroll up
 let lastScrollY = window.scrollY;
 const nav = document.getElementById("glassNav");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY) {
-    nav.classList.add("hidden");    // scrolling down → hide
+  if (window.scrollY > lastScrollY + 5) {
+    nav.classList.add("hidden");
   } else {
-    nav.classList.remove("hidden"); // scrolling up → show
+    nav.classList.remove("hidden");
   }
   lastScrollY = window.scrollY;
 });

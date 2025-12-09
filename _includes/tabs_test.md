@@ -1,3 +1,7 @@
+<section id="section5">
+    <h2>Test</h2>
+  </section>
+
 <ul data-tabs>
 	<li><a data-tabby-default href="#shared" style="color: #FF4500;">Shared authorship</a></li>
 	<li><a href="#stylo" style="color: #FF4500;">Stylometric</a></li>

@@ -1,5 +1,17 @@
 will add the next two after getting fixed
 
+<div class="heatmap-container">
+	<iframe src="plots/heatmap_embeddings_stylo_correl.html" style="width: 100%; height: 100%;"></iframe>
+</div>
+
+<div class="heatmap-container">
+	<iframe src="plots/heatmap_embeddings_psycho_correl.html" style="width: 100%; height: 100%;"></iframe>
+</div>
+
+<div class="heatmap-container">
+	<iframe src="plots/heatmap_stylo_psycho_correl.html" style="width: 100%; height: 100%;"></iframe>
+</div>
+
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">
 	<iframe src="plots/heatmap_authorship_centroids.html" style="width: 100%; height: 100%;"></iframe>

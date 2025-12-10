@@ -126,29 +126,27 @@ These distributions reveal the shape of each similarity space and provide intuit
 ## Distribution of Distances
 
   <ul data-tabs-3>
-    <li><a data-tabby-default href="#shared_dist" style="color: #FF4500;">Shared authorship</a></li>
-    <li><a href="#stylo_dist" style="color: #FF4500;">Stylometric</a></li>
-    <li><a href="#psycho_dist" style="color: #FF4500;">Psychological</a></li>
+    <li><a data-tabby-default href="#shared_dist" style="color: #FF4500;">Shared Authorship Distance</a></li>
+    <li><a href="#stylo_dist" style="color: #FF4500;">Stylometric Distance</a></li>
+    <li><a href="#psycho_dist" style="color: #FF4500;">Psychological Distance</a></li>
   </ul>
 
   <div id="shared_dist">
-    <h3><strong>Shared Authorship Distance</strong></h3>
     {% include basic_plots/distrib_cosine_dist_embeddings.html %}
     <p>
       The right-skewed distribution indicates that subreddits tend to be 
       <strong>moderately aligned</strong> in structural space: they share enough 
-      authorship to be related, but rarely enough to be almost identical. 
+      authorship to be related, but rarely enough to be almost identical. <br>
       Only a small fraction of pairs reach very high distances, meaning 
       interactions between structurally opposite communities are uncommon.
     </p>
   </div>
 
   <div id="stylo_dist">
-    <h3><strong>Stylometric Distance</strong></h3>
     {% include basic_plots/distrib_cosine_dist_stylo.html %}
     <p>
       In contrast to the embeddings distribution, stylometric distances are typically 
-      <strong>lower</strong>. This means that the <strong>writing styles</strong> used 
+      <strong>lower</strong>. <br> This means that the <strong>writing styles</strong> used 
       in cross-subreddit interactions often share structural similarities.
     </p>
     <p>
@@ -159,7 +157,6 @@ These distributions reveal the shape of each similarity space and provide intuit
   </div>
 
   <div id="psycho_dist">
-    <h3><strong>Psychological Distance</strong></h3>
     <div style="text-align:center;">
       {% include basic_plots/distrib_cosine_dist_psycho.html %}
     </div>
@@ -210,13 +207,95 @@ Since these signatures are derived from **LIWC** and **VADER**, this pattern sug
 
 ---
 
+We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
+Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
+<ul data-tabs-4>
+  <li><a data-tabby-default href="#embeddings_sentiment" style="color: #FF4500;">Authorship (Embeddings)</a></li>
+  <li><a href="#stylo_sentiment" style="color: #FF4500;">Stylometric</a></li>
+  <li><a href="#psycho_sentiment" style="color: #FF4500;">Psychological</a></li>
+</ul>
+
+<div id="embeddings_sentiment">
+  {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
+  <p>
+    Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably 
+    <strong>larger cosine distances</strong> than those with positive links.<br>
+    This suggests that aligned communities tend to get along more (shocking, we know!), 
+    while more distant ones are more likely to disagree.<br>
+    Positive links show a small bump near cosine distance <strong>~0.1</strong>, 
+    while negative links spike around <strong>~0.6</strong>.<br>
+    The curves cross around <strong>0.5</strong>, below that, positive links dominate; 
+    above that, negative links take over.
+  </p>
+
+  <h4><span style="color:#ff4500">Are the Means Actually Different?</span></h4>
+  <p>
+    A two-sample t-test (α = 0.05) confirms it: <strong>p ≤ 0.05</strong>, so we reject the null hypothesis.<br>
+    Communities with positive links are, on average, <strong>closer</strong> in embedding space than those with negative links.
+  </p>
+
+  <h4><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></h4>
+  <ul>
+    <li><strong>r ≈ -0.11</strong></li>
+    <li><strong>p &lt; 0.05</strong></li>
+  </ul>
+  <p>
+    The relationship is statistically significant but the linear effect is very weak.<br>
+    A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
+  </p>
+</div>
+
+<div id="stylo_sentiment">
+  {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
+  <p>
+    The difference is statistically significant—negative interactions occur between slightly more stylometrically distant communities.<br>
+    Effect size is small: about <b>0.77 vs. 0.75</b>.<br>
+    Even though the t-test returns <b>p ≤ 0.05</b>, the absolute difference (<b>≈ 0.017</b>) is minimal.
+  </p>
+
+  <h4><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></h4>
+  <ul>
+    <li><b>r ≈ -0.009</b></li>
+    <li><b>p &lt; 0.05</b></li>
+  </ul>
+  <p>
+    Stylometric distance shows an almost non-existent linear relationship with link sentiment.<br>
+    Statistically detectable, but too small to matter in practice.
+  </p>
+</div>
+
+<div id="psycho_sentiment">
+  {% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
+  <p>
+    The difference in sample means is small, only about <b>0.1</b>, yet confidence intervals indicate it may be significant.<br>
+    With p ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur mostly between psychologically more distant communities.
+  </p>
+
+  <h4><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></h4>
+  <ul>
+    <li><b>r ≈ -0.08</b></li>
+    <li><b>p &lt; 0.05</b></li>
+  </ul>
+  <p>
+    Correlation is statistically significant and stronger than for stylometric distance, yet remains modest compared with shared authorship.<br>
+    Psychological distance captures sentiment-relevant variation, but only partially.
+  </p>
+</div>
+
+<script>
+  var tabs = new Tabby('[data-tabs-4]');
+</script>
+
+
 #### <span style="color:#ff4500">Embedding Distance & Link Sentiment</span>
 
 We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
 Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
 
 **Are positive and negative links present at different distances?**
-{% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
+
+[plot silenced]
+{ include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
 
 Yes. Subreddit pairs with **negative** link sentiment have noticeably **larger cosine distances** than those with positive links.
 
@@ -275,6 +354,7 @@ To test whether being “far apart” in embedding space actually changes the se
     <b>Controlling for Confounders</b><br>
     We fit a logistic regression to estimate a <b>propensity score</b> using the hyperlink feature vector.<br>
     One covariate stands out: <b>compound_sentiment</b>, which correlates with both distance and link sentiment, as we can see :<br>
+
     {% include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
 
     To handle it properly, we match pairs with a caliper of <code>0.2 × std</code> of that feature.<br><br>
@@ -305,7 +385,8 @@ Stylometric distance measures how similar two subreddits’ writing styles are.
 
 As with embedding distance, we first compare how stylometric distances vary across the two sentiment groups.
 
-{% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
+[plot silenced]
+{ include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
 
 The difference is statistically significant—negative interactions occur between slightly more stylometrically distant communities.  
 But the effect size is small: about <b>0.77 vs. 0.75</b>.  
@@ -379,7 +460,8 @@ The **Average Treatment Effect** reaches **-0.19**. However, the p-value is equa
 We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  
 As before, we begin by comparing distance values across the two sentiment groups.
 
-{% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
+[plot silenced]
+{ include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
 
 The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant.  
 With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
@@ -1155,4 +1237,5 @@ it ultimately revealed a broader pattern: a network of humor-oriented subreddits
 
 <script>
 	var tabs_3 = new Tabby('[data-tabs-3]');
+  var tabs_4 = new Tabby('[data-tabs-4]');
 </script>

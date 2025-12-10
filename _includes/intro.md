@@ -124,65 +124,58 @@ These distributions reveal the shape of each similarity space and provide intuit
 
 ## Distribution of Distances
 
-<ul data-tabs>
+<div class="tab-group">
+  <ul data-tabs>
     <li><a data-tabby-default href="#shared_dist" style="color: #FF4500;">Shared authorship</a></li>
     <li><a href="#stylo_dist" style="color: #FF4500;">Stylometric</a></li>
     <li><a href="#psycho_dist" style="color: #FF4500;">Psychological</a></li>
-</ul>
-<div id="shared_dist">
-  <h3><strong>Shared Authorship Distance</strong></h3>
+  </ul>
 
-  {% include basic_plots/distrib_cosine_dist_embeddings.html %}
+  <div id="shared_dist">
+    <h3><strong>Shared Authorship Distance</strong></h3>
+    {% include basic_plots/distrib_cosine_dist_embeddings.html %}
+    <p>
+      The right-skewed distribution indicates that subreddits tend to be 
+      <strong>moderately aligned</strong> in structural space: they share enough 
+      authorship to be related, but rarely enough to be almost identical. 
+      Only a small fraction of pairs reach very high distances, meaning 
+      interactions between structurally opposite communities are uncommon.
+    </p>
+  </div>
 
-  <p>
-    The right-skewed distribution indicates that subreddits tend to be 
-    <strong>moderately aligned</strong> in structural space: they share enough 
-    authorship to be related, but rarely enough to be almost identical. 
-    Only a small fraction of pairs reach very high distances, meaning 
-    interactions between structurally opposite communities are uncommon.
-  </p>
-</div>
+  <div id="stylo_dist">
+    <h3><strong>Stylometric Distance</strong></h3>
+    {% include basic_plots/distrib_cosine_dist_stylo.html %}
+    <p>
+      In contrast to the embeddings distribution, stylometric distances are typically 
+      <strong>lower</strong>. This means that the <strong>writing styles</strong> used 
+      in cross-subreddit interactions often share structural similarities.
+    </p>
+    <p>
+      This suggests that users often have matching textual habits when discussing 
+      across communities: sentence length, stopword diversity, or readability levels 
+      indicate a stylistic resemblance.
+    </p>
+  </div>
 
-<div id="stylo_dist">
-<h3><strong>Stylometric Distance</strong></h3>
-
-{% include basic_plots/distrib_cosine_dist_stylo.html %}
-
-<p>
-  In contrast to the embeddings distribution, stylometric distances are typically 
-  <strong>lower</strong>. This means that the <strong>writing styles</strong> used 
-  in cross-subreddit interactions often share structural similarities.
-</p>
-
-<p>
-  This suggests that users often have matching textual habits when discussing 
-  across communities: sentence length, stopword diversity, or readability levels 
-  indicate a stylistic resemblance.
-</p>
-
-</div>
-
-<div id="psycho_dist">
-<h3><strong>Psychological Distance</strong></h3>
-
-<div style="text-align:center;">
-  {% include basic_plots/distrib_cosine_dist_psycho.html %}
-</div>
-
-<p>
-  The psychological distance distribution centers around 
-  <strong>moderate values</strong>, indicating that most interactions occur 
-  between subreddits whose emotional and cognitive signatures are neither 
-  identical nor opposed.
-</p>
-
-<p>
-  Since these signatures are derived from <strong>LIWC</strong> and 
-  <strong>VADER</strong>, this pattern suggests that users interacting between 
-  different subreddits tend to display <strong>loosely similar psychological 
-  traits</strong>.
-</p>
-
+  <div id="psycho_dist">
+    <h3><strong>Psychological Distance</strong></h3>
+    <div style="text-align:center;">
+      {% include basic_plots/distrib_cosine_dist_psycho.html %}
+    </div>
+    <p>
+      The psychological distance distribution centers around 
+      <strong>moderate values</strong>, indicating that most interactions occur 
+      between subreddits whose emotional and cognitive signatures are neither 
+      identical nor opposed.
+    </p>
+    <p>
+      Since these signatures are derived from <strong>LIWC</strong> and 
+      <strong>VADER</strong>, this pattern suggests that users interacting between 
+      different subreddits tend to display <strong>loosely similar psychological 
+      traits</strong>.
+    </p>
+  </div>
 </div>
 
 <script>

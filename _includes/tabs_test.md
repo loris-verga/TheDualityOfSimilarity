@@ -1,3 +1,46 @@
+<section id="section5">
+    <h2>Test</h2>
+  </section>
+
+
+
+
+
+
+<style>
+/* --- Tabs container --- */
+[data-tabs] {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0 0 20px 0;      /* small spacing under tabs */
+    list-style: none;
+    border: none !important; /* remove grey line */
+}
+
+/* --- Tab links --- */
+[data-tabs] a {
+    text-decoration: none;
+    color: #FF4500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+/* --- Active tab --- */
+[data-tabs] a.tabby-active {
+    background-color: #FF4500;
+    color: white !important;
+    font-weight: 600;
+}
+
+/* --- Tab panels (optional styling) --- */
+.tabby-content {
+    padding-top: 10px;
+}
+</style>
+
 
 <ul data-tabs>
     <li><a data-tabby-toggle data-tabby-default href="#shared">Shared authorship</a></li>

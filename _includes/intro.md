@@ -827,15 +827,13 @@ For stylometric and psychological distances, an extra step is required: we first
 ---
 
 <ul data-tabs-6>
-  <li><a data-tabby-default href="#authorship_categories" style="color: #FF4500;">a) Authorship Distance</a></li>
-  <li><a href="#stylometric_categories" style="color: #FF4500;">b) Stylometric Signatures</a></li>
-  <li><a href="#psychological_categories" style="color: #FF4500;">c) Psychological Signatures</a></li>
+  <li><a data-tabby-default href="#authorship_categories" style="color: #FF4500;">Authorship Distance & Categories</a></li>
+  <li><a href="#stylometric_categories" style="color: #FF4500;">Stylometric Signatures & Categories</a></li>
+  <li><a href="#psychological_categories" style="color: #FF4500;">Psychological Signatures & Categories</a></li>
 </ul>
 
 
 <div id="authorship_categories">
-
-<h2><span style="color:#ff4500">Authorship Distance & Categories</span></h2>
 
 <div style="text-align:center;">
   <img src="assets/img/cluster/heatmap_embeddings.png" width="70%" style="margin-right:2%;" alt="Authorship centroid distances">
@@ -892,8 +890,6 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
 
 <div id="stylometric_categories">
 
-<h2><span style="color:#ff4500">Stylometric Signatures & Categories</span></h2>
-
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">
 	<iframe src="plots/heatmap_stylo_centroids.html" style="width: 100%; height: 100%;"></iframe>
@@ -903,7 +899,8 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
 	</div>
 </div>
 
-The left heatmap shows a different picture: stylometric centroids are **more separated** as the cosine distances are larger. Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
+The left heatmap shows a different picture: stylometric centroids are <b>more separated</b> as the cosine distances are larger. <br>
+Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
 
 For example:
 
@@ -927,15 +924,13 @@ Close to zero again. Categories differ in stylometric identity but overlap heavi
 
 <div id="psychological_categories">
 
-<h2><span style="color:#ff4500">Psychological Signatures & Categories</span></h2>
-
 <div style="text-align:center;">
   <img src="assets/img/cluster/heatmap_psy.png" width="70%" style="margin-right:2%;" alt="Psychological centroid distances">
   <div style="font-size:0.85rem;"><em>Psychological centroid comparisons.</em></div>
 </div>
 
-The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  
-On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others, which can be deduced through the lower values on the diagonal.
+The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  <br>
+On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others, which can be deduced through the lower values on the diagonal. <br><br>
 
 Psychological signatures distinguish categories more clearly than stylometric signatures, as subreddits cluster closer to their own category. This suggests that different community clusters have distinct and well-separated “psychological” states.
 

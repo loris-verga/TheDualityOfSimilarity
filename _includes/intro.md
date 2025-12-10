@@ -179,10 +179,13 @@ These distributions reveal the shape of each similarity space and provide intuit
 </div>
 
 <script>
-  document.querySelectorAll('[data-tabs]').forEach(function(group) {
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('[data-tabs]').forEach(group => {
     new Tabby(group);
   });
+});
 </script>
+
 
 ### **Shared Authorship Distance**
 

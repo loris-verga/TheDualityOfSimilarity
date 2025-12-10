@@ -231,6 +231,35 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   <p>
     The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
   </p>
+  <hr>
+  <p><span style="color:#ff4500">Are the Means Actually Different?</span></p>
+  <p>
+    To double-check, we compared the mean cosine distances of the two sentiment groups.
+  </p>
+  <p>
+    A two-sample t-test (α = 0.05) confirms it:
+  </p>
+  <p>
+    <strong>p ≤ 0.05</strong>, so we reject the null hypothesis.
+  </p>
+  <p>
+    Communities with positive links are, on average, <strong>closer</strong> in embedding space than those with negative links.  
+    Not a huge surprise ! but good to have statistical confirmation rather than intuition alone.
+  </p>
+  <hr>
+  <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
+  <p>
+    We use a <strong>point-biserial correlation</strong>, since the distance is continuous and sentiment is binary.<br>
+    The result:
+  </p>
+  <ul>
+    <li><strong>r ≈ -0.11</strong></li>
+    <li><strong>p &lt; 0.05</strong></li>
+  </ul>
+  <p>
+    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>.<br>
+    A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
+  </p>
 </div>
 
 <div id="stylometric_sentiment">
@@ -250,6 +279,17 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     Even though the t-test returns <b>p ≤ 0.05</b> (allowing us to reject the null), the absolute difference (<b>≈ 0.017</b>) is minimal.  
     Similar writing styles align mildly with positivity, but the relationship remains weak.
   </p>
+  <hr>
+  <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
+  <ul>
+    <li><b>r ≈ -0.009</b></li>
+    <li><b>p &lt; 0.05</b></li>
+  </ul>
+  <p>
+    The sign and significance mirror the embedding findings, but the strength is even weaker.  
+    Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment.  
+    While statistically detectable, it is far too small to matter in practice.
+  </p>
 </div>
 
 <div id="psychological_sentiment">
@@ -265,6 +305,16 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   <p>
     The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  
     This reflects a strong statistical signal, but the <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
+  </p>
+  <hr>
+  <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
+  <ul>
+    <li><b>r ≈ -0.08</b></li>
+    <li><b>p &lt; 0.05</b></li>
+  </ul>
+  <p>
+    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest compared with shared authorship.  
+    Psychological distance therefore captures sentiment-relevant variation, but only partially.
   </p>
 </div>
 

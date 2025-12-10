@@ -68,7 +68,7 @@ ul[data-tabs] a.tabby-active::after {
 .tabby-content {
   padding-top: 12px;
 }
-</style>
+</style> 
 
 <ul data-tabs>
   <li><a data-tabby-toggle data-tabby-default href="#shared">Shared authorship</a></li>

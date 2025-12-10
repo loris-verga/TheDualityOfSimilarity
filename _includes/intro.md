@@ -842,6 +842,7 @@ For stylometric and psychological distances, an extra step is required: we first
 
 <h4>Centroid alignment: moderately similar</h4>
 <p>
+  TEEEEST
   Generalist categories like Miscellaneous, Lifestyle, and Humour &amp; Memes are all relatively close to each other. These categories spread widely in the embedding space and overlap heavily with others. Gaming and Technology, on the other hand, sit closer together for intuitive reasons: users often post in both, and the topics naturally relate.
 </p>
 

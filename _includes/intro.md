@@ -382,7 +382,7 @@ To test whether being “far apart” in embedding space actually changes the se
   <li>
     <b>Visualizing Close vs. Distant Groups</b><br><br>
 
-    {% include basic_plots/number_link_sentiment_distant_groups.html %}
+    { include basic_plots/number_link_sentiment_distant_groups.html %}
 
     <br>
     Before controlling for confounders, the <b>Distant</b> group has about <b>twice as many negative links</b> as the Close group.
@@ -395,7 +395,7 @@ To test whether being “far apart” in embedding space actually changes the se
     We fit a logistic regression to estimate a <b>propensity score</b> using the hyperlink feature vector.<br>
     One covariate stands out: <b>compound_sentiment</b>, which correlates with both distance and link sentiment, as we can see :<br>
 
-    {% include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
+    { include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
 
     To handle it properly, we match pairs with a caliper of <code>0.2 × std</code> of that feature.<br><br>
 
@@ -463,7 +463,7 @@ Because stylometric distance is continuous, we apply the same dichotomization st
 
 We begin by comparing sentiment outcomes in these two groups.
 
-{% include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
+{ include basic_plots/number_link_sentiment_distant_groups_stylo.html %}
 
 At first glance, the distributions look similar, with only mild shifts in negativity for stylometrically distant pairs.
 
@@ -539,7 +539,7 @@ As before, we convert the continuous distance into a binary treatment:
 
 We begin by visualizing sentiment distributions across these two groups.
 
-{% include basic_plots/number_link_sentiment_distant_groups_psycho.html %}
+{ include basic_plots/number_link_sentiment_distant_groups_psycho.html %}
 
 At first glance, the distributions appear similar, with only a mild shift toward negativity for psychologically distant communities.
 

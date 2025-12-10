@@ -191,7 +191,8 @@ These distributions reveal the shape of each similarity space and provide intuit
 
 ### **Shared Authorship Distance**
 
-{% include basic_plots/distrib_cosine_dist_embeddings.html %}
+[deleted plot for test]
+
  
 The right-skewed distribution indicates that subreddits tend to be **moderately aligned** in structural space: they share enough authorship to be related, but rarely enough to be almost identical.  
 Only a small fraction of pairs reach very high distances, meaning interactions between structurally opposite communities are uncommon.
@@ -200,7 +201,8 @@ Only a small fraction of pairs reach very high distances, meaning interactions b
 
 ### **Stylometric Distance**
 
-{% include basic_plots/distrib_cosine_dist_stylo.html %}
+[deleted plot for test]
+
 
 In contrast to the embeddings distribution, stylometric distances are typically **lower**.  
 This means that the **writing styles** used in cross-subreddit interactions often share structural similarities.
@@ -211,10 +213,8 @@ This suggests that users often have matching textual habits when dicussing acros
 
 ### **Psychological Distance**
 
-<p align="center">
-  {% include basic_plots/distrib_cosine_dist_psycho.html %}
-</p>
-{% include basic_plots/distrib_cosine_dist_psycho.html %}
+[deleted plot for test]
+
 
 The psychological distance distribution centers around **moderate values**, indicating that most interactions occur between subreddits whose emotional and cognitive signatures are neither identical nor opposed.
 

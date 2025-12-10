@@ -17,7 +17,3 @@ Test first tab
 </div>
 <div id="psycho">
 </div>
-
-<script>
-	var tabs = new Tabby('[data-tabs]');
-</script>

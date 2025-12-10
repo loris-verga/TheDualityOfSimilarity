@@ -40,7 +40,8 @@ In this data story, we map out what it means for two communities to be “simila
 
 <strong>Do birds of a feather flock together, or do they fight?</strong>
 
-
+<section id="section1">
+</section>
 ## <span style="color:#ff201e">A Map of Reddit’s Interactions</span>
 
 Before we can understand why communities clash, we must first understand **how they resemble one another**.  

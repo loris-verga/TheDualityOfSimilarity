@@ -211,6 +211,7 @@ Since these signatures are derived from **LIWC** and **VADER**, this pattern sug
 We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
 Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
 
+**Are positive and negative links present at different distances?**
 <ul data-tabs-4>
   <li><a data-tabby-default href="#authorship_sentiment" style="color: #FF4500;">Authorship (Embeddings) Distance</a></li>
   <li><a href="#stylometric_sentiment" style="color: #FF4500;">Stylometric Distance</a></li>
@@ -263,16 +264,17 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 </div>
 
 <div id="stylometric_sentiment">
-  {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
-    Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>.  
-    Stylometric distance measures how similar two subreddits’ writing styles are.
+    Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>, assessing the writing style similarity.
   </p>
   <p>
     As with embedding distance, we first compare how stylometric distances vary across the two sentiment groups.
   </p>
+
+  {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
+
   <p>
-    The difference is statistically significant—negative interactions occur between slightly more stylometrically distant communities.  
+    The difference is statistically significant : negative interactions occur between slightly more stylometrically distant communities.  <br>
     But the effect size is small: about <b>0.77 vs. 0.75</b>.  
   </p>
   <p>
@@ -286,24 +288,26 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     <li><b>p &lt; 0.05</b></li>
   </ul>
   <p>
-    The sign and significance mirror the embedding findings, but the strength is even weaker.  
-    Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment.  
+    The sign and significance mirror the embedding findings, but the strength is even weaker.  <br>
+    Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment.  <br>
     While statistically detectable, it is far too small to matter in practice.
   </p>
 </div>
 
 <div id="psychological_sentiment">
-  {% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
-    We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  
+    We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  <br>
     As before, we begin by comparing distance values across the two sentiment groups.
   </p>
+
+  {% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
+
   <p>
-    The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant.  
+    The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant.  <br>
     With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
   </p>
   <p>
-    The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  
+    The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  <br>
     This reflects a strong statistical signal, but the <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
   </p>
   <hr>
@@ -313,7 +317,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     <li><b>p &lt; 0.05</b></li>
   </ul>
   <p>
-    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest compared with shared authorship.  
+    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest compared with shared authorship.  <br>
     Psychological distance therefore captures sentiment-relevant variation, but only partially.
   </p>
 </div>

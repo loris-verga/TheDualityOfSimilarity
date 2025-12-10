@@ -28,16 +28,3 @@ Test first tab
 <script>
 	var tabs = new Tabby('[data-tabs]');
 </script>
-
-
-test:
-<style>
-/* --- Tabs container --- */
-[data-tabs] {
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0 0 20px 0;      /* small spacing under tabs */
-    list-style: none;
-    border: none !important; /* remove grey line */
-}

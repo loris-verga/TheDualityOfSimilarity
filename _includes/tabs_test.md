@@ -8,22 +8,18 @@
 
 
 <style>
-/* -------------------------
-   Tabs container (no full-width grey line)
-   ------------------------- */
 ul[data-tabs] {
   display: flex;
   gap: 18px;
   padding: 0;
   margin: 0 0 18px 0;
   list-style: none;
-  border: none !important; /* keep no ugly full-width line */
+  border: none !important;
 }
 
-/* make links inline-block so padding and pseudo-element behave well */
 ul[data-tabs] a {
   text-decoration: none;
-  color: #FF4500;                /* default link color (orange) */
+  color: #FF4500;               
   padding: 8px 14px;
   border-radius: 8px;
   display: inline-block;
@@ -40,11 +36,10 @@ ul[data-tabs] a:hover {
 /* -------------------------
    Active tab: high specificity + important
    ------------------------- */
-/* this targets anchors inside the data-tabs UL with the tabby-active class */
 ul[data-tabs] a.tabby-active,
 ul[data-tabs] a.tabby-active:focus {
-  background-color: #FF4500 !important;  /* orange rectangle */
-  color: #ffffff !important;             /* white text */
+  background-color: #FF4500 !important; 
+  color: #ffffff !important;             
   font-weight: 600 !important;
 }
 
@@ -54,17 +49,12 @@ ul[data-tabs] a.tabby-active::after {
   position: absolute;
   left: 10%;
   right: 10%;
-  bottom: -8px;                 /* gap between rect and underline */
+  bottom: -8px;               
   height: 4px;
   border-radius: 3px;
-  background: #E64A19;          /* slightly darker orange for contrast */
+  background: #E64A19;          
 }
 
-/* if you prefer underline to span full tab width, use left:0; right:0; */
-
-/* -------------------------
-   Panels
-   ------------------------- */
 .tabby-content {
   padding-top: 12px;
 }

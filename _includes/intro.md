@@ -179,11 +179,7 @@ These distributions reveal the shape of each similarity space and provide intuit
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('[data-tabs]').forEach(group => {
-    new Tabby(group);
-  });
-});
+    var tabs = new Tabby('[data-tabs]');
 </script>
 
 

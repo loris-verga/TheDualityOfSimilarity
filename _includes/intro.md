@@ -125,8 +125,7 @@ These distributions reveal the shape of each similarity space and provide intuit
 
 ## Distribution of Distances
 
-<div class="tab-group">
-  <ul data-tabs>
+  <ul data-tabs-3>
     <li><a data-tabby-default href="#shared_dist" style="color: #FF4500;">Shared authorship</a></li>
     <li><a href="#stylo_dist" style="color: #FF4500;">Stylometric</a></li>
     <li><a href="#psycho_dist" style="color: #FF4500;">Psychological</a></li>
@@ -177,13 +176,7 @@ These distributions reveal the shape of each similarity space and provide intuit
       traits</strong>.
     </p>
   </div>
-</div>
-
-<script>
-    var tabs = new Tabby('[data-tabs]');
-</script>
-
-
+  
 ### **Shared Authorship Distance**
 
 [deleted plot for test]
@@ -1160,3 +1153,6 @@ it ultimately revealed a broader pattern: a network of humor-oriented subreddits
 
 
 
+<script>
+	var tabs_3 = new Tabby('[data-tabs-3]');
+</script>

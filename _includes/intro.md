@@ -212,17 +212,13 @@ We first look at how subreddit embedding distances relate to the sentiment of th
 Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
 
 <ul data-tabs-4>
-  <li><a data-tabby-default href="#authorship_sentiment" style="color: #FF4500;">Authorship (Embeddings) Distance & Link Sentiment</a></li>
-  <li><a href="#means_difference" style="color: #FF4500;">Are the Means Actually Different?</a></li>
-  <li><a href="#correlation_embedding" style="color: #FF4500;">Correlation: How Strong Is the Relationship? (Embeddings)</a></li>
-  <li><a href="#stylometric_sentiment" style="color: #FF4500;">Stylometric Distance & Link Sentiment</a></li>
-  <li><a href="#correlation_stylo" style="color: #FF4500;">Correlation: How Strong Is the Relationship? (Stylometric)</a></li>
-  <li><a href="#psycho_sentiment" style="color: #FF4500;">Psychological Distance & Link Sentiment</a></li>
-  <li><a href="#correlation_psycho" style="color: #FF4500;">Correlation: How Strong Is the Relationship? (Psychological)</a></li>
+  <li><a data-tabby-default href="#authorship_sentiment" style="color: #FF4500;">Authorship (Embeddings) Distance</a></li>
+  <li><a href="#stylometric_sentiment" style="color: #FF4500;">Stylometric Distance</a></li>
+  <li><a href="#psychological_sentiment" style="color: #FF4500;">Psychological Distance</a></li>
 </ul>
 
 <div id="authorship_sentiment">
-  { % include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
+  {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
   <p>
     Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links.
   </p>
@@ -237,39 +233,8 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   </p>
 </div>
 
-<div id="means_difference">
-  <p>
-    To double-check, we compared the mean cosine distances of the two sentiment groups.
-  </p>
-  <p>
-    A two-sample t-test (α = 0.05) confirms it:
-  </p>
-  <p>
-    <strong>p ≤ 0.05</strong>, so we reject the null hypothesis.
-  </p>
-  <p>
-    Communities with positive links are, on average, <strong>closer</strong> in embedding space than those with negative links.
-    Not a huge surprise ! but good to have statistical confirmation rather than intuition alone.
-  </p>
-</div>
-
-<div id="correlation_embedding">
-  <p>
-    We use a <strong>point-biserial correlation</strong>, since the distance is continuous and sentiment is binary.<br>
-    The result:
-  </p>
-  <ul>
-    <li><strong>r ≈ -0.11</strong></li>
-    <li><strong>p &lt; 0.05</strong></li>
-  </ul>
-  <p>
-    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>.<br>
-    A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
-  </p>
-</div>
-
 <div id="stylometric_sentiment">
-  { % include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
+  {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
     Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>.  
     Stylometric distance measures how similar two subreddits’ writing styles are.
@@ -287,23 +252,8 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   </p>
 </div>
 
-<div id="correlation_stylo">
-  <p>
-    Applying the same point-biserial correlation used earlier:
-  </p>
-  <ul>
-    <li><b>r ≈ -0.009</b></li>
-    <li><b>p &lt; 0.05</b></li>
-  </ul>
-  <p>
-    The sign and significance mirror the embedding findings, but the strength is even weaker.  
-    Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment.  
-    While statistically detectable, it is far too small to matter in practice.
-  </p>
-</div>
-
-<div id="psycho_sentiment">
-  { % include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
+<div id="psychological_sentiment">
+  {% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
     We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  
     As before, we begin by comparing distance values across the two sentiment groups.
@@ -315,20 +265,6 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   <p>
     The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  
     This reflects a strong statistical signal, but the <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
-  </p>
-</div>
-
-<div id="correlation_psycho">
-  <p>
-    We again use the <b>point-biserial correlation</b> to quantify the linear relationship between psychological distance and link sentiment.
-  </p>
-  <ul>
-    <li><b>r ≈ -0.08</b></li>
-    <li><b>p &lt; 0.05</b></li>
-  </ul>
-  <p>
-    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest compared with shared authorship.  
-    Psychological distance therefore captures sentiment-relevant variation, but only partially.
   </p>
 </div>
 

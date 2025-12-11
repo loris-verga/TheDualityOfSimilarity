@@ -1158,7 +1158,7 @@ The distribution plot confirms this:
   </li>
 </ul>
 
-This reinforces the idea that each thematic community on Reddit has its own relational “profile”: some attack, some are attacked, and some do both.
+This reinforces the idea that each thematic community on Reddit has its own relational “profile”: some spread negativity, some are subject to it, and some are on both sides.
 
 
 

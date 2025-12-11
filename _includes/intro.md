@@ -1,3 +1,5 @@
+<section id="section1">
+</section>
 # <span style="color:#ff201e">Birds of a Feather… Fight Together?</span>
 ### Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
 
@@ -40,10 +42,10 @@ In this data story, we map out what it means for two communities to be “simila
 
 <strong>Do birds of a feather flock together, or do they fight?</strong>
 
-<section id="section1">
-</section>
-
 <hr style="margin:40px 0;">
+
+<section id="section2">
+</section>
 
 ## <span style="color:#ff201e">A Map of Reddit’s Interactions</span>
 
@@ -677,6 +679,9 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
           </p>
   </div>
 
+<section id="section3">
+</section>
+
 ### Causal Analysis between Distance Type & Link Sentiment
 
 <ul data-tabs-5>
@@ -832,6 +837,8 @@ These insights set the context for  a deeper question:
 **How does similarity in each space relate to negativity in cross-subreddit interactions?**
 
 ---
+<section id="section4">
+</section>
 
 ## <span style="color:#ff201e">Within and Inter-Category Analysis</span>
 
@@ -1374,6 +1381,8 @@ Taken together, these results reveal how category structure shapes the relations
 
 <hr style="margin:40px 0;">
 
+<section id="section5">
+</section>
 
 ### <span style="color:#ff201e">4) Case Study: Humour &amp; Memes</span>
 

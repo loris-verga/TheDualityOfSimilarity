@@ -830,7 +830,7 @@ These insights set the context for  a deeper question:
 
 ---
 
-### <span style="color:#ff4500">Within and Inter-Category Analysis</span>
+# <span style="color:#ff4500">Within and Inter-Category Analysis</span>
 
 <div class="section">
 
@@ -886,7 +886,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 
 
-#### <span style="color:#ff4500"> Relating Distances and Categories</span>
+#### <span style="color:#ff4500">1) Relating Distances and Categories</span>
 
 We work at the category level rather than at the individual subreddit level.  
 For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
@@ -1195,7 +1195,7 @@ Still, stylometric and psychological signatures show potential as light forms of
 <hr style="margin:40px 0;">
 
 
-### <span style="color:#ff4500">Negativity & Categories</span>
+### <span style="color:#ff4500">2) Negativity & Categories</span>
 
 We now take advantage of our hyperlink network, where each edge carries a sentiment from a <em>source</em> subreddit to a <em>target</em> subreddit, to understand how negativity circulates across categories.
 
@@ -1272,10 +1272,9 @@ To understand how category structure interacts with distances and sentiment, we 
   <li><b>Inter-cluster links:</b> source and target subreddits belong to different categories.</li>
 </ul>
 
-We then examine how the **mean cosine distance (authorship distance)** varies across:
+Analyzing link sentiment with this setting adds a particular relevant layer, as we control for the distance type **and** the type of hyperlink, in order to analyze the behavior of the link sentiment.
 
-- <b>Link sentiment</b> (negative or positive),
-- <b>Hyperlink type</b>  (within vs inter cluster).
+As **Authorship Distance** is based on embeddings provided in the dataset, this is what we expect to yield the best results. This analysis will primarily focus on this distance type.
 
 {% include basic_plots/mean_authorship_dist_for_type_of_links.html %}
 
@@ -1285,7 +1284,7 @@ We then examine how the **mean cosine distance (authorship distance)** varies ac
 
 From the plot, we observe, at high confidence (non-overlapping 95% CIs), the following:
 
-<div style="background:#f7f7f7; padding:15px; border-radius:8px; margin:20px 0; font-size:14px;">
+<div style="background:#f7f7f7; padding:15px; border-radius:8px; margin:20px 0; font-size:18x;">
 <b>1. Smaller distances → positive links (already established causally).</b><br>
 <b>2. Inter-cluster distances are larger than within-cluster distances.</b><br>
 <b>3. The trend holds for both positive and negative links.</b>
@@ -1296,7 +1295,7 @@ This pattern is a clear instance of <a href="https://en.wikipedia.org/wiki/Simps
 
 #### Category-level decomposition
 
-We further break down mean cosine distance by category and by sentiment:
+We would like to get more precise insights about the categories that are most involved in this behavior. Therefore, we further break down mean cosine distance by category and by sentiment:
 
 {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_within.html %}
 {% include basic_plots/mean_authorship_dist_for_type_of_links_disentangled_by_cat_inter.html %}
@@ -1309,7 +1308,7 @@ The same structure emerges:
   <li>Inter-cluster links have larger distances overall.</li>
 </ul>
 
-This strongly supports <b>the hypothesis</b>:  
+This strongly supports an intuitive expectation:  
 <b>source and target subreddit pairs from the same category exhibit smaller mean cosine distances than pairs from different categories.</b>
 
 
@@ -1327,18 +1326,6 @@ We repeat the same decomposition for the other two signature-based distances.
 	{% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
 </div>
 
-
-#### Psychological distance
-
-<ul>
-  <li>The pattern mirrors authorship distance: positive links → smaller distances; negative → larger.</li>
-  <li>Within-cluster distances are smaller than inter-cluster distances.</li>
-</ul>
-
-This also supports Hypothesis n°7.
-
-
-
 #### Stylometric distance
 
 Stylometric distance behaves differently:
@@ -1348,6 +1335,15 @@ Stylometric distance behaves differently:
   <li>Within-cluster and inter-cluster stylometric distances show only small differences.</li>
 </ul>
 
+#### Psychological distance
+
+<ul>
+  <li>The pattern mirrors authorship distance: positive links → smaller distances (more similar); negative → larger (less similar).</li>
+  <li>Within-cluster distances are smaller than inter-cluster distances.</li>
+</ul>
+
+This also supports the same findings we observed for the authorship distance.
+
 This indicates that stylometric features are **less predictive of sentiment** than authorship or psychological distances, even though they still exhibit a mild within- vs inter-cluster difference (supporting Hypothesis n°7).
 
 
@@ -1356,7 +1352,7 @@ This indicates that stylometric features are **less predictive of sentiment** th
 
 
 
-### <span style="color:#ff4500">Overall Summary</span>
+### <span style="color:#black">Overall Summary</span>
 
 Across authorship, psychological and stylometric distances, we find:
 
@@ -1367,7 +1363,7 @@ Across authorship, psychological and stylometric distances, we find:
   <li><b>The effect is strongest for authorship distance, moderate for psychological distance, and weakest for stylometric distance</b></li>
 </ul>
 
-<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px; font-size:14px;">
+<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px; font-size:18px;">
 Taken together, these results reveal how category structure shapes the relationship between semantic distance and negativity:  
 <b>communities that are closer in content tend to interact more positively, while distant communities interact more negatively, especially across category boundaries.</b>
 </div>
@@ -1438,20 +1434,18 @@ This reinforces the idea that “Humour &amp; Memes” communities contribute di
 
 Earlier (section 2), we observed that:
 
-<div style="background:#f7f7f7; padding:15px; border-radius:10px; width:fit-content;">
+<div style="background:#f7f7f7; padding:15px; border-radius:10px; width:fit-content; font-size:18px;">
 <b>“Humour &amp; Memes” emits more than 25,000 negative hyperlinks.</b><br>
 Yet it does <b>not</b> receive an unusually high number of negative links in return.
 </div>
-
-This asymmetry is striking and begs the question:
-
-<b>Which subreddits are responsible for emitting this negativity, and where do they send it?</b>
-
+<br>
+This asymmetry is striking and raises a central question:
+<h5 style="margin-top:30px; color:#d02c2c;">Which subreddits are responsible for emitting this negativity, and where do they send it?</h5>
 
 
-### Subreddits emitting the most negative links
+#### Subreddits emitting the most negative links
 
-Below is the output from the analysis, displayed in a clean table:
+Below is the output from the analysis:
 
 <div style="margin-top:10px;">
 <table style="border-collapse:collapse; width:70%; font-size:0.9rem;">
@@ -1478,7 +1472,7 @@ Below is the output from the analysis, displayed in a clean table:
 
 
 
-### Which subreddits do they target?
+#### Which subreddits do they target?
 
 Displayed below is the structured version of your output showing the main targets for each source.
 
@@ -1571,11 +1565,11 @@ Displayed below is the structured version of your output showing the main target
 
 A key pattern stands out:
 
-<div style="background:#fff4db; padding:15px; border-radius:10px;">
+<div style="background:#fff4db; padding:15px; border-radius:10px; font-size:18px;">
 <b>The subreddits emitting the most negativity within “Humour &amp; Memes” almost never target each other.</b><br><br>
 Instead, they target <b>general-purpose</b> or <b>topic-specific</b> communities such as<br>
 <em>askreddit, todayilearned, gaming, worldnews, pics, funny, fitness, movies…</em>
-</div>
+</div> <br>
 
 These communities behave almost like “commentary” or “parody” subreddits that take aim at mainstream Reddit spaces, not at humour-oriented neighbours.
 
@@ -1584,7 +1578,7 @@ These communities behave almost like “commentary” or “parody” subreddits
 <div style="text-align:center; margin-top:20px;">
   <img src="assets/img/cluster/bipartite_humor_memes_negative_links.png" width="85%" alt="Bipartite graph of negative links">
   <div style="font-size:0.85rem;"><em>Bipartite representation of negative links from Humour &amp; Memes subreddits to their targets.</em></div>
-</div>
+</div> <br>
 
 <p>
 The bipartite graph reveals that while <em>Humor & Memes</em> subreddits often emit negative links, they rarely target each other. Instead, the negativity is usually directed toward broader, more neutral subreddits outside the humor ecosystem.
@@ -1601,7 +1595,7 @@ Overall, one can search almost any topic within <em>Humor & Memes</em> and obser
 
 
 
-### Additional example: the “nbacirclejerk” pattern
+#### Additional example: the “nbacirclejerk” pattern
 
 To illustrate how general this behaviour is, here is the table generated for the topic “NBA”:
 

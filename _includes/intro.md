@@ -1092,7 +1092,7 @@ We examined authorship, stylometric and psychological distances through the lens
   <li><b>Psychological distance:</b> Similar behavior to stylometric distance, but with slightly more cohesion within categories.</li>
 </ul>
 
-<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px; font-size:16px;">
+<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px; font-size:18px;">
 <b>All silhouette scores are near zero.</b>  <br>
 This confirms that Reddit categories heavily overlap across all distance types.   
 Still, stylometric and psychological signatures show potential as light forms of category identity. They are not strong enough to define boundaries, but they do capture broad differences in how communities write and emotionally express themselves.
@@ -1159,8 +1159,8 @@ This reinforces the idea that each thematic community on Reddit has its own rela
 Earlier , we established a key relationship:
 
 <div style="background:#eef1f5; padding:12px; border-radius:8px; width: fit-content; font-size:0.9rem;">
-<b>Negative links → larger cosine distances<br>
-Positive links → smaller cosine distances</b> 
+<b>Larger cosine distances → Negative links <br>
+Smaller cosine distances → Positive links</b> 
 </div>
 This causal relationship was found for both Authorship and Psychological Distances.
 
@@ -1190,7 +1190,7 @@ We then examine how the **mean cosine distance (authorship distance)** varies ac
 
 #### Key insight
 
-From the plot, we observe—at high confidence (non-overlapping 95% CIs)—the following:
+From the plot, we observe, at high confidence (non-overlapping 95% CIs), the following:
 
 <div style="background:#f7f7f7; padding:15px; border-radius:8px; margin:20px 0;">
 <b>1. Smaller distances → positive links (already established causally).</b><br>

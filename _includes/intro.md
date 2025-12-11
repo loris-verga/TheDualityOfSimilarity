@@ -846,7 +846,9 @@ For stylometric and psychological distances, an extra step is required: we first
 </p>
 
 <h4>Subreddit cohesion: surprisingly weak</h4>
+<p>
 The right heatmap shows that many subreddits are not especially close to their assigned category’s centroid. In some categories, they are nearly equidistant from several centroids. Why?
+</p>
 
 <ul>
   <li>LLM classification errors: misleading subreddit names produce noisy assignments.</li>
@@ -884,7 +886,9 @@ The right heatmap shows that many subreddits are not especially close to their a
 <b>Silhouette score: -0.08</b>
 </div>
 
+<p>
 A silhouette score near 0 confirms that subreddit clusters overlap, reflecting the lack of clear category boundaries. Contrary to expectations of distinct, isolated clusters, Reddit’s broad ecosystem creates thousands of overlapping categories, resulting in a large and interconnected mass of subreddits rather than well-defined clusters.
+</p>
 
 </div>
 
@@ -901,10 +905,12 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
 	</div>
 </div>
 
+<p>
 The left heatmap shows a different picture: stylometric centroids are <b>more separated</b> as the cosine distances are larger. <br>
-Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
+Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.<br><br>
 
 For example:
+</p>
 
 <div style="background:#eef7ff; padding:10px; border-left:4px solid #79a6d2; border-radius:4px; margin:12px 0; font-size:0.9rem;">
 <b>Gaming ↔ Technology stylometric distance: ~0.1</b><br>
@@ -912,14 +918,18 @@ Such a small distance was expected, as Gaming and Technology subreddits share si
 </div>
 
 <h4>Cohesion: still weak</h4>
-The right plot shows strong overlap between subreddit signatures. While stylometric clusters appear separated at first glance, they are not fully cohesive. This may be because users from one category borrow textual traits from related categories (e.g., gaming and technology). Additionally, averaging all stylometric features smooths out unique category characteristics.
+<p>
+The right plot shows strong overlap between subreddit signatures. While stylometric clusters appear separated at first glance, they are not fully cohesive. This may be because users from one category borrow textual traits from related categories (e.g., gaming and technology). Additionally, averaging all stylometric features smooths out unique category characteristics.<br><br>
+</p>
 
 <h4>Silhouette score</h4>
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
 <b>Silhouette score: -0.09</b>
 </div>
 
+<p>
 Close to zero again. Categories differ in stylometric identity but overlap heavily in practice.
+</p>
 
 </div>
 
@@ -931,17 +941,21 @@ Close to zero again. Categories differ in stylometric identity but overlap heavi
   <div style="font-size:0.85rem;"><em>Psychological centroid comparisons.</em></div>
 </div>
 
+<p>
 The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  <br>
 On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others, which can be deduced through the lower values on the diagonal. <br><br>
 
 Psychological signatures distinguish categories more clearly than stylometric signatures, as subreddits cluster closer to their own category. This suggests that different community clusters have distinct and well-separated “psychological” states.
+</p>
 
 <h4>Silhouette score</h4>
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
 <b>Silhouette score: -0.05</b>
 </div>
 
+<p>
 Still close to zero, but slightly better. Clusters remain overlapping, yet psychological signatures yield a bit more structure.
+</p>
 
 <hr style="margin:40px 0;">
 

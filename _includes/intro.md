@@ -92,7 +92,7 @@ Because these features vary wildly in scale, we first apply **Z-score normalizat
 
 This ensures that no single feature dominates simply because it has larger numerical values.
 
-Once each subreddit has its stylometric signature, we again compare communities via **cosine similarity**, not Euclidean distance, because we want to measure **proportions**, not magnitudes.
+Once each subreddit has its stylometric signature, we again compare communities via **cosine similarity** as we want to measure **proportions**, not magnitudes like we would obtain with Euclidean distance.
 
 The resulting distance is:
 
@@ -210,7 +210,8 @@ These distributions reveal the shape of each similarity space and provide intuit
 
 ## <span style="color:#ff4500">Visualizing the Spaces in 2D</span>
 
-To better understand how signatures relate across communities, we choose to visualize the high-dimensional psychological and stylometric spaces into two dimensions. As they are based on features we manually selected, we are keen to observe potential clusters that are formed.
+To better understand how signatures relate across communities, we choose to visualize the high-dimensional spaces in 2D.
+We are particularly keen to observe potential clusters that are formed in the **Psychological and Stylometric spaces**, as these distances are based on features we manually selected.<br><br>
 We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure). <br><br>
 PCA identifies the 2D projection plane that captures the maximum possible variance from the psychological features. <br>
 On the other hand, t-SNE is a tool that reveals local structures and potential clusters by creating a 2D map that preserves the neighborhood relationships from the original high-dimensional space. We use it here to see if the psychological profiles form distinct groups.
@@ -294,6 +295,8 @@ This continuity suggests that subreddit psychological signatures vary gradually,
   var tabs = new Tabby('[data-tabs-pca]');
 </script>
 
+---
+
 ## Distance Type & Observed Sentiment
 
 We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
@@ -322,6 +325,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   </p>
   <hr>
   <p><span style="color:#ff4500">Are the Means Actually Different?</span></p>
+  {% include basic_plots/mean_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
     To double-check, we compared the mean cosine distances of the two sentiment groups.
   </p>
@@ -833,6 +837,15 @@ These insights set the context for  a deeper question:
 <h4>Introduction</h4>
 
 We assigned each of the ~51'000 subreddits in our embeddings dataframe to one of thirteen categories using an LLM.  
+
+<p>
+  More details about the methodology
+  <a href="https://github.com/epfl-ada/ada-2025-project-adal0vel4ce/tree/a2c92d143cd6405df79c4e125ac1611b7264c6e8/src/scripts/LLM_classification"
+     target="_blank" rel="noopener noreferrer">
+    here
+  </a>.
+</p>
+
 The list covers broad thematic areas:<br><br>
 <ul>
   <li>Lifestyle</li>
@@ -853,12 +866,15 @@ The list covers broad thematic areas:<br><br>
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem;">
 <b>Note on accuracy:</b> Subreddit names are often uninformative, and thirteen categories are far too few to reflect the true diversity of Reddit. Expect misclassifications and broad bins that act more like umbrellas than precise labels.</div>
 
-
+<p>
 Our aim here is simpler: look for large-scale patterns. We do not need perfect labels to detect whether broad thematic groups behave differently, interact differently, or exhibit distinct “signatures.”
+</p>
 
 {% include basic_plots/distrib_category.html %}
 
+<p>
 As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate by sheer volume. To avoid being misled by this imbalance, we rely on confidence intervals and other measures of uncertainty throughout the analysis.
+</p>
 
 </div>
 
@@ -868,7 +884,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 
 
-### <span style="color:#ff4500">1) Relating Distances and Categories</span>
+### <span style="color:#ff4500"> Relating Distances and Categories</span>
 
 We work at the category level rather than at the individual subreddit level.  
 For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
@@ -882,9 +898,13 @@ The cosine distance scale remains the same:
 <div style="text-align:center; margin-top:10px;">
 <span style="font-size:0.9rem; background:#eef1f5; padding:6px 10px; border-radius:6px;">0 = perfectly aligned, &nbsp; 2 = maximally different</span>
 </div>
-
+<br>
 For stylometric and psychological distances, an extra step is required: we first compute a subreddit-level signature, then take the mean per category.
 
+<br><br>
+
+<h6 style="margin-top:30px; color:black;">In what follows, Left : Alignment between Categories and Right : Cohesion between Categories</h4>
+<br>
 
 ---
 

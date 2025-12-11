@@ -938,7 +938,7 @@ For stylometric and psychological distances, an extra step is required: we first
 
 <h4>Subreddit cohesion: surprisingly weak</h4>
 <p>
-The right heatmap shows that many subreddits are not especially close to their assigned category’s centroid. In some categories, they are nearly equidistant from several centroids. Why?
+The right heatmap shows that many subreddits are not especially close to their assigned category’s centroid. In some categories, they are nearly equidistant from several centroids. Why ?
 </p>
 
 <ul>

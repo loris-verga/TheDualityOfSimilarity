@@ -42,7 +42,7 @@ In this data story, we map out what it means for two communities to be “simila
 
 <section id="section1">
 </section>
-## <span style="color:#ff201e">A Map of Reddit’s Interactions</span>
+## <span style="color:##ff4500">A Map of Reddit’s Interactions</span>
 
 Before we can understand why communities clash, we must first understand **how they resemble one another**.  
 On Reddit, similarity is not a single dimension. It is an intricate mix of **who posts where**, **how people write**, and **what psychological traits they express**.  
@@ -55,7 +55,7 @@ To capture this, we introduce **three notions of similarity**, each one giving r
 
 Together, these distances serve as a springboard to define communities can be close, aligned, or fundamentally opposed.
 
-## 1. Shared Authorship
+### 1. Shared Authorship
 
 Every subreddit has a “population signature”: a set of users who post there.  
 The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community.  
@@ -74,7 +74,7 @@ To turn similarity into a distance, we use:
 
 ---
 
-## 2. Stylometric Signatures: How Communities Write
+### 2. Stylometric Signatures: How Communities Write
 
 Communities also differ in how they **sound** : their structure, complexity, and textual habits.
 
@@ -100,7 +100,7 @@ The resulting distance is:
 
 ---
 
-## 3. Psychological Signatures: What Communities Express
+### 3. Psychological Signatures: What Communities Express
 
 Language also reveals psychology.  
 Each hyperlink post in the dataset includes **64 LIWC features** and **VADER sentiment scores**. LIWC is a text analysis program that counts words belonging to psychologically meaningful categories. Meanwhile, VADER (Valence Aware Dictionary and Sentiment Reasoner) is a rule-based sentiment analysis tool. It uses a specialized dictionary designed to accurately understand the emotions and opinions found in social media texts.
@@ -116,14 +116,14 @@ This gives us a final observation angle:
 
 ---
 
-## <span style="color:#ff201e">Exploring the Geometry of Similarity</span>
+### <span style="color:##ff4500">Exploring the Geometry of Similarity</span>
 
 Before linking similarity to conflict, we first examine how each distance is distributed across Reddit.  
 These distributions reveal the shape of each similarity space and provide intuition for how communities are built.
 
 ---
 
-## Distribution of Distances
+### Distribution of Distances
 
   <ul data-tabs-3>
     <li><a data-tabby-default href="#shared_dist" style="color: #FF4500;">Shared Authorship Distance</a></li>
@@ -208,7 +208,7 @@ These distributions reveal the shape of each similarity space and provide intuit
   </div>
 ---
 
-## <span style="color:#ff4500">Visualizing the Spaces in 2D</span>
+### <span style="color:#ff4500">Visualizing the Spaces in 2D</span>
 
 To better understand how signatures relate across communities, we choose to visualize the high-dimensional spaces in 2D.
 We are particularly keen to observe potential clusters that are formed in the **Psychological and Stylometric spaces**, as these distances are based on features we manually selected.<br><br>
@@ -297,7 +297,7 @@ This continuity suggests that subreddit psychological signatures vary gradually,
 
 ---
 
-## Distance Type & Observed Sentiment
+### Distance Type & Observed Sentiment
 
 We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
 Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
@@ -674,7 +674,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
           </p>
   </div>
 
-## Causal Analysis between Distance Type & Link Sentiment
+### Causal Analysis between Distance Type & Link Sentiment
 
 <ul data-tabs-5>
   <li><a data-tabby-default href="#causal_authorship" style="color: #FF4500;">Authorship Distance</a></li>
@@ -830,7 +830,7 @@ These insights set the context for  a deeper question:
 
 ---
 
-# <span style="color:#ff4500">Within and Inter-Category Analysis</span>
+## <span style="color:#ff4500">Within and Inter-Category Analysis</span>
 
 <div class="section">
 
@@ -886,7 +886,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 
 
-#### <span style="color:#ff4500">1) Relating Distances and Categories</span>
+### <span style="color:#ff4500">1) Relating Distances and Categories</span>
 
 We work at the category level rather than at the individual subreddit level.  
 For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
@@ -1203,7 +1203,7 @@ At this stage, we step beyond distances and look directly at how categories inte
 
 
 
-#### Negative interactions between categories
+### Negative interactions between categories
 
 Before relating negativity to distances, we first inspect how negativity flows between categories at a global scale.
 

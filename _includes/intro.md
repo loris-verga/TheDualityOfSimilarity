@@ -1173,7 +1173,7 @@ Still close to zero, but slightly better. Clusters remain overlapping, yet psych
   </div>
 
 
-<h3>Categories & Distances: Conclusion</3>
+<h3>Categories & Distances: Conclusion</h3>
 
 We examined authorship, stylometric and psychological distances through the lens of subreddit categories. The main findings:
 

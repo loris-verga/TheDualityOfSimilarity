@@ -828,8 +828,8 @@ For stylometric and psychological distances, an extra step is required: we first
 
 <ul data-tabs-6>
   <li><a data-tabby-default href="#authorship_categories" style="color: #FF4500;">Authorship Distance & Categories</a></li>
-  <li><a href="#stylometric_categories" style="color: #FF4500;">Stylometric Signatures & Categories</a></li>
-  <li><a href="#psychological_categories" style="color: #FF4500;">Psychological Signatures & Categories</a></li>
+  <li><a href="#stylometric_categories" style="color: #FF4500;">Stylometric Distance & Categories</a></li>
+  <li><a href="#psychological_categories" style="color: #FF4500;">Psychological Distance & Categories</a></li>
 </ul>
 
 
@@ -846,7 +846,9 @@ For stylometric and psychological distances, an extra step is required: we first
 </p>
 
 <h4>Subreddit cohesion: surprisingly weak</h4>
+<p>
 The right heatmap shows that many subreddits are not especially close to their assigned category’s centroid. In some categories, they are nearly equidistant from several centroids. Why?
+</p>
 
 <ul>
   <li>LLM classification errors: misleading subreddit names produce noisy assignments.</li>
@@ -882,9 +884,11 @@ The right heatmap shows that many subreddits are not especially close to their a
 
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
 <b>Silhouette score: -0.08</b>
-</div>
+</div> <br>
 
+<p>
 A silhouette score near 0 confirms that subreddit clusters overlap, reflecting the lack of clear category boundaries. Contrary to expectations of distinct, isolated clusters, Reddit’s broad ecosystem creates thousands of overlapping categories, resulting in a large and interconnected mass of subreddits rather than well-defined clusters.
+</p>
 
 </div>
 
@@ -901,10 +905,12 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
 	</div>
 </div>
 
+<p>
 The left heatmap shows a different picture: stylometric centroids are <b>more separated</b> as the cosine distances are larger. <br>
-Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
+Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.<br><br>
 
 For example:
+</p>
 
 <div style="background:#eef7ff; padding:10px; border-left:4px solid #79a6d2; border-radius:4px; margin:12px 0; font-size:0.9rem;">
 <b>Gaming ↔ Technology stylometric distance: ~0.1</b><br>
@@ -912,14 +918,17 @@ Such a small distance was expected, as Gaming and Technology subreddits share si
 </div>
 
 <h4>Cohesion: still weak</h4>
-The right plot shows strong overlap between subreddit signatures. While stylometric clusters appear separated at first glance, they are not fully cohesive. This may be because users from one category borrow textual traits from related categories (e.g., gaming and technology). Additionally, averaging all stylometric features smooths out unique category characteristics.
+<p>
+The right plot shows strong overlap between subreddit signatures. While stylometric clusters appear separated at first glance, they are not fully cohesive. This may be because users from one category borrow textual traits from related categories (e.g., gaming and technology). Additionally, averaging all stylometric features smooths out unique category characteristics.<br><br>
+</p>
 
-<h4>Silhouette score</h4>
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
 <b>Silhouette score: -0.09</b>
-</div>
+</div> <br>
 
+<p>
 Close to zero again. Categories differ in stylometric identity but overlap heavily in practice.
+</p>
 
 </div>
 
@@ -931,17 +940,20 @@ Close to zero again. Categories differ in stylometric identity but overlap heavi
   <div style="font-size:0.85rem;"><em>Psychological centroid comparisons.</em></div>
 </div>
 
+<p>
 The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  <br>
 On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others, which can be deduced through the lower values on the diagonal. <br><br>
 
 Psychological signatures distinguish categories more clearly than stylometric signatures, as subreddits cluster closer to their own category. This suggests that different community clusters have distinct and well-separated “psychological” states.
+</p>
 
-<h4>Silhouette score</h4>
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
 <b>Silhouette score: -0.05</b>
-</div>
+</div> <br>
 
+<p>
 Still close to zero, but slightly better. Clusters remain overlapping, yet psychological signatures yield a bit more structure.
+</p>
 
 <hr style="margin:40px 0;">
 
@@ -954,116 +966,117 @@ Still close to zero, but slightly better. Clusters remain overlapping, yet psych
 </script>
 
 
+<div class="ignore">
+          ## <span style="color:#ff4500">a) Authorship Distance & Categories</span>
 
-## <span style="color:#ff4500">a) Authorship Distance & Categories</span>
+          <div style="text-align:center;">
+            <img src="assets/img/cluster/heatmap_embeddings.png" width="70%" style="margin-right:2%;" alt="Authorship centroid distances">
+            <div style="font-size:0.85rem;"><em>Embeddings centroid comparisons</em></div>
+          </div>
 
-<div style="text-align:center;">
-  <img src="assets/img/cluster/heatmap_embeddings.png" width="70%" style="margin-right:2%;" alt="Authorship centroid distances">
-  <div style="font-size:0.85rem;"><em>Embeddings centroid comparisons</em></div>
-</div>
+          <h4>Centroid alignment: moderately similar</h4>
+          Generalist categories like Miscellaneous, Lifestyle, and Humour &amp; Memes are all relatively close to each other. These categories spread widely in the embedding space and overlap heavily with others. Gaming and Technology, on the other hand, sit closer together for intuitive reasons: users often post in both, and the topics naturally relate.
 
-<h4>Centroid alignment: moderately similar</h4>
-Generalist categories like Miscellaneous, Lifestyle, and Humour &amp; Memes are all relatively close to each other. These categories spread widely in the embedding space and overlap heavily with others. Gaming and Technology, on the other hand, sit closer together for intuitive reasons: users often post in both, and the topics naturally relate.
+          <h4>Subreddit cohesion: surprisingly weak</h4>
+          The right heatmap shows that many subreddits are not especially close to their assigned category’s centroid. In some categories, they are nearly equidistant from several centroids. Why?
 
-<h4>Subreddit cohesion: surprisingly weak</h4>
-The right heatmap shows that many subreddits are not especially close to their assigned category’s centroid. In some categories, they are nearly equidistant from several centroids. Why?
+          <ul>
+            <li>LLM classification errors: misleading subreddit names produce noisy assignments.</li>
+            <li>Thirteen categories are too coarse for Reddit’s complexity.</li>
+            <li>Reddit is inherently fluid: overlapping interests create overlapping clusters.</li>
+          </ul>
 
-<ul>
-  <li>LLM classification errors: misleading subreddit names produce noisy assignments.</li>
-  <li>Thirteen categories are too coarse for Reddit’s complexity.</li>
-  <li>Reddit is inherently fluid: overlapping interests create overlapping clusters.</li>
-</ul>
+          <p>
+            To evaluate how well our clustering separates subreddit groups, we use the 
+            <b>silhouette score</b>. It measures how similar a point is to its own cluster 
+            compared to points in other clusters.
+          </p>
 
-<p>
-  To evaluate how well our clustering separates subreddit groups, we use the 
-  <b>silhouette score</b>. It measures how similar a point is to its own cluster 
-  compared to points in other clusters.
-</p>
+          <div style="
+            border: 1px solid #ddd;
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            background:#fafafa;
+            text-align:center;
+            margin: 1rem 0;
+            font-size:1.1rem;
+          ">
+            <em>\( s = \frac{b - a}{\max(a,\, b)} \)</em>
+          </div>
 
-<div style="
-  border: 1px solid #ddd;
-  padding: 0.8rem 1rem;
-  border-radius: 6px;
-  background:#fafafa;
-  text-align:center;
-  margin: 1rem 0;
-  font-size:1.1rem;
-">
-  <em>\( s = \frac{b - a}{\max(a,\, b)} \)</em>
-</div>
+          <p>
+            where:<br>
+            • <b>a</b> = average distance to other points within the same cluster<br>
+            • <b>b</b> = lowest average distance to points in any <em>other</em> cluster<br><br>
+            The silhouette score ranges from -1 to 1, with higher values indicating 
+            more coherent and well-separated clusters.
+          </p>
 
-<p>
-  where:<br>
-  • <b>a</b> = average distance to other points within the same cluster<br>
-  • <b>b</b> = lowest average distance to points in any <em>other</em> cluster<br><br>
-  The silhouette score ranges from -1 to 1, with higher values indicating 
-  more coherent and well-separated clusters.
-</p>
+          <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
+          <b>Silhouette score: -0.08</b>
+          </div>
 
-<div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
-<b>Silhouette score: -0.08</b>
-</div>
+          A silhouette score near 0 confirms that subreddit clusters overlap, reflecting the lack of clear category boundaries. Contrary to expectations of distinct, isolated clusters, Reddit’s broad ecosystem creates thousands of overlapping categories, resulting in a large and interconnected mass of subreddits rather than well-defined clusters.
 
-A silhouette score near 0 confirms that subreddit clusters overlap, reflecting the lack of clear category boundaries. Contrary to expectations of distinct, isolated clusters, Reddit’s broad ecosystem creates thousands of overlapping categories, resulting in a large and interconnected mass of subreddits rather than well-defined clusters.
+          ---
 
----
+          ## <span style="color:#ff4500">b) Stylometric Signatures & Categories</span>
 
-## <span style="color:#ff4500">b) Stylometric Signatures & Categories</span>
+          <div class="two-heatmaps-container">
+            <div class="heatmap-container">
+            <iframe src="plots/heatmap_stylo_centroids.html" style="width: 100%; height: 100%;"></iframe>
+            </div>
+            <div class="heatmap-container">
+            <iframe src="plots/heatmap_stylo_centroids_2.html" style="width: 100%; height: 100%;"></iframe>
+            </div>
+          </div>
 
-<div class="two-heatmaps-container">
-	<div class="heatmap-container">
-	<iframe src="plots/heatmap_stylo_centroids.html" style="width: 100%; height: 100%;"></iframe>
-	</div>
-	<div class="heatmap-container">
-	<iframe src="plots/heatmap_stylo_centroids_2.html" style="width: 100%; height: 100%;"></iframe>
-	</div>
-</div>
+          The left heatmap shows a different picture: stylometric centroids are **more separated** as the cosine distances are larger. Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
 
-The left heatmap shows a different picture: stylometric centroids are **more separated** as the cosine distances are larger. Stylometric signatures of categories constitute a strong enough identity to indicate how stylometrically different two subreddit categories are.
+          For example:
 
-For example:
+          <div style="background:#eef7ff; padding:10px; border-left:4px solid #79a6d2; border-radius:4px; margin:12px 0; font-size:0.9rem;">
+          <b>Gaming ↔ Technology stylometric distance: ~0.1</b><br>
+          Such a small distance was expected, as Gaming and Technology subreddits share similar centers of interests, potentially leading similar syntactical structures.
+          </div>
 
-<div style="background:#eef7ff; padding:10px; border-left:4px solid #79a6d2; border-radius:4px; margin:12px 0; font-size:0.9rem;">
-<b>Gaming ↔ Technology stylometric distance: ~0.1</b><br>
-Such a small distance was expected, as Gaming and Technology subreddits share similar centers of interests, potentially leading similar syntactical structures.
-</div>
+          <h4>Cohesion: still weak</h4>
+          The right plot shows strong overlap between subreddit signatures. While stylometric clusters appear separated at first glance, they are not fully cohesive. This may be because users from one category borrow textual traits from related categories (e.g., gaming and technology). Additionally, averaging all stylometric features smooths out unique category characteristics.
 
-<h4>Cohesion: still weak</h4>
-The right plot shows strong overlap between subreddit signatures. While stylometric clusters appear separated at first glance, they are not fully cohesive. This may be because users from one category borrow textual traits from related categories (e.g., gaming and technology). Additionally, averaging all stylometric features smooths out unique category characteristics.
+          <h4>Silhouette score</h4>
+          <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
+          <b>Silhouette score: -0.09</b>
+          </div>
 
-<h4>Silhouette score</h4>
-<div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
-<b>Silhouette score: -0.09</b>
-</div>
-
-Close to zero again. Categories differ in stylometric identity but overlap heavily in practice.
-
-
-
----
-
-## <span style="color:#ff4500">c) Psychological Signatures & Categories</span>
-
-<div style="text-align:center;">
-  <img src="assets/img/cluster/heatmap_psy.png" width="70%" style="margin-right:2%;" alt="Psychological centroid distances">
-  <div style="font-size:0.85rem;"><em>Psychological centroid comparisons.</em></div>
-</div>
-
-The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  
-On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others, which can be deduced through the lower values on the diagonal.
-
-Psychological signatures distinguish categories more clearly than stylometric signatures, as subreddits cluster closer to their own category. This suggests that different community clusters have distinct and well-separated “psychological” states.
-
-<h4>Silhouette score</h4>
-<div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
-<b>Silhouette score: -0.05</b>
-</div>
-
-Still close to zero, but slightly better. Clusters remain overlapping, yet psychological signatures yield a bit more structure.
+          Close to zero again. Categories differ in stylometric identity but overlap heavily in practice.
 
 
 
-<hr style="margin:40px 0;">
+          ---
+
+          ## <span style="color:#ff4500">c) Psychological Signatures & Categories</span>
+
+          <div style="text-align:center;">
+            <img src="assets/img/cluster/heatmap_psy.png" width="70%" style="margin-right:2%;" alt="Psychological centroid distances">
+            <div style="font-size:0.85rem;"><em>Psychological centroid comparisons.</em></div>
+          </div>
+
+          The left heatmap echoes the stylometric one: categories differ substantially in their emotional and evaluative styles.  
+          On the right, however, we finally see a hint of cohesion. Subreddits tend to sit closer to their own psychological centroid than to others, which can be deduced through the lower values on the diagonal.
+
+          Psychological signatures distinguish categories more clearly than stylometric signatures, as subreddits cluster closer to their own category. This suggests that different community clusters have distinct and well-separated “psychological” states.
+
+          <h4>Silhouette score</h4>
+          <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem; width: fit-content;">
+          <b>Silhouette score: -0.05</b>
+          </div>
+
+          Still close to zero, but slightly better. Clusters remain overlapping, yet psychological signatures yield a bit more structure.
+
+
+
+          <hr style="margin:40px 0;">
+  </div>
 
 
 
@@ -1079,8 +1092,8 @@ We examined authorship, stylometric and psychological distances through the lens
   <li><b>Psychological distance:</b> Similar behavior to stylometric distance, but with slightly more cohesion within categories.</li>
 </ul>
 
-<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px;">
-<b>All silhouette scores are near zero.</b>  
+<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px; font-size:18px;">
+<b>All silhouette scores are near zero.</b>  <br>
 This confirms that Reddit categories heavily overlap across all distance types.   
 Still, stylometric and psychological signatures show potential as light forms of category identity. They are not strong enough to define boundaries, but they do capture broad differences in how communities write and emotionally express themselves.
 </div>
@@ -1146,8 +1159,8 @@ This reinforces the idea that each thematic community on Reddit has its own rela
 Earlier , we established a key relationship:
 
 <div style="background:#eef1f5; padding:12px; border-radius:8px; width: fit-content; font-size:0.9rem;">
-<b>Negative links → larger cosine distances<br>
-Positive links → smaller cosine distances</b> 
+<b>Larger cosine distances → Negative links <br>
+Smaller cosine distances → Positive links</b> 
 </div>
 This causal relationship was found for both Authorship and Psychological Distances.
 
@@ -1177,7 +1190,7 @@ We then examine how the **mean cosine distance (authorship distance)** varies ac
 
 #### Key insight
 
-From the plot, we observe—at high confidence (non-overlapping 95% CIs)—the following:
+From the plot, we observe, at high confidence (non-overlapping 95% CIs), the following:
 
 <div style="background:#f7f7f7; padding:15px; border-radius:8px; margin:20px 0;">
 <b>1. Smaller distances → positive links (already established causally).</b><br>

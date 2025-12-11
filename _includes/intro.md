@@ -903,10 +903,9 @@ The cosine distance scale remains the same:
 <br>
 For stylometric and psychological distances, an extra step is required: we first compute a subreddit-level signature, then take the mean per category.
 
-<br><br>
-
-<h6 style="margin-top:30px; color:black;">In what follows, Left : Alignment between Categories and Right : Cohesion between Categories</h6>
 <br>
+
+<h6 style="margin-top:30px; color:black;">Left Matrix : Alignment between Categories and Right Matrix : Cohesion between Categories</h6>
 
 ---
 
@@ -962,7 +961,7 @@ The right heatmap shows that many subreddits are not especially close to their a
   margin: 1rem 0;
   font-size:1.1rem;
 ">
-  <em>\( s = \frac{b - a}{\max(a,\, b)} \)</em>
+  <em>\( s = \frac{b(i) - a(i)}{\max(a(i),\, b(i))} \)</em>
 </div>
 
 <p>

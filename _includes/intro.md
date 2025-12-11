@@ -42,7 +42,10 @@ In this data story, we map out what it means for two communities to be “simila
 
 <section id="section1">
 </section>
-## <span style="color:##ff4500">A Map of Reddit’s Interactions</span>
+
+<hr style="margin:40px 0;">
+
+## <span style="color:#ff201e">A Map of Reddit’s Interactions</span>
 
 Before we can understand why communities clash, we must first understand **how they resemble one another**.  
 On Reddit, similarity is not a single dimension. It is an intricate mix of **who posts where**, **how people write**, and **what psychological traits they express**.  

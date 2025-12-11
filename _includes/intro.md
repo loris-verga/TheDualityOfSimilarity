@@ -207,6 +207,32 @@ These distributions reveal the shape of each similarity space and provide intuit
         Since these signatures are derived from **LIWC** and **VADER**, this pattern suggests that users interacting between different subreddits tend to display **loosely similar psychological traits**.
   </div>
 ---
+
+## <span style="color:#ff4500">Visualizing the Psychological Space</span>
+
+To better understand how signatures relate across communities, we can visualize the high-dimensional psychological space into two dimensions.  
+We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure).
+PCA identifies the 2D projection plane that captures the maximum possible variance from the psychological features. On the other hand, t-SNE is a tool that reveals local structures and potential clusters by creating a 2D map that preserves the neighborhood relationships from the original high-dimensional space. We use it here to see if the psychological profiles form distinct groups.
+
+<div class="two-heatmaps-container">
+        {% include basic_plots/tsne_stylo.html %}
+        {% include basic_plots/pca_psycho.html %}
+</div>
+
+
+---
+
+### **What does it all mean ?**
+
+#### **PCA**
+The first two principal components explain **24.07%** of the total variance. As the original data is of high dimension, this value is not inherently bad to grasp to main tendency.
+The resulting projection forms a **dense, continuous cloud** without sharp separations, suggesting that subreddits vary smoothly in their psychological tone.  
+
+#### **t-SNE**
+While t-SNE also reveals a large central mass, it uncovers **peripheral clusters**. 
+These clusters reflect **locally cohesive psychological communities**, even though the global landscape remains continuous.
+
+
 ## Distance Type & Observed Sentiment
 
 We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
@@ -733,31 +759,6 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 <script>
   var tabs = new Tabby('[data-tabs-5]');
 </script>
-
-
-## <span style="color:#ff4500">Visualizing the Psychological Space</span>
-
-To better understand how signatures relate across communities, we can visualize the high-dimensional psychological space into two dimensions.  
-We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure).
-PCA identifies the 2D projection plane that captures the maximum possible variance from the psychological features. On the other hand, t-SNE is a tool that reveals local structures and potential clusters by creating a 2D map that preserves the neighborhood relationships from the original high-dimensional space. We use it here to see if the psychological profiles form distinct groups.
-
-<div class="two-heatmaps-container">
-        {% include basic_plots/tsne_stylo.html %}
-        {% include basic_plots/pca_psycho.html %}
-</div>
-
-
----
-
-### **What does it all mean ?**
-
-#### **PCA**
-The first two principal components explain **24.07%** of the total variance. As the original data is of high dimension, this value is not inherently bad to grasp to main tendency.
-The resulting projection forms a **dense, continuous cloud** without sharp separations, suggesting that subreddits vary smoothly in their psychological tone.  
-
-#### **t-SNE**
-While t-SNE also reveals a large central mass, it uncovers **peripheral clusters**. 
-These clusters reflect **locally cohesive psychological communities**, even though the global landscape remains continuous.
 
 These insights set the context a deeper question:  
 **How does similarity in each space relate to negativity in cross-subreddit interactions?**

@@ -830,7 +830,7 @@ These insights set the context for  a deeper question:
 
 ---
 
-#### <span style="color:#ff4500">Within and Inter-Category Analysis</span>
+### <span style="color:#ff4500">Within and Inter-Category Analysis</span>
 
 <div class="section">
 
@@ -886,7 +886,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 
 
-### <span style="color:#ff4500"> Relating Distances and Categories</span>
+#### <span style="color:#ff4500"> Relating Distances and Categories</span>
 
 We work at the category level rather than at the individual subreddit level.  
 For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
@@ -1173,8 +1173,7 @@ Still close to zero, but slightly better. Clusters remain overlapping, yet psych
   </div>
 
 
-
-## <span style="color:#ff4500">Categories & Distances: Conclusion</span>
+<h3>Categories & Distances: Conclusion</3>
 
 We examined authorship, stylometric and psychological distances through the lens of subreddit categories. The main findings:
 

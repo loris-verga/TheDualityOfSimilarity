@@ -1,6 +1,8 @@
 <section id="section1">
 </section>
+
 # <span style="color:#ff201e">Birds of a Feather… Fight Together?</span>
+
 ### Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
 
 We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes.
@@ -11,29 +13,15 @@ but between communities that look almost exactly the <strong>same</strong>?
 
 Reddit, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
 
-<div class="container">
-<iframe src="graphs/reddit_1500_hyperlinks.html" style="width: 100%; height: 100%;"></iframe>
-</div>
-
-<div style="display:flex; justify-content:center; margin:40px 0;">
-    <iframe src="graphs/reddit_1500_hyperlinks.html"
-            style="width:80%; height:600px; border-radius:10px;">
-    </iframe>
-</div>
-
 <div style="display:flex; justify-content:center; margin:40px 0;">
     <iframe src="graphs/reddit_1500_hyperlinks.html"
             style="width:80%; height:600px; border:1px solid #ddd; border-radius:10px;">
     </iframe>
 </div>
 
-
-
 <p style="font-size:14px; color:#666; margin-top:10px;">
         Above is a network of <b>1,500 inter-subreddit hyperlinks</b>.  
-        Each line represents a citation : praise, mockery, alliance, or conflict.  
-        Beneath Reddit’s surface lies a dense web of cross-community relations.
-    </p>
+</p>
 
 Hidden inside these hyperlinks is a wealth of linguistic and psychological information:
 

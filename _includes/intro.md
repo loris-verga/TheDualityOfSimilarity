@@ -17,7 +17,7 @@ Reddit, with its tens of thousands of micro-communities, called subreddits, and 
 
 <div style="display:flex; justify-content:center; margin:40px 0;">
     <iframe src="graphs/reddit_1500_hyperlinks.html"
-            style="width:80%; height:600px; border:none; border-radius:10px;">
+            style="width:80%; height:600px; border-radius:10px;">
     </iframe>
 </div>
 

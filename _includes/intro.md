@@ -1,4 +1,4 @@
-# <span style="color:#ff4500">Birds of a Feather… Fight Together?</span>
+# <span style="color:#ff201e">Birds of a Feather… Fight Together?</span>
 ### Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
 
 We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes.
@@ -126,9 +126,9 @@ These distributions reveal the shape of each similarity space and provide intuit
 ### Distribution of Distances
 
   <ul data-tabs-3>
-    <li><a data-tabby-default href="#shared_dist" style="color: #FF4500;">Shared Authorship Distance</a></li>
-    <li><a href="#stylo_dist" style="color: #FF4500;">Stylometric Distance</a></li>
-    <li><a href="#psycho_dist" style="color: #FF4500;">Psychological Distance</a></li>
+    <li><a data-tabby-default href="#shared_dist" style="color: #ff201e;">Shared Authorship Distance</a></li>
+    <li><a href="#stylo_dist" style="color: #ff201e;">Stylometric Distance</a></li>
+    <li><a href="#psycho_dist" style="color: #ff201e;">Psychological Distance</a></li>
   </ul>
 
   <div id="shared_dist">
@@ -208,7 +208,7 @@ These distributions reveal the shape of each similarity space and provide intuit
   </div>
 ---
 
-### <span style="color:#ff4500">Visualizing the Spaces in 2D</span>
+### <span style="color:#ff201e">Visualizing the Spaces in 2D</span>
 
 To better understand how signatures relate across communities, we choose to visualize the high-dimensional spaces in 2D.
 We are particularly keen to observe potential clusters that are formed in the **Psychological and Stylometric spaces**, as these distances are based on features we manually selected.<br><br>
@@ -219,8 +219,8 @@ On the other hand, t-SNE is a tool that reveals local structures and potential c
 
 
 <ul data-tabs-pca>
-  <li><a data-tabby-default href="#stylometric_viz" style="color:#FF4500;">Stylometric Visualizations</a></li>
-  <li><a href="#psychological_viz" style="color:#FF4500;">Psychological Visualizations</a></li>
+  <li><a data-tabby-default href="#stylometric_viz" style="color:#ff201e;">Stylometric Visualizations</a></li>
+  <li><a href="#psychological_viz" style="color:#ff201e;">Psychological Visualizations</a></li>
 </ul>
 
 
@@ -304,9 +304,9 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 
 **Are positive and negative links present at different distances?**
 <ul data-tabs-4>
-  <li><a data-tabby-default href="#authorship_sentiment" style="color: #FF4500;">Authorship (Embeddings) Distance</a></li>
-  <li><a href="#stylometric_sentiment" style="color: #FF4500;">Stylometric Distance</a></li>
-  <li><a href="#psychological_sentiment" style="color: #FF4500;">Psychological Distance</a></li>
+  <li><a data-tabby-default href="#authorship_sentiment" style="color: #ff201e;">Authorship (Embeddings) Distance</a></li>
+  <li><a href="#stylometric_sentiment" style="color: #ff201e;">Stylometric Distance</a></li>
+  <li><a href="#psychological_sentiment" style="color: #ff201e;">Psychological Distance</a></li>
 </ul>
 
 <div id="authorship_sentiment">
@@ -324,7 +324,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
   </p>
   <hr>
-  <p><span style="color:#ff4500">Are the Means Actually Different?</span></p>
+  <p><span style="color:#ff201e">Are the Means Actually Different?</span></p>
   {% include basic_plots/mean_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
     To double-check, we compared the mean cosine distances of the two sentiment groups.
@@ -340,7 +340,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     Not a huge surprise ! but good to have statistical confirmation rather than intuition alone.
   </p>
   <hr>
-  <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
+  <p><span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span></p>
   <p>
     We use a <strong>point-biserial correlation</strong>, since the distance is continuous and sentiment is binary.<br>
     The result:
@@ -374,7 +374,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     Similar writing styles align mildly with positivity, but the relationship remains weak.
   </p>
   <hr>
-  <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
+  <p><span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span></p>
   <ul>
     <li><b>r ≈ -0.009</b></li>
     <li><b>p &lt; 0.05</b></li>
@@ -403,7 +403,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     This reflects a strong statistical signal, but the <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
   </p>
   <hr>
-  <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
+  <p><span style="color:#ff201e">Correlation: How Strong Is the Relationship?</span></p>
   <ul>
     <li><b>r ≈ -0.08</b></li>
     <li><b>p &lt; 0.05</b></li>
@@ -419,7 +419,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 </script>
 
 <div class="ignore">
-          #### <span style="color:#ff4500">Embedding Distance & Link Sentiment</span>
+          #### <span style="color:#ff201e">Embedding Distance & Link Sentiment</span>
 
           We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
           Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
@@ -677,9 +677,9 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 ### Causal Analysis between Distance Type & Link Sentiment
 
 <ul data-tabs-5>
-  <li><a data-tabby-default href="#causal_authorship" style="color: #FF4500;">Authorship Distance</a></li>
-  <li><a href="#causal_stylo" style="color: #FF4500;">Stylometric Distance</a></li>
-  <li><a href="#causal_psycho" style="color: #FF4500;">Psychological Distance</a></li>
+  <li><a data-tabby-default href="#causal_authorship" style="color: #ff201e;">Authorship Distance</a></li>
+  <li><a href="#causal_stylo" style="color: #ff201e;">Stylometric Distance</a></li>
+  <li><a href="#causal_psycho" style="color: #ff201e;">Psychological Distance</a></li>
 </ul>
 
 <div id="causal_authorship">
@@ -830,7 +830,7 @@ These insights set the context for  a deeper question:
 
 ---
 
-## <span style="color:#ff4500">Within and Inter-Category Analysis</span>
+## <span style="color:#ff201e">Within and Inter-Category Analysis</span>
 
 <div class="section">
 
@@ -886,7 +886,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 
 
-### <span style="color:#ff4500">1) Relating Distances and Categories</span>
+### <span style="color:#ff201e">1) Relating Distances and Categories</span>
 
 We work at the category level rather than at the individual subreddit level.  
 For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
@@ -910,9 +910,9 @@ For stylometric and psychological distances, an extra step is required: we first
 ---
 
 <ul data-tabs-6>
-  <li><a data-tabby-default href="#authorship_categories" style="color: #FF4500;">Authorship Distance & Categories</a></li>
-  <li><a href="#stylometric_categories" style="color: #FF4500;">Stylometric Distance & Categories</a></li>
-  <li><a href="#psychological_categories" style="color: #FF4500;">Psychological Distance & Categories</a></li>
+  <li><a data-tabby-default href="#authorship_categories" style="color: #ff201e;">Authorship Distance & Categories</a></li>
+  <li><a href="#stylometric_categories" style="color: #ff201e;">Stylometric Distance & Categories</a></li>
+  <li><a href="#psychological_categories" style="color: #ff201e;">Psychological Distance & Categories</a></li>
 </ul>
 
 
@@ -1195,7 +1195,7 @@ Still, stylometric and psychological signatures show potential as light forms of
 <hr style="margin:40px 0;">
 
 
-### <span style="color:#ff4500">2) Negativity & Categories</span>
+### <span style="color:#ff201e">2) Negativity & Categories</span>
 
 We now take advantage of our hyperlink network, where each edge carries a sentiment from a <em>source</em> subreddit to a <em>target</em> subreddit, to understand how negativity circulates across categories.
 
@@ -1247,7 +1247,7 @@ This reinforces the idea that each thematic community on Reddit has its own rela
 
 
 
-### <span style="color:#ff4500">3) Negativity, Distances & Categories</span>
+### <span style="color:#ff201e">3) Negativity, Distances & Categories</span>
 
 Earlier , we established a key relationship:
 
@@ -1317,7 +1317,7 @@ This strongly supports an intuitive expectation:
 
 
 
-### <span style="color:#ff4500">Beyond Authorship Distance: Stylometric & Psychological Distances</span>
+### <span style="color:#ff201e">Beyond Authorship Distance: Stylometric & Psychological Distances</span>
 
 We repeat the same decomposition for the other two signature-based distances.
 
@@ -1372,7 +1372,7 @@ Taken together, these results reveal how category structure shapes the relations
 <hr style="margin:40px 0;">
 
 
-### <span style="color:#ff4500">4) Case Study: Humour &amp; Memes</span>
+### <span style="color:#ff201e">4) Case Study: Humour &amp; Memes</span>
 
 On the stylometric and psychological distance heatmaps (part 1), a clear pattern emerged:  
 the <b>“Humour &amp; Memes”</b> category appears well separated from all others, with higher centroid cosine distances for both signatures.  
@@ -1430,7 +1430,7 @@ This reinforces the idea that “Humour &amp; Memes” communities contribute di
 
 
 
-### <span style="color:#ff4500">Where does the negativity go?</span>
+### <span style="color:#ff201e">Where does the negativity go?</span>
 
 Earlier (section 2), we observed that:
 
@@ -1627,7 +1627,7 @@ Again, we see the same structure:
 
 
 
-### <span style="color:#ff4500">Conclusion of the Case Study</span>
+### <span style="color:#ff201e">Conclusion of the Case Study</span>
 
 This case study reveals a facet of Reddit that would have been very difficult to uncover without:
 

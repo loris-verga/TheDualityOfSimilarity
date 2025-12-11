@@ -1092,8 +1092,8 @@ We examined authorship, stylometric and psychological distances through the lens
   <li><b>Psychological distance:</b> Similar behavior to stylometric distance, but with slightly more cohesion within categories.</li>
 </ul>
 
-<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px;">
-<b>All silhouette scores are near zero.</b>  
+<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px; font-size:14px;">
+<b>All silhouette scores are near zero.</b>  <br>
 This confirms that Reddit categories heavily overlap across all distance types.   
 Still, stylometric and psychological signatures show potential as light forms of category identity. They are not strong enough to define boundaries, but they do capture broad differences in how communities write and emotionally express themselves.
 </div>

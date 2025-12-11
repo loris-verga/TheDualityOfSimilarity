@@ -1195,7 +1195,7 @@ Still, stylometric and psychological signatures show potential as light forms of
 <hr style="margin:40px 0;">
 
 
-### <span style="color:#ff4500">2) Negativity & Categories</span>
+### <span style="color:#ff4500">Negativity & Categories</span>
 
 We now take advantage of our hyperlink network, where each edge carries a sentiment from a <em>source</em> subreddit to a <em>target</em> subreddit, to understand how negativity circulates across categories.
 
@@ -1255,8 +1255,8 @@ Earlier , we established a key relationship:
 <b>Larger cosine distances → Negative links <br>
 Smaller cosine distances → Positive links</b> 
 </div>
-This causal relationship was found for both Authorship and Psychological Distances.
 
+This causal relationship was found for both Authorship and Psychological Distances.
 This was supported by a t-test and a causal analysis.
 
 We now extend this to incorporate categories and hyperlink types.
@@ -1285,7 +1285,7 @@ We then examine how the **mean cosine distance (authorship distance)** varies ac
 
 From the plot, we observe, at high confidence (non-overlapping 95% CIs), the following:
 
-<div style="background:#f7f7f7; padding:15px; border-radius:8px; margin:20px 0;">
+<div style="background:#f7f7f7; padding:15px; border-radius:8px; margin:20px 0; font-size:14px;">
 <b>1. Smaller distances → positive links (already established causally).</b><br>
 <b>2. Inter-cluster distances are larger than within-cluster distances.</b><br>
 <b>3. The trend holds for both positive and negative links.</b>
@@ -1309,7 +1309,7 @@ The same structure emerges:
   <li>Inter-cluster links have larger distances overall.</li>
 </ul>
 
-This strongly supports <b>Hypothesis n°7</b>:  
+This strongly supports <b>the hypothesis</b>:  
 <b>source and target subreddit pairs from the same category exhibit smaller mean cosine distances than pairs from different categories.</b>
 
 
@@ -1367,7 +1367,7 @@ Across authorship, psychological and stylometric distances, we find:
   <li><b>The effect is strongest for authorship distance, moderate for psychological distance, and weakest for stylometric distance</b></li>
 </ul>
 
-<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px;">
+<div style="background:#eef1f5; padding:15px; border-radius:10px; margin-top:20px; font-size:14px;">
 Taken together, these results reveal how category structure shapes the relationship between semantic distance and negativity:  
 <b>communities that are closer in content tend to interact more positively, while distant communities interact more negatively, especially across category boundaries.</b>
 </div>

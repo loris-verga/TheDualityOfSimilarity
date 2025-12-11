@@ -208,17 +208,127 @@ These distributions reveal the shape of each similarity space and provide intuit
   </div>
 ---
 
-## <span style="color:#ff4500">Visualizing the Psychological Space</span>
+## <span style="color:#ff4500">Visualizing the Spaces in 2D</span>
 
-To better understand how signatures relate across communities, we can visualize the high-dimensional psychological space into two dimensions.  
+To better understand how signatures relate across communities, we choose to visualize the high-dimensional psychological and stylometric spaces into two dimensions. As they are based on features we manually selected, we are keen to observe potential clusters that are formed.
 We present both **PCA** (linear structure) and **t-SNE** (local non-linear structure).
 PCA identifies the 2D projection plane that captures the maximum possible variance from the psychological features. On the other hand, t-SNE is a tool that reveals local structures and potential clusters by creating a 2D map that preserves the neighborhood relationships from the original high-dimensional space. We use it here to see if the psychological profiles form distinct groups.
 
+
+
+<ul data-tabs-pca>
+  <li><a data-tabby-default href="#stylometric_viz" style="color:#FF4500;">Stylometric Visualizations</a></li>
+  <li><a href="#psychological_viz" style="color:#FF4500;">Psychological Visualizations</a></li>
+</ul>
+
+
+<div id="stylometric_viz">
+
 <div class="two-heatmaps-container">
+        {% include basic_plots/pca_stylo.html %}
         {% include basic_plots/tsne_stylo.html %}
-        {% include basic_plots/pca_psycho.html %}
 </div>
 
+<h3 style="margin-top:30px; color:#d02c2c;">What does it all mean ?</h3>
+
+<h4>PCA</h4>
+<p>
+The PCA visualization allows us to capture <strong>61% of the total variance</strong>. This means the rest of the variance is not visible on the PCA graph, which is due to the features having low correlation with one another (mean absolute correlation ≈ 0.3).  
+</p>
+<p>
+We observe a <strong>single cloud of points</strong> with no visible clustering. This suggests that subreddit writing styles exist on a <strong>continuous spectrum</strong>, gradually blending into one another rather than forming a few distinct types.
+</p>
+
+<h4>t-SNE</h4>
+<p>
+t-SNE is a <strong>non-linear technique</strong> designed to map points that are neighbors in the 18-dimensional space to remain neighbors in 2D. It is particularly useful for identifying <strong>local structures and clusters</strong>, although the distances between clusters in t-SNE are <strong>not meaningful globally</strong>.  
+</p>
+<p>
+Our t-SNE visualization shows <strong>one large, relatively unified cloud</strong>, with some potential clusters forming at the edges.
+</p>
+
+<h4>Conclusion</h4>
+<p>
+The presence of clusters in the t-SNE graph indicates that some subreddits share a <strong>stylometric signature</strong>. However, the absence of clustering in PCA suggests that these groups are <strong>very close to each other</strong> along the principal components that explain most of the variance.  
+</p>
+<p>
+In summary, <strong>clusters exist but are tightly packed</strong>, and t-SNE allows us to visualize them despite their proximity.
+</p>
+
+</div>
+
+
+
+<div id="psychological_viz">
+
+<div class="two-heatmaps-container">
+        {% include basic_plots/pca_psycho.html %}
+        {% include basic_plots/tsne_psycho.html %}
+</div>
+
+<h3 style="margin-top:30px; color:#d02c2c;">What does it all mean ?</h3>
+
+<h4>PCA</h4>
+<p>
+The first two principal components explain <strong>24.07%</strong> of the total variance. As the original data is of high dimension, this value is not inherently bad to grasp to main tendency.  
+The resulting projection forms a <strong>dense, continuous cloud</strong> without sharp separations, suggesting that subreddits vary smoothly in their psychological tone.  
+</p>
+
+<h4>t-SNE</h4>
+<p>
+While t-SNE also reveals a large central mass, it uncovers <strong>peripheral clusters</strong>.  
+These clusters reflect <strong>locally cohesive psychological communities</strong>, even though the global landscape remains continuous.
+</p>
+
+<h4>Conclusion</h4>
+<p>
+Both visualizations confirm that while there may be local concentrations of similar subreddits, the overall structure of the data remains continuous and overlapping.  
+This continuity suggests that subreddit psychological signatures vary gradually, although some isolated clusters appear.
+</p>
+
+</div>
+
+
+<script>
+  var tabs = new Tabby('[data-tabs-pca]');
+</script>
+
+
+
+
+
+
+
+
+<div class="two-heatmaps-container">
+        { include basic_plots/pca_stylo.html %}
+        { include basic_plots/tsne_stylo.html %}
+</div>
+
+---
+
+### **What does it all mean ?**
+#### PCA
+The PCA visualization allows us to capture **61% of the total variance**. This means the rest of the variance is not visible on the PCA graph, which is due to the features having low correlation with one another (mean absolute correlation ≈ 0.3).  
+
+We observe a **single cloud of points** with no visible clustering. This suggests that subreddit writing styles exist on a **continuous spectrum**, gradually blending into one another rather than forming a few distinct types.
+
+#### t-SNE
+t-SNE is a **non-linear technique** designed to map points that are neighbors in the 18-dimensional space to remain neighbors in 2D. It is particularly useful for identifying **local structures and clusters**, although the distances between clusters in t-SNE are **not meaningful globally**.  
+
+Our t-SNE visualization shows **one large, relatively unified cloud**, with some potential clusters forming at the edges.
+
+#### Conclusion
+The presence of clusters in the t-SNE graph indicates that some subreddits share a **stylometric signature**. However, the absence of clustering in PCA suggests that these groups are **very close to each other** along the principal components that explain most of the variance.  
+
+In summary, **clusters exist but are tightly packed**, and t-SNE allows us to visualize them despite their proximity.
+
+---
+
+<div class="two-heatmaps-container">
+        { include basic_plots/pca_psycho.html %}
+        { include basic_plots/tsne_psycho.html %}
+</div>
 
 ---
 
@@ -231,6 +341,15 @@ The resulting projection forms a **dense, continuous cloud** without sharp separ
 #### **t-SNE**
 While t-SNE also reveals a large central mass, it uncovers **peripheral clusters**. 
 These clusters reflect **locally cohesive psychological communities**, even though the global landscape remains continuous.
+
+#### **Conclusion**
+Both visualizations confirm that while there may be local concentrations of similar subreddits, the overall structure of the data remains continuous and overlapping.
+This continuity suggests that subreddit psychological signatures vary gradually, although some isolated clusters appear.
+
+
+
+
+
 
 
 ## Distance Type & Observed Sentiment

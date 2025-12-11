@@ -11,6 +11,16 @@ but between communities that look almost exactly the <strong>same</strong>?
 
 Reddit, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
 
+<div class="container">
+<iframe src="graphs/reddit_1500_hyperlinks.html" style="width: 100%; height: 100%;"></iframe>
+</div>
+
+<p style="font-size:14px; color:#666; margin-top:10px;">
+        Above is a network of <b>1,500 inter-subreddit hyperlinks</b>.  
+        Each line represents a citation : praise, mockery, alliance, or conflict.  
+        Beneath Reddit’s surface lies a dense web of cross-community relations.
+    </p>
+
 Hidden inside these hyperlinks is a wealth of linguistic and psychological information:
 
 - how people <strong>write</strong>
@@ -19,7 +29,7 @@ Hidden inside these hyperlinks is a wealth of linguistic and psychological infor
 
 This leads us to a provocative set of questions:
 
-<strong>Does similarity create harmony… or fuel conflict?</strong>
+<strong>Does similarity create harmony… or fuel negative reactions?</strong>
 
 And more specifically:
 
@@ -1251,7 +1261,12 @@ The distribution plot confirms this:
 
 This reinforces the idea that each thematic community on Reddit has its own relational “profile”: some spread negativity, some are subject to it, and some are on both sides.
 
+### Sankey Diagram
 
+{% include basic_plots/sankey_nbr_negative_links.html %}
+
+This visual representation makes it possible to quantify the number of incoming and outgoing negative links between a chosen category and all others. <br>
+It offers a clear perspective on the role each category occupies in the hyperlink network, whether as a contributor or a receiver of negative sentiment.
 
 <hr style="margin:40px 0;">
 

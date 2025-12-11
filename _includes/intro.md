@@ -21,6 +21,13 @@ Reddit, with its tens of thousands of micro-communities, called subreddits, and 
     </iframe>
 </div>
 
+<div style="display:flex; justify-content:center; margin:40px 0;">
+    <iframe src="graphs/reddit_1500_hyperlinks.html"
+            style="width:80%; height:600px; border:1px solid #ddd; border-radius:10px;">
+    </iframe>
+</div>
+
+
 
 <p style="font-size:14px; color:#666; margin-top:10px;">
         Above is a network of <b>1,500 inter-subreddit hyperlinks</b>.  

@@ -836,7 +836,9 @@ These insights set the context for  a deeper question:
 
 <h4>Introduction</h4>
 
+<p>
 We assigned each of the ~51'000 subreddits in our embeddings dataframe to one of thirteen categories using an LLM.  
+</p>
 
 <p>
   More details about the methodology
@@ -865,7 +867,7 @@ The list covers broad thematic areas:<br><br>
 
 <div style="background:#f7f7f7; padding:12px; border-radius:8px; font-size:0.9rem;">
 <b>Note on accuracy:</b> Subreddit names are often uninformative, and thirteen categories are far too few to reflect the true diversity of Reddit. Expect misclassifications and broad bins that act more like umbrellas than precise labels.</div>
-
+<br><br>
 <p>
 Our aim here is simpler: look for large-scale patterns. We do not need perfect labels to detect whether broad thematic groups behave differently, interact differently, or exhibit distinct “signatures.”
 </p>
@@ -903,7 +905,7 @@ For stylometric and psychological distances, an extra step is required: we first
 
 <br><br>
 
-<h6 style="margin-top:30px; color:black;">In what follows, Left : Alignment between Categories and Right : Cohesion between Categories</h4>
+<h6 style="margin-top:30px; color:black;">In what follows, Left : Alignment between Categories and Right : Cohesion between Categories</h6>
 <br>
 
 ---

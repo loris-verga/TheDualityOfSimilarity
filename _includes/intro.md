@@ -828,8 +828,8 @@ For stylometric and psychological distances, an extra step is required: we first
 
 <ul data-tabs-6>
   <li><a data-tabby-default href="#authorship_categories" style="color: #FF4500;">Authorship Distance & Categories</a></li>
-  <li><a href="#stylometric_categories" style="color: #FF4500;">Stylometric Signatures & Categories</a></li>
-  <li><a href="#psychological_categories" style="color: #FF4500;">Psychological Signatures & Categories</a></li>
+  <li><a href="#stylometric_categories" style="color: #FF4500;">Stylometric Distance & Categories</a></li>
+  <li><a href="#psychological_categories" style="color: #FF4500;">Psychological Distance & Categories</a></li>
 </ul>
 
 

@@ -14,14 +14,14 @@ but between communities that look almost exactly the <strong>same</strong>?
 
 Reddit, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
 
-<div style="display:flex; justify-content:center; margin:40px 0;">
-    <iframe src="graphs/reddit_1500_hyperlinks.html"
-            style="width:80%; height:600px; border:1px solid #ddd; border-radius:10px;">
-    </iframe>
+We have prepared a interactive graph that represents only 1500 links between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits.
+
+<div style="display:flex; justify-content:center;">
+    <iframe src="graphs/reddit_1500_hyperlinks.html" style="width:100%; height:620px;"></iframe>
 </div>
 
-<p style="font-size:14px; color:#666; margin-top:10px;">
-        Above is a network of <b>1,500 inter-subreddit hyperlinks</b>.  
+<p style="font-size:14px; color:#666; text-align:center;">
+	The size of each subreddit node depends on the number of links it receives.  
 </p>
 
 Hidden inside these hyperlinks is a wealth of linguistic and psychological information:
@@ -55,10 +55,7 @@ In this data story, we map out what it means for two communities to be “simila
 
 <strong>Do birds of a feather flock together, or do they fight?</strong>
 
-<hr style="margin:40px 0;">
-
-<section id="section2">
-</section>
+---
 
 ## <span style="color:#ff4500">A Map of Reddit’s Interactions</span>
 
@@ -75,9 +72,7 @@ Together, these distances serve as a springboard to define communities can be cl
 
 ### 1. Shared Authorship
 
-Every subreddit has a “population signature”: a set of users who post there.  
-The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community.  
-Two subreddits are close in this space **when many of the same users interact with both**.
+Every subreddit has a “population signature”: a set of users who post there. The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community. Two subreddits are close in this space **when many of the same users interact with both**.
 
 Mathematically, we compare two communities using **cosine similarity**:
 
@@ -87,8 +82,8 @@ To turn similarity into a distance, we use:
 
 <p> \( \text{Shared Authorship Distance} = 1 − \text{cosine\_sim(A, B)} \) </p>
 
-- **0** → communities whose authorship overlaps
-- **2** → communities with no shared authorship
+- **0** → Communities whose authorship overlaps
+- **2** → Communities with no shared authorship
 
 ---
 
@@ -98,39 +93,32 @@ Communities also differ in how they **sound** : their structure, complexity, and
 
 To capture a community’s writing style, we compute a **stylometric signature**, a vector built from features such as:
 
-- average character count  
-- fraction of uppercase letters  
-- number of unique stopwords  
-- average characters per sentence  
-- automated readability index  
+- Average character count  
+- Fraction of uppercase letters
+- Average characters per sentence  
+- <a href="https://en.wikipedia.org/wiki/Automated_readability_index" target="_blank">Automated readability index</a>
 
-Because these features vary wildly in scale, we first apply **Z-score normalization**:
-
-<div> $$ \frac{x - \mu}{\sigma} $$ </div>
+<p>Because these features vary wildly in scale, we first apply <b>Z-score normalization</b>: \( \frac{x - \mu}{\sigma} \)</p>
 
 This ensures that no single feature dominates simply because it has larger numerical values.
 
 Once each subreddit has its stylometric signature, we again compare communities via **cosine similarity** as we want to measure **proportions**, not magnitudes like we would obtain with Euclidean distance.
 
-The resulting distance is:
-
-<p> \( \text{Stylometric Distance} = 1 − \text{cosine\_sim(style\_A, style\_B)} \) </p>
+<p>The resulting distance is: \( \text{Stylometric Distance} = 1 − \text{cosine\_sim(style\_A, style\_B)} \) </p>
 
 ---
 
 ### 3. Psychological Signatures: What Communities Express
 
-Language also reveals psychology.  
-Each hyperlink post in the dataset includes **64 LIWC features** and **VADER sentiment scores**. LIWC is a text analysis program that counts words belonging to psychologically meaningful categories. Meanwhile, VADER (Valence Aware Dictionary and Sentiment Reasoner) is a rule-based sentiment analysis tool. It uses a specialized dictionary designed to accurately understand the emotions and opinions found in social media texts.
+Language also reveals psychology. Each hyperlink post in the dataset includes **64 LIWC features** and **VADER sentiment scores**. LIWC is a text analysis program that counts words belonging to psychologically meaningful categories. Meanwhile, VADER (Valence Aware Dictionary and Sentiment Reasoner) is a rule-based sentiment analysis tool. It uses a specialized dictionary designed to accurately understand the emotions and opinions found in social media texts.
 
 For each subreddit, we aggregate the normalized LIWC+VADER features of all its outgoing posts to define a **psychological signature**, the average emotional and cognitive expression shown by its authors when interacting with other communities.
 
-As before, similarity is computed as a distance, using cosine similarity:
+As before, similarity is computed as a distance, using cosine similarity: 
 
-`Psychological Distance = 1 − cosine_sim(psych_A, psych_B)`
+<p>\( \text{Psychological Distance} = 1 − \text{cosine\_sim(psych\_A, psych\_B)} \)</p>
 
-This gives us a final observation angle:  
-**how similar communities are in what they feel and the emotions they display**.
+This gives us a final observation angle: **How similar communities are in what they feel and the emotions they display**.
 
 ---
 
@@ -139,9 +127,7 @@ This gives us a final observation angle:
 Before linking similarity to conflict, we first examine how each distance is distributed across Reddit.  
 These distributions reveal the shape of each similarity space and provide intuition for how communities are built.
 
----
-
-### Distribution of Distances
+#### Distribution of Distances
 
   <ul data-tabs-3>
     <li><a data-tabby-default href="#shared_dist" style="color: #ff4500;">Shared Authorship Distance</a></li>
@@ -149,7 +135,7 @@ These distributions reveal the shape of each similarity space and provide intuit
     <li><a href="#psycho_dist" style="color: #ff4500;">Psychological Distance</a></li>
   </ul>
 
-  <div id="shared_dist">
+  <div id="shared_dist" class="tab_content_shadow">
     {% include basic_plots/distrib_cosine_dist_embeddings.html %}
     <p>
       The right-skewed distribution indicates that subreddits tend to be 
@@ -160,7 +146,7 @@ These distributions reveal the shape of each similarity space and provide intuit
     </p>
   </div>
 
-  <div id="stylo_dist">
+  <div id="stylo_dist" class="tab_content_shadow">
     {% include basic_plots/distrib_cosine_dist_stylo.html %}
     <p>
       In contrast to the embeddings distribution, stylometric distances are typically 
@@ -174,7 +160,7 @@ These distributions reveal the shape of each similarity space and provide intuit
     </p>
   </div>
 
-  <div id="psycho_dist">
+  <div id="psycho_dist" class="tab_content_shadow">
     <div style="text-align:center;">
       {% include basic_plots/distrib_cosine_dist_psycho.html %}
     </div>
@@ -242,7 +228,7 @@ On the other hand, t-SNE is a tool that reveals local structures and potential c
 </ul>
 
 
-<div id="stylometric_viz">
+<div id="stylometric_viz" class="tab_content_shadow">
 
 <div class="two-heatmaps-container">
         {% include basic_plots/pca_stylo.html %}
@@ -279,7 +265,7 @@ In summary, <strong>clusters exist but are tightly packed</strong>, and t-SNE al
 
 
 
-<div id="psychological_viz">
+<div id="psychological_viz" class="tab_content_shadow">
 
 <div class="two-heatmaps-container">
         {% include basic_plots/pca_psycho.html %}
@@ -327,7 +313,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   <li><a href="#psychological_sentiment" style="color: #ff4500;">Psychological Distance</a></li>
 </ul>
 
-<div id="authorship_sentiment">
+<div id="authorship_sentiment" class="tab_content_shadow">
   {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
   <p>
     Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links.
@@ -373,7 +359,8 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   </p>
 </div>
 
-<div id="stylometric_sentiment">
+<div id="stylometric_sentiment" class="tab_content_shadow">
+  <br>
   <p>
     Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>, assessing the writing style similarity.
   </p>
@@ -384,8 +371,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
 
   <p>
-    The difference is statistically significant : negative interactions occur between slightly more stylometrically distant communities.  <br>
-    But the effect size is small: about <b>0.77 vs. 0.75</b>.  
+    The difference is statistically significant : negative interactions occur between slightly more stylometrically distant communities. But the effect size is small: about <b>0.77 vs. 0.75</b>.  
   </p>
   <p>
     Even though the t-test returns <b>p ≤ 0.05</b> (allowing us to reject the null), the absolute difference (<b>≈ 0.017</b>) is minimal.  
@@ -404,7 +390,8 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   </p>
 </div>
 
-<div id="psychological_sentiment">
+<div id="psychological_sentiment" class="tab_content_shadow">
+  <br>
   <p>
     We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  <br>
     As before, we begin by comparing distance values across the two sentiment groups.
@@ -413,8 +400,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   {% include basic_plots/mean_psycho_cosine_dist_across_groups_of_link_sentiment.html %}
 
   <p>
-    The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant.  <br>
-    With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
+    The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant. With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
   </p>
   <p>
     The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  <br>
@@ -703,7 +689,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   <li><a href="#causal_psycho" style="color: #ff4500;">Psychological Distance</a></li>
 </ul>
 
-<div id="causal_authorship">
+<div id="causal_authorship" class="tab_content_shadow">
   <p>
     To test whether being “far apart” in embedding space actually changes the sentiment of links, we frame distance as a treatment.
   </p>
@@ -745,7 +731,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   </ul>
 </div>
 
-<div id="causal_stylo">
+<div id="causal_stylo" class="tab_content_shadow">
   <p>
     To parallel our earlier analysis, we test whether being stylometrically “far apart” actually causes shifts in link sentiment.  
     Because stylometric distance is continuous, we apply the same dichotomization strategy:
@@ -790,7 +776,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   </p>
 </div>
 
-<div id="causal_psycho">
+<div id="causal_psycho" class="tab_content_shadow">
   <p>
     To determine whether psychological distance <i>causally</i> affects link sentiment, we apply the same causal framework used in the previous distance analyses.  <br>
     Even though the linear correlation is small, causal effects may still exist, possibly non-linear or shaped by confounders, so we use propensity score matching.
@@ -850,8 +836,6 @@ These insights set the context for  a deeper question:
 **How does similarity in each space relate to negativity in cross-subreddit interactions?**
 
 ---
-<section id="section4">
-</section>
 
 ## <span style="color:#ff4500">Within and Inter-Category Analysis</span>
 
@@ -939,7 +923,7 @@ For stylometric and psychological distances, an extra step is required: we first
 </ul>
 
 
-<div id="authorship_categories">
+<div id="authorship_categories" class="tab_content_shadow">
 
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">
@@ -1007,7 +991,7 @@ A silhouette score near 0 confirms that subreddit clusters overlap, reflecting t
 
 
 
-<div id="stylometric_categories">
+<div id="stylometric_categories" class="tab_content_shadow">
 
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">
@@ -1046,7 +1030,7 @@ Close to zero again. Categories differ in stylometric identity but overlap heavi
 </div>
 
 
-<div id="psychological_categories">
+<div id="psychological_categories" class="tab_content_shadow">
 
 <div class="two-heatmaps-container">
 	<div class="heatmap-container">

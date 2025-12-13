@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Psychological Slider</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.8.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.8.0.min.js"></script>
+<script type="text/javascript">
+Bokeh.set_log_level("info");
+</script>
+  </head>
+  <body>
+    <div id="ed17f6df-3bf3-4683-ba1b-74237df1c0c8" data-root-id="p1141" style="display: contents;"></div>
+  
+    <script type="application/json" id="a8131123-0b57-4d89-8fd5-05384abdf108">
+      {"74aafb61-8062-4307-9a05-a99192ddb80b":{"version":"3.8.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1151","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1152"}}},"roots":[{"type":"object","name":"Row","id":"p1141","attributes":{"children":[{"type":"object","name":"Figure","id":"p1011","attributes":{"width":900,"height":450,"x_range":{"type":"object","name":"FactorRange","id":"p1021","attributes":{"factors":["Adult &amp; Pornography","Automobile","Countries &amp; Cities","Cryptocurrencies","Gaming","Humour &amp; Memes","Lifestyle","Miscellaneous","Music","Politics &amp; News","Science &amp; Nature &amp; Education","Sport","Technology"]}},"y_range":{"type":"object","name":"DataRange1d","id":"p1013","attributes":{"start":0,"end":0.27}},"x_scale":{"type":"object","name":"CategoricalScale","id":"p1022"},"y_scale":{"type":"object","name":"LinearScale","id":"p1023"},"title":{"type":"object","name":"Title","id":"p1014","attributes":{"text":"Weighted Psychological Score per Category"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1053","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1008","attributes":{"selected":{"type":"object","name":"Selection","id":"p1009","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1010"},"data":{"type":"map","entries":[["category",["Adult &amp; Pornography","Automobile","Countries &amp; Cities","Cryptocurrencies","Gaming","Humour &amp; Memes","Lifestyle","Miscellaneous","Music","Politics &amp; News","Science &amp; Nature &amp; Education","Sport","Technology"]],["score",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/wFoAJf/bZNV9ECEvz+aHS5rLTeXP3liJNKDrqM/3QhAfWgZnj9eHvB8ho21P3vObm0ywsU/booYaFzjvj8lrymG1U23P3pCziIFirI/mTqSyhgMwj/QPag1fw2vPz4GGSj+Qpo/oJJ+FhJOlT8acGxwaAAAAA=="},"shape":[13],"dtype":"float64","order":"little"}],["LIWC_Anger",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/3MtXpe5/swTe5/UTyq7io/bM0BBxvqtj0VMNtmrvDzLU/7xmn35Dkfzi7zv7BlEtmV86zpqL7V8v6WZ4HV7hgb24/adMVB9H+wvtEqfkJu/1X6H/ssCk9P77BViTrHkRky0BwABybnlaAAAAA=="},"shape":[13],"dtype":"float64","order":"little"}],["LIWC_Negemo",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC//u35O0yb88H9h2fso1khA/aM0BBw0+Xcs4JC+1NEnZJBRlehop/sGc5ckroqPM1+wmzJiz/KnzDPoFpr+InzmX2DmyLJb0S39rvmOCezP7wjP2Dc9enzQreYB8Q/syu+txGewDVHJieaAAAAA=="},"shape":[13],"dtype":"float64","order":"little"}],["LIWC_Posemo",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NgAIEP9gxQIFCbq8K27oh9Ru+nVR/P37Z/MXmOxSXfF/YKzmy9kzqf2e+wD9zRxPzKfkoJq1y6xwP7C5YvXu+Le2JvMH2aY+KWi/Yf/GRPhT4+Zz/Bf9Yn5o2n7QPipDV/LTxjDwAEGxGCaAAAAA=="},"shape":[13],"dtype":"float64","order":"little"}],["LIWC_Anx",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/ytIDtPI+frKfsK3V7JsOQvsLbzLjNwW7bBPOKh50HHZQfuEG5Ovqf49br9hot8EQZ/n9gxg8MF+wraD18yDH9vP+NzFHX/3hr3U8efXJlW/tm9LsXhlKfUMqg6oct87/43se+wBpkckV2gAAAA="},"shape":[13],"dtype":"float64","order":"little"}],["LIWC_Sad",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC/2NggACRqFUz+zuu24dlP45kuv/WviHmoJdu+hz7lnMaLo9O3bH/9x8E3tsHJT2a9y7ilb3NlhinKLuH9m0Z8+s/zH1t/2ly4GkF6ef2P7Ydlb++4Y69RNWa2en3L9tHuERn6asftAcAMQu7uGgAAAA="},"shape":[13],"dtype":"float64","order":"little"}],["LIWC_Affect",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAC//uwKic9vfCNPQMUNDw4emAuwwz7B3VrjzdNOmNfkXGOa2/sY6j8B/sbS1ULrRSe2lucdW89bX/f/seMZBmpA9fsE2oTEtfsf2ofsJH3z6cPZ+wPeKcJ3infac9wZVJ4Vf8uewC8+c86aAAAAA=="},"shape":[13],"dtype":"float64","order":"little"}],["color",["#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500","#ff4500"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1054","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1055"}}},"glyph":{"type":"object","name":"VBar","id":"p1050","attributes":{"x":{"type":"field","field":"category"},"width":{"type":"value","value":0.7},"top":{"type":"field","field":"score"},"line_color":{"type":"value","value":"white"},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.75}}},"nonselection_glyph":{"type":"object","name":"VBar","id":"p1051","attributes":{"x":{"type":"field","field":"category"},"width":{"type":"value","value":0.7},"top":{"type":"field","field":"score"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"VBar","id":"p1052","attributes":{"x":{"type":"field","field":"category"},"width":{"type":"value","value":0.7},"top":{"type":"field","field":"score"},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"field","field":"color"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1020","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1034"},{"type":"object","name":"WheelZoomTool","id":"p1035","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1036","attributes":{"dimensions":"both","overlay":{"type":"object","name":"BoxAnnotation","id":"p1037","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1043","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1042","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1044"},{"type":"object","name":"ResetTool","id":"p1045"},{"type":"object","name":"HelpTool","id":"p1046"}]}},"toolbar_location":null,"left":[{"type":"object","name":"LinearAxis","id":"p1029","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1030","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1031"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1032"}}}],"below":[{"type":"object","name":"CategoricalAxis","id":"p1024","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1025"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1026"},"major_label_orientation":1.0,"major_label_policy":{"type":"object","name":"AllLabels","id":"p1027"}}}],"center":[{"type":"object","name":"Grid","id":"p1028","attributes":{"axis":{"id":"p1024"}}},{"type":"object","name":"Grid","id":"p1033","attributes":{"dimension":1,"axis":{"id":"p1029"}}}]}},{"type":"object","name":"Column","id":"p1140","attributes":{"children":[{"type":"object","name":"Slider","id":"p1056","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"type":"object","name":"CustomJS","id":"p1062","attributes":{"args":{"type":"map","entries":[["source",{"id":"p1008"}],["sliders",[{"id":"p1056"},{"type":"object","name":"Slider","id":"p1057","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1062"}]]]},"title":"LIWC_Negemo","start":0,"end":1,"value":0.5,"step":0.01}},{"type":"object","name":"Slider","id":"p1058","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1062"}]]]},"title":"LIWC_Posemo","start":0,"end":1,"value":0.5,"step":0.01}},{"type":"object","name":"Slider","id":"p1059","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1062"}]]]},"title":"LIWC_Anx","start":0,"end":1,"value":0.5,"step":0.01}},{"type":"object","name":"Slider","id":"p1060","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1062"}]]]},"title":"LIWC_Sad","start":0,"end":1,"value":0.5,"step":0.01}},{"type":"object","name":"Slider","id":"p1061","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1062"}]]]},"title":"LIWC_Affect","start":0,"end":1,"value":0.5,"step":0.01}}]]]},"code":"\nconst data = source.data;\nconst n = data['category'].length;\nconst features = ['LIWC_Anger', 'LIWC_Negemo', 'LIWC_Posemo', 'LIWC_Anx', 'LIWC_Sad', 'LIWC_Affect'];\nlet weights = [];\nfor (let i=0; i&lt;features.length; i++){\n    weights.push(sliders[i].value);\n}\n\n// Compute weighted scores\nfor (let i=0; i&lt;n; i++){\n    let s = 0;\n    for (let j=0; j&lt;features.length; j++){\n        s += data[features[j]][i] * weights[j];\n    }\n    data['score'][i] = s;\n}\n\n// Normalize so sum of all scores = 1\nlet total = 0;\nfor (let i=0; i&lt;n; i++){\n    total += data['score'][i];\n}\nfor (let i=0; i&lt;n; i++){\n    data['score'][i] = data['score'][i] / total;\n}\n\nsource.change.emit();\n"}}]]]},"title":"LIWC_Anger","start":0,"end":1,"value":0.5,"step":0.01}},{"id":"p1057"},{"id":"p1058"},{"id":"p1059"},{"id":"p1060"},{"id":"p1061"}],"spacing":3}}]}}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('a8131123-0b57-4d89-8fd5-05384abdf108').textContent;
+              const render_items = [{"docid":"74aafb61-8062-4307-9a05-a99192ddb80b","roots":{"p1141":"ed17f6df-3bf3-4683-ba1b-74237df1c0c8"},"root_ids":["p1141"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>

@@ -57,7 +57,7 @@ In this data story, we map out what it means for two communities to be “simila
 
 ---
 
-## <span style="color:#ff4500">A Map of Reddit’s Interactions</span>
+## <span style="color:#ff4500" id="section2">A Map of Reddit’s Interactions</span>
 
 Before we can understand why communities clash, we must first understand **how they resemble one another**.  
 On Reddit, similarity is not a single dimension. It is an intricate mix of **who posts where**, **how people write**, and **what psychological traits they express**.  
@@ -837,7 +837,7 @@ These insights set the context for  a deeper question:
 
 ---
 
-## <span style="color:#ff4500">Within and Inter-Category Analysis</span>
+## <span style="color:#ff4500" id="section4">Within and Inter-Category Analysis</span>
 
 <div class="section">
 
@@ -1248,8 +1248,6 @@ The distribution plot confirms this:
 
 This reinforces the idea that each thematic community on Reddit has its own relational “profile”: some spread negativity, some are subject to it, and some are on both sides.
 
-### Sankey Diagram
-
 {% include basic_plots/sankey_nbr_negative_links.html %}
 
 This visual representation makes it possible to quantify the number of incoming and outgoing negative links between a chosen category and all others. <br>
@@ -1261,7 +1259,7 @@ It offers a clear perspective on the role each category occupies in the hyperlin
 
 ### <span style="color:#ff4500">3) Negativity, Distances & Categories</span>
 
-Earlier , we established a key relationship:
+Earlier, we established a key relationship:
 
 <div style="background:#eef1f5; padding:12px; border-radius:8px; width: fit-content; font-size:0.9rem;">
 <b>Larger cosine distances → Negative links <br>
@@ -1320,8 +1318,7 @@ The same structure emerges:
   <li>Inter-cluster links have larger distances overall.</li>
 </ul>
 
-This strongly supports an intuitive expectation:  
-<b>source and target subreddit pairs from the same category exhibit smaller mean cosine distances than pairs from different categories.</b>
+This strongly supports an intuitive expectation: <b>Source and target subreddit pairs from the same category exhibit smaller mean cosine distances than pairs from different categories.</b>
 
 
 

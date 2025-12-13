@@ -662,7 +662,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 
 ### Causal Analysis between Distance Type & Link Sentiment
 
-<p>In order to determine whether distance really has an effect on the link sentiment between subreddits, we must formally do so by means of a causal analysis.</p>
+<p>In order to determine whether a distance really has an effect on the link sentiment between subreddits, we must formally do so by means of a causal analysis.</p>
 
 <ul data-tabs-5>
   <li><a data-tabby-default href="#causal_authorship" style="color: #ff4500;">Authorship Distance</a></li>
@@ -813,7 +813,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   var tabs = new Tabby('[data-tabs-5]');
 </script>
 <br>
-These insights set the context for  a deeper question: **How does similarity in each space relate to negativity in cross-subreddit interactions?**
+These insights set the context for a deeper question: **How does similarity in each space relate to negativity in cross-subreddit interactions?**
 
 ---
 
@@ -1359,13 +1359,12 @@ We now evaluate whether this is true in the data.
 
 #### Comparing “Humour & Memes” centroids to all other categories
 
-Our goal is simple:  
-<b>compare the stylometric and psychological centroids of “Humour &amp; Memes” to the median centroid of all other categories</b>.
+Our goal is simple: <b>Compare the stylometric and psychological centroids of “Humour &amp; Memes” to the median centroid of all other categories</b>.
 
 {% include basic_plots/deviation_stylometric_features.html %}
 {% include basic_plots/deviation_psychological_features.html %}
 
-#### Stylometric deviations
+##### Stylometric deviations
 
 As expected:
 
@@ -1376,9 +1375,7 @@ As expected:
 
 Even without inspecting the textual content, this aligns with our expectations about meme-style communication: short, intense, loud, and sharp.
 
-
-
-#### Psychological deviations
+##### Psychological deviations
 
 Psychological signatures show an even stronger deviation:
 
@@ -1405,9 +1402,7 @@ Yet it does <b>not</b> receive an unusually high number of negative links in ret
 </p>
 </div>
 <br>
-This asymmetry is striking and raises a central question:
-<h5 style="margin-top:30px; color:#d02c2c;">Which subreddits are responsible for emitting this negativity, and where do they send it?</h5>
-
+This asymmetry is striking and raises a central question: Which subreddits are responsible for emitting this negativity, and where do they send it?
 
 #### Subreddits emitting the most negative links
 
@@ -1418,7 +1413,7 @@ Below is the output from the analysis:
   <thead>
     <tr style="background:#ffefef;">
       <th style="padding:8px; border:1px solid #ccc;">Source Subreddit</th>
-      <th style="padding:8px; border:1px solid #ccc;">Negative Links</th>
+      <th style="padding:8px; border:1px solid #ccc;"># Negative Links</th>
     </tr>
   </thead>
   <tbody>
@@ -1560,10 +1555,7 @@ For instance, <strong>gamingcirclejerk</strong> shows strong negative linking to
 Overall, one can search almost any topic within <em>Humor & Memes</em> and observe the same pattern: these subreddits tend to cast negative references toward topic-focused communities rather than toward other humor subreddits. Below is an example using <strong>nba</strong>.
 </p>
 
-
-
-
-#### Additional example: the “nbacirclejerk” pattern
+##### Additional example: the “nbacirclejerk” pattern
 
 To illustrate how general this behaviour is, here is the table generated for the topic “NBA”:
 
@@ -1586,14 +1578,11 @@ To illustrate how general this behaviour is, here is the table generated for the
 </table>
 </div>
 
-Again, we see the same structure:  
-<b>a humour-oriented circlejerk subreddit mocking the “serious” version of the topic.</b>
+Again, we see the same structure: <b>a humour-oriented circlejerk subreddit mocking the “serious” version of the topic.</b>
 
-
-
+Below is a graph representing a subset of subreddits containing "circlejerk" in their name (in red) as well as the top 3 subreddits to which they have the most negative links (in green). Feel free to interact with the graph (zoom, move nodes) so you can see what we're talking about !
+<iframe src="graphs/humour_subreddits_graph.html" style="width:100%; height:620px;"></iframe>
 <hr style="margin:40px 0;">
-
-
 
 ### <span style="color:#ff4500">Conclusion of the Case Study</span>
 
@@ -1619,11 +1608,6 @@ Our analysis shows that:
 	it ultimately revealed a broader pattern: a network of humor-oriented subreddits that plays a central role in shaping Reddit’s negativity dynamics.
 </p>
 </div>
-
-
-
-
-
 
 <script>
 	var tabs_3 = new Tabby('[data-tabs-3]');

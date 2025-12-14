@@ -2,17 +2,13 @@
 </section>
 <br><br>
 
-# <span style="color:#ff4500">Birds of a Feather… Fight Together?</span>
+# <span style="color:#ff4500">Birds of a Feather… Flock Together?</span>
 
-### Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
+### Exploring How Similarity Shapes negativity in Reddit’s Ecosystem
 
-We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes.
+We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes. But what if this intuition is wrong? What if the most intense disputes don’t arise between opposites… but between communities that look almost exactly the <strong>same</strong>?
 
-But what if this intuition is wrong?<br>
-What if the most intense disputes don’t arise between opposites…  
-but between communities that look almost exactly the <strong>same</strong>?
-
-Reddit, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
+<a href="https://www.reddit.com/" target="_blank">Reddit</a>, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
 
 We have prepared a interactive graph that represents only 1500 links between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits.
 
@@ -41,7 +37,7 @@ These datasets allow us to view Reddit not as a collection of disconnected topic
 
 In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
 
-<strong>Do birds of a feather flock together, or do they fight?</strong>
+<strong>Do birds of a feather really flock together ?</strong>
 
 ---
 
@@ -72,9 +68,7 @@ Every subreddit has a “population signature”: a set of users who post there.
 
 ### 2. Stylometric Signatures: How Communities Write
 
-Communities also differ in how they **sound** : their structure, complexity, and textual habits.
-
-To capture a community’s writing style, we compute a **stylometric signature**, a vector built from features such as:
+Communities also differ in how they **sound** : their structure, complexity, and textual habits. To capture a community’s writing style, we compute a **stylometric signature**, a vector built from features such as:
 
 - Average character count  
 - Fraction of uppercase letters
@@ -105,7 +99,7 @@ This gives us a final observation angle: **How similar communities are in what t
 
 ### <span style="color:##ff4500">Exploring the Geometry of Similarity</span>
 
-Before linking similarity to conflict, we first examine how each distance is distributed across Reddit.  
+Before linking similarity to negativity, we first examine how each distance is distributed across Reddit.  
 These distributions reveal the shape of each similarity space and provide intuition for how communities are built.
 
 #### Distribution of Distances
@@ -297,28 +291,16 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 <div id="authorship_sentiment" class="tab_content_shadow">
   {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
   <p>
-    Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links.
+    Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links. This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
   </p>
   <p>
-    This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
-  </p>
-  <p>
-    Positive links show a small bump near cosine distance <strong>~0.1</strong>, while negative links spike around <strong>~0.6</strong>.
-  </p>
-  <p>
-    The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
+    Positive links show a small bump near cosine distance <strong>~0.1</strong>, while negative links spike around <strong>~0.6</strong>. The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
   </p>
   <hr>
   <p><span style="color:#ff4500">Are the Means Actually Different?</span></p>
   {% include basic_plots/mean_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
-    To double-check, we compared the mean cosine distances of the two sentiment groups.
-  </p>
-  <p>
-    A two-sample t-test (α = 0.05) confirms it:
-  </p>
-  <p>
-    <strong>p ≤ 0.05</strong>, so we reject the null hypothesis.
+    To double-check, we compared the mean cosine distances of the two sentiment groups. A two-sample t-test (α = 0.05) confirms it: <strong>p ≤ 0.05</strong>, so we reject the null hypothesis.
   </p>
   <p>
     Communities with positive links are, on average, <strong>closer</strong> in embedding space than those with negative links.  
@@ -335,8 +317,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     <li><strong>p &lt; 0.05</strong></li>
   </ul>
   <p>
-    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>.<br>
-    A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
+    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>. A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
   </p>
 </div>
 
@@ -821,8 +802,6 @@ These insights set the context for a deeper question: **How does similarity in e
 
 <div class="section">
 
-<h4>Introduction</h4>
-
 <p>
 We assigned each of the ~51'000 subreddits in our embeddings dataframe to one of thirteen categories using an LLM. More details about the methodology <a href="https://github.com/epfl-ada/ada-2025-project-adal0vel4ce/tree/a2c92d143cd6405df79c4e125ac1611b7264c6e8/src/scripts/LLM_classification" target="_blank">here</a>.
 </p>
@@ -870,7 +849,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 ### <span style="color:#ff4500">1) Relating Distances and Categories</span>
 
-We work at the category level rather than at the individual subreddit level. For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
+We work at the category level rather than at the individual subreddit level. For each category, we compute a **centroid** representing the average embedding or signature of subreddits belonging to that category. These centroids allow us to assess:
 <ul>
   <li><b>Alignment between categories</b> (how similar their centroids are)</li>
   <li><b>Cohesion within categories</b> (how close individual subreddits are to their corresponding centroid compared to other centroids)</li>
@@ -1387,6 +1366,8 @@ Psychological signatures show an even stronger deviation:
 
 This reinforces the idea that “Humour &amp; Memes” communities contribute disproportionately to negative content on Reddit.
 
+<iframe src="plots/psychological_slider.html" style="width:100%; height:400px;"></iframe>
+	
 <hr style="margin:40px 0;">
 
 
@@ -1528,23 +1509,19 @@ A key pattern stands out:
 
 <div style="background:#fff4db; padding:15px; border-radius:10px;">
 	<p style="margin-bottom:0;">
-		<b>The subreddits emitting the most negativity within “Humour &amp; Memes” almost never target each other.</b><br><br>
-		Instead, they target <b>general-purpose</b> or <b>topic-specific</b> communities such as<br>
-		<em>askreddit, todayilearned, gaming, worldnews, pics, funny, fitness, movies…</em>
+		<b>The subreddits emitting the most negativity within “Humour &amp; Memes” almost never target each other</b>. Instead, they target <b>general-purpose</b> or <b>topic-specific</b> communities such as <em>askreddit, todayilearned, gaming, worldnews, pics, funny, fitness, movies…</em>
 	</p>
 </div> <br>
 
 These communities behave almost like “commentary” or “parody” subreddits that take aim at mainstream Reddit spaces, not at humour-oriented neighbours.
 
-
-
 <div style="text-align:center; margin-top:20px;">
   <img src="assets/img/cluster/bipartite_humor_memes_negative_links.png" width="85%" alt="Bipartite graph of negative links">
-  <div style="font-size:0.85rem;"><em>Bipartite representation of negative links from Humour &amp; Memes subreddits to their targets.</em></div>
+  <div style="font-size:14px; text-align:center;"><em>Bipartite representation of negative links from a subset of Humour &amp; Memes subreddits (in red) to their targets (in green). For each of the source subreddits, we show only the top 5 subreddits to which they emit the most negative hyperlinks</em></div>
 </div> <br>
 
 <p>
-The bipartite graph reveals that while <em>Humor & Memes</em> subreddits often emit negative links, they rarely target each other. Instead, the negativity is usually directed toward broader, more neutral subreddits outside the humor ecosystem.
+The graph reveals that while <em>Humor & Memes</em> subreddits often emit negative links, they do not primarily target each other. Instead, the negativity is usually directed toward broader, more neutral subreddits outside the humor ecosystem.
 </p>
 
 <p>

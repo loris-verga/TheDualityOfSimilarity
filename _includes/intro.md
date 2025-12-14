@@ -329,6 +329,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 </div>
 
 <div id="stylometric_sentiment" class="tab_content_shadow">
+	{% include basic_plots/indiv_distrib_cosine_dist_stylo_by_link_sentiment.html %}
   <p>
     Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>, assessing the writing style similarity.
   </p>
@@ -359,6 +360,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 </div>
 
 <div id="psychological_sentiment" class="tab_content_shadow">
+	{% include basic_plots/indiv_distrib_cosine_dist_psycho_by_link_sentiment.html %}
   <p>
     We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  <br>
     As before, we begin by comparing distance values across the two sentiment groups.

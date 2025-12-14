@@ -19,7 +19,7 @@ We often imagine online conflict as something that emerges between groups that s
 </g></svg></a>, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
 </p>
 
-We have prepared a interactive graph that represents only 1500 links between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits.
+We have prepared a interactive graph that represents only 1500 links between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits by zooming in and moving nodes around.
 
 <iframe src="graphs/reddit_1500_hyperlinks.html" style="width:100%; height:620px;"></iframe>
 
@@ -1568,7 +1568,7 @@ To illustrate how general this behaviour is, here is the table generated for the
 
 Again, we see the same structure: <b>a humour-oriented circlejerk subreddit mocking the “serious” version of the topic.</b>
 
-Below is a graph representing a subset of subreddits containing "circlejerk" in their name (in red) as well as the top 3 subreddits to which they have the most negative links (in green). Feel free to interact with the graph (zoom, move nodes) so you can see what we're talking about !
+Below is a graph representing a subset of subreddits containing "circlejerk" in their name (in red) as well as the top 3 subreddits to which they have the most negative links (in green). Feel free to interact with the graph (zoom in, move nodes) so you can see what we're talking about !
 <iframe src="graphs/humour_subreddits_graph.html" style="width:100%; height:620px;"></iframe>
 <hr style="margin:40px 0;">
 

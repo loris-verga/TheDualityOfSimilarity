@@ -38,3 +38,9 @@ li {
 	padding: 15px;
 	border-radius: 0 0 10px 10px;
 }
+
+.two-barplots-container {
+	display: flex;
+	width: 150%;
+	margin-left: -20%;
+}

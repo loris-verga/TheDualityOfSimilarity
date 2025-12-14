@@ -2,19 +2,24 @@
 </section>
 <br><br>
 
-# <span style="color:#ff4500">Birds of a Feather… Fight Together?</span>
+# <span style="color:rgba(255,69,0,0.85);">Birds of a Feather… Flock Together?</span>
 
-### Exploring How Similarity Shapes Conflict in Reddit’s Ecosystem
+### Exploring How Similarity Shapes negativity in Reddit’s Ecosystem
 
-We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes.
+We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes. But what if this intuition is wrong? What if the most intense disputes don’t arise between opposites… but between communities that look almost exactly the <strong>same</strong>?
 
-But what if this intuition is wrong?<br>
-What if the most intense disputes don’t arise between opposites…  
-but between communities that look almost exactly the <strong>same</strong>?
+<p>
+<a href="https://www.reddit.com/" target="_blank" style="color:#ff4500;">Reddit<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	<path d="M 82.428 50.508 c -1.138 0.569 -1.822 1.765 -1.736 3.034 c 0.055 0.826 0.055 1.665 0 2.492 c -0.005 0.071 -0.007 0.142 -0.007 0.213 c 0 13.109 -15.921 23.774 -35.492 23.774 c -19.57 0 -35.492 -10.665 -35.492 -23.774 c 0 -0.072 -0.003 -0.143 -0.007 -0.215 c -0.056 -0.825 -0.056 -1.662 0 -2.488 c 0.09 -1.324 -0.659 -2.564 -1.873 -3.099 c -0.596 -0.264 -1.177 -0.656 -1.721 -1.164 c -1.269 -1.19 -1.999 -2.803 -2.054 -4.542 c -0.055 -1.744 0.572 -3.404 1.771 -4.679 c 1.189 -1.269 2.802 -1.999 4.542 -2.054 c 0.071 -0.003 0.141 -0.004 0.211 -0.004 c 1.666 0 3.244 0.624 4.462 1.77 c 1.073 1.009 2.705 1.141 3.928 0.314 c 7.141 -4.832 15.466 -7.465 24.081 -7.615 c 8.165 0.19 20.729 3.054 27.998 8.005 c 1.229 0.837 2.875 0.701 3.95 -0.322 c 1.173 -1.117 2.694 -1.763 4.277 -1.818 c 3.576 -0.106 6.644 2.701 6.776 6.231 C 86.086 47.057 84.667 49.388 82.428 50.508 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+	<path d="M 61.951 64.101 c -1.017 -0.509 -2.234 -0.397 -3.143 0.286 c -3.925 2.951 -8.777 4.46 -13.655 4.261 c -0.083 -0.004 -0.167 -0.005 -0.25 0 c -4.878 0.191 -9.726 -1.309 -13.655 -4.262 c -1.324 -0.996 -3.204 -0.729 -4.201 0.596 c -0.995 1.325 -0.729 3.206 0.596 4.201 c 4.732 3.557 10.512 5.482 16.387 5.482 c 0.333 0 0.666 -0.006 0.999 -0.019 c 5.791 0.22 11.526 -1.447 16.32 -4.702 c 1.3 -0.329 2.263 -1.507 2.263 -2.909 v -0.251 C 63.612 65.648 62.969 64.609 61.951 64.101 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+	<path d="M 77.391 33.213 c -2.177 0.076 -4.28 0.737 -6.107 1.899 c -6.924 -4.041 -16.675 -6.539 -24.476 -7.268 l 3.719 -17.482 l 13.879 2.774 c 0.793 3.758 4.127 6.58 8.121 6.58 c 4.585 0 8.302 -3.717 8.302 -8.302 c 0 -4.585 -3.717 -8.302 -8.302 -8.302 c -3.05 0 -5.708 1.649 -7.152 4.1 L 50.797 4.298 c -1.297 -0.291 -2.623 -0.058 -3.742 0.654 c -1.12 0.712 -1.894 1.819 -2.181 3.117 C 44.86 8.133 44.848 8.2 44.838 8.268 l -4.14 19.461 c -7.805 0.513 -15.33 2.907 -22.003 7.001 c -2.029 -1.269 -4.386 -1.918 -6.834 -1.832 c -3.259 0.103 -6.281 1.47 -8.506 3.845 c -2.236 2.378 -3.41 5.484 -3.307 8.747 c 0.103 3.259 1.47 6.281 3.853 8.513 c 0.472 0.441 0.966 0.838 1.479 1.189 c 0.005 0.387 0.02 0.772 0.045 1.157 c 0.078 15.731 17.885 28.512 39.76 28.512 c 21.878 0 39.685 -12.78 39.761 -28.513 c 0.025 -0.408 0.041 -0.818 0.045 -1.229 c 3.187 -2.318 5.12 -6.102 5.049 -10.147 C 89.792 38.261 84.111 32.963 77.391 33.213 z M 80.605 50.788 c -1.082 0.541 -1.733 1.679 -1.651 2.886 c 0.053 0.786 0.053 1.584 0 2.37 c -0.005 0.067 -0.007 0.135 -0.007 0.202 c 0 12.47 -15.145 22.615 -33.761 22.615 c -18.615 0 -33.761 -10.145 -33.761 -22.615 c 0 -0.068 -0.002 -0.136 -0.007 -0.204 c -0.054 -0.785 -0.054 -1.581 0 -2.366 c 0.086 -1.26 -0.626 -2.439 -1.782 -2.948 C 9.069 50.477 8.518 50.104 8 49.62 c -1.208 -1.132 -1.902 -2.666 -1.954 -4.321 c -0.053 -1.659 0.544 -3.238 1.685 -4.451 c 1.131 -1.208 2.666 -1.901 4.321 -1.954 c 0.067 -0.002 0.134 -0.003 0.201 -0.003 c 1.585 0 3.085 0.594 4.245 1.684 c 1.021 0.959 2.573 1.085 3.736 0.299 c 6.793 -4.596 14.712 -7.101 22.906 -7.244 c 7.767 0.181 19.718 2.905 26.632 7.614 c 1.169 0.796 2.734 0.667 3.757 -0.307 c 1.116 -1.063 2.563 -1.677 4.068 -1.729 c 3.401 -0.101 6.32 2.569 6.445 5.927 C 84.084 47.505 82.735 49.723 80.605 50.788 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+	<path d="M 36.416 51.59 c 0 -3.561 -2.904 -6.465 -6.465 -6.465 s -6.465 2.904 -6.465 6.465 s 2.888 6.432 6.465 6.465 C 33.512 58.055 36.416 55.151 36.416 51.59 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+	<path d="M 59.82 45.349 c -3.561 0 -6.465 2.904 -6.465 6.465 c 0 3.561 2.904 6.465 6.465 6.465 l -0.049 0.241 c 0.113 0 0.209 0 0.321 0 c 3.561 -0.145 6.336 -3.143 6.192 -6.706 C 66.284 48.253 63.38 45.349 59.82 45.349 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,69,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g></svg></a>, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
+</p>
 
-Reddit, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
-
-We have prepared a interactive graph that represents only 1500 links between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits.
+We have prepared a interactive graph that represents only 1500 links between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits by zooming in and moving nodes around.
 
 <iframe src="graphs/reddit_1500_hyperlinks.html" style="width:100%; height:620px;"></iframe>
 
@@ -37,11 +42,9 @@ To investigate this, we rely on two large datasets from Stanford:
 - <strong>850,000 inter-subreddit hyperlinks</strong> enriched with stylometric and psychological attributes  
 - <strong>300-dimensional subreddit embeddings</strong> capturing patterns of shared authorship
 
-These datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>.
+These datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>. In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
 
-In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
-
-<strong>Do birds of a feather flock together, or do they fight?</strong>
+<strong>Do birds of a feather really flock together ?</strong>
 
 ---
 
@@ -72,9 +75,7 @@ Every subreddit has a “population signature”: a set of users who post there.
 
 ### 2. Stylometric Signatures: How Communities Write
 
-Communities also differ in how they **sound** : their structure, complexity, and textual habits.
-
-To capture a community’s writing style, we compute a **stylometric signature**, a vector built from features such as:
+Communities also differ in how they **sound** : their structure, complexity, and textual habits. To capture a community’s writing style, we compute a **stylometric signature**, a vector built from features such as:
 
 - Average character count  
 - Fraction of uppercase letters
@@ -105,7 +106,7 @@ This gives us a final observation angle: **How similar communities are in what t
 
 ### <span style="color:##ff4500">Exploring the Geometry of Similarity</span>
 
-Before linking similarity to conflict, we first examine how each distance is distributed across Reddit.  
+Before linking similarity to negativity, we first examine how each distance is distributed across Reddit.  
 These distributions reveal the shape of each similarity space and provide intuition for how communities are built.
 
 #### Distribution of Distances
@@ -297,28 +298,16 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 <div id="authorship_sentiment" class="tab_content_shadow">
   {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
   <p>
-    Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links.
+    Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links. This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
   </p>
   <p>
-    This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
-  </p>
-  <p>
-    Positive links show a small bump near cosine distance <strong>~0.1</strong>, while negative links spike around <strong>~0.6</strong>.
-  </p>
-  <p>
-    The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
+    Positive links show a small bump near cosine distance <strong>~0.1</strong>, while negative links spike around <strong>~0.6</strong>. The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
   </p>
   <hr>
   <p><span style="color:#ff4500">Are the Means Actually Different?</span></p>
   {% include basic_plots/mean_cosine_dist_across_groups_of_link_sentiment.html %}
   <p>
-    To double-check, we compared the mean cosine distances of the two sentiment groups.
-  </p>
-  <p>
-    A two-sample t-test (α = 0.05) confirms it:
-  </p>
-  <p>
-    <strong>p ≤ 0.05</strong>, so we reject the null hypothesis.
+    To double-check, we compared the mean cosine distances of the two sentiment groups. A two-sample t-test (α = 0.05) confirms it: <strong>p ≤ 0.05</strong>, so we reject the null hypothesis.
   </p>
   <p>
     Communities with positive links are, on average, <strong>closer</strong> in embedding space than those with negative links.  
@@ -335,12 +324,12 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     <li><strong>p &lt; 0.05</strong></li>
   </ul>
   <p>
-    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>.<br>
-    A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
+    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>. A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
   </p>
 </div>
 
 <div id="stylometric_sentiment" class="tab_content_shadow">
+	{% include basic_plots/indiv_distrib_cosine_dist_stylo_by_link_sentiment.html %}
   <p>
     Having assessed how semantic distance relates to interaction sentiment, we now turn to a complementary dimension: <b>stylometric similarity</b>, assessing the writing style similarity.
   </p>
@@ -371,6 +360,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 </div>
 
 <div id="psychological_sentiment" class="tab_content_shadow">
+	{% include basic_plots/indiv_distrib_cosine_dist_psycho_by_link_sentiment.html %}
   <p>
     We now extend our analysis to a third dimension: <b>psychological distance</b>, a metric capturing how differently two communities express emotions, attitudes, and evaluative language.  <br>
     As before, we begin by comparing distance values across the two sentiment groups.
@@ -821,8 +811,6 @@ These insights set the context for a deeper question: **How does similarity in e
 
 <div class="section">
 
-<h4>Introduction</h4>
-
 <p>
 We assigned each of the ~51'000 subreddits in our embeddings dataframe to one of thirteen categories using an LLM. More details about the methodology <a href="https://github.com/epfl-ada/ada-2025-project-adal0vel4ce/tree/a2c92d143cd6405df79c4e125ac1611b7264c6e8/src/scripts/LLM_classification" target="_blank">here</a>.
 </p>
@@ -870,7 +858,7 @@ As expected, Lifestyle, Miscellaneous, Gaming, and Humour &amp; Memes dominate b
 
 ### <span style="color:#ff4500">1) Relating Distances and Categories</span>
 
-We work at the category level rather than at the individual subreddit level. For each category, we compute a **centroid** representing the average embedding or signature of its subreddits. These centroids allow us to assess:
+We work at the category level rather than at the individual subreddit level. For each category, we compute a **centroid** representing the average embedding or signature of subreddits belonging to that category. These centroids allow us to assess:
 <ul>
   <li><b>Alignment between categories</b> (how similar their centroids are)</li>
   <li><b>Cohesion within categories</b> (how close individual subreddits are to their corresponding centroid compared to other centroids)</li>
@@ -946,6 +934,7 @@ The right heatmap shows that many subreddits are not especially close to their a
 </div>
 
 <p>
+<br>
 A silhouette score near 0 confirms that subreddit clusters overlap, reflecting the lack of clear category boundaries. Contrary to expectations of distinct, isolated clusters, Reddit’s broad ecosystem creates thousands of overlapping categories, resulting in a large and interconnected mass of subreddits rather than well-defined clusters.
 </p>
 
@@ -1293,7 +1282,7 @@ This strongly supports an intuitive expectation: <b>Source and target subreddit 
 
 We repeat the same decomposition for the other two signature-based distances.
 
-<div class="two-heatmaps-container">
+<div class="two-barplots-container" style="margin-bottom:-20px;">
 	{% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
 	{% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
 </div>
@@ -1387,6 +1376,10 @@ Psychological signatures show an even stronger deviation:
 
 This reinforces the idea that “Humour &amp; Memes” communities contribute disproportionately to negative content on Reddit.
 
+It is interesting to be able to compare the level of certain psychological features between each category. We have selected six features that you can tweak in order to see the prevalence of each of these feature in the categories. For example, it is interesting to notice how "Music" bar increases when sadness features increase. Play with the different sliders to discover patterns !
+
+<iframe src="plots/psychological_slider.html" style="width:100%; height:450px;"></iframe>
+	
 <hr style="margin:40px 0;">
 
 
@@ -1528,23 +1521,19 @@ A key pattern stands out:
 
 <div style="background:#fff4db; padding:15px; border-radius:10px;">
 	<p style="margin-bottom:0;">
-		<b>The subreddits emitting the most negativity within “Humour &amp; Memes” almost never target each other.</b><br><br>
-		Instead, they target <b>general-purpose</b> or <b>topic-specific</b> communities such as<br>
-		<em>askreddit, todayilearned, gaming, worldnews, pics, funny, fitness, movies…</em>
+		<b>The subreddits emitting the most negativity within “Humour &amp; Memes” almost never target each other</b>. Instead, they target <b>general-purpose</b> or <b>topic-specific</b> communities such as <em>askreddit, todayilearned, gaming, worldnews, pics, funny, fitness, movies…</em>
 	</p>
 </div> <br>
 
 These communities behave almost like “commentary” or “parody” subreddits that take aim at mainstream Reddit spaces, not at humour-oriented neighbours.
 
-
-
-<div style="text-align:center; margin-top:20px;">
-  <img src="assets/img/cluster/bipartite_humor_memes_negative_links.png" width="85%" alt="Bipartite graph of negative links">
-  <div style="font-size:0.85rem;"><em>Bipartite representation of negative links from Humour &amp; Memes subreddits to their targets.</em></div>
+<div style="text-align:center;">
+  <img src="assets/img/cluster/bipartite_humor_memes_negative_links.png" width="70%" alt="Bipartite graph of negative links">
+  <div style="font-size:14px; text-align:center;"><em>Bipartite representation of negative links from a subset of Humour &amp; Memes subreddits (in red) to their targets (in green). For each of the source subreddits, we show only the top 5 subreddits to which they emit the most negative hyperlinks</em></div>
 </div> <br>
 
 <p>
-The bipartite graph reveals that while <em>Humor & Memes</em> subreddits often emit negative links, they rarely target each other. Instead, the negativity is usually directed toward broader, more neutral subreddits outside the humor ecosystem.
+The graph reveals that while <em>Humor & Memes</em> subreddits often emit negative links, they do not primarily target each other. Instead, the negativity is usually directed toward broader, more neutral subreddits outside the humor ecosystem.
 </p>
 
 <p>
@@ -1580,7 +1569,7 @@ To illustrate how general this behaviour is, here is the table generated for the
 
 Again, we see the same structure: <b>a humour-oriented circlejerk subreddit mocking the “serious” version of the topic.</b>
 
-Below is a graph representing a subset of subreddits containing "circlejerk" in their name (in red) as well as the top 3 subreddits to which they have the most negative links (in green). Feel free to interact with the graph (zoom, move nodes) so you can see what we're talking about !
+Below is a graph representing a subset of subreddits containing "circlejerk" in their name (in red) as well as the top 3 subreddits to which they have the most negative links (in green). Feel free to interact with the graph (zoom in, move nodes) so you can see what we're talking about !
 <iframe src="graphs/humour_subreddits_graph.html" style="width:100%; height:620px;"></iframe>
 <hr style="margin:40px 0;">
 

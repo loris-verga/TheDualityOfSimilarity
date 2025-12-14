@@ -42,9 +42,7 @@ To investigate this, we rely on two large datasets from Stanford:
 - <strong>850,000 inter-subreddit hyperlinks</strong> enriched with stylometric and psychological attributes  
 - <strong>300-dimensional subreddit embeddings</strong> capturing patterns of shared authorship
 
-These datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>.
-
-In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
+These datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>. In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
 
 <strong>Do birds of a feather really flock together ?</strong>
 
@@ -934,6 +932,7 @@ The right heatmap shows that many subreddits are not especially close to their a
 </div>
 
 <p>
+<br>
 A silhouette score near 0 confirms that subreddit clusters overlap, reflecting the lack of clear category boundaries. Contrary to expectations of distinct, isolated clusters, Reddit’s broad ecosystem creates thousands of overlapping categories, resulting in a large and interconnected mass of subreddits rather than well-defined clusters.
 </p>
 
@@ -1281,7 +1280,7 @@ This strongly supports an intuitive expectation: <b>Source and target subreddit 
 
 We repeat the same decomposition for the other two signature-based distances.
 
-<div class="two-heatmaps-container">
+<div class="two-barplots-container" style="margin-bottom:-20px;">
 	{% include basic_plots/mean_stylo_dist_for_type_of_links.html %}
 	{% include basic_plots/mean_psycho_dist_for_type_of_links.html %}
 </div>

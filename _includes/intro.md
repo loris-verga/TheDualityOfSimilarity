@@ -1515,8 +1515,8 @@ A key pattern stands out:
 
 These communities behave almost like “commentary” or “parody” subreddits that take aim at mainstream Reddit spaces, not at humour-oriented neighbours.
 
-<div style="text-align:center; margin-top:20px;">
-  <img src="assets/img/cluster/bipartite_humor_memes_negative_links.png" width="85%" alt="Bipartite graph of negative links">
+<div style="text-align:center;">
+  <img src="assets/img/cluster/bipartite_humor_memes_negative_links.png" width="70%" alt="Bipartite graph of negative links">
   <div style="font-size:14px; text-align:center;"><em>Bipartite representation of negative links from a subset of Humour &amp; Memes subreddits (in red) to their targets (in green). For each of the source subreddits, we show only the top 5 subreddits to which they emit the most negative hyperlinks</em></div>
 </div> <br>
 

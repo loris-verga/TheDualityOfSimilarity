@@ -1,86 +1,206 @@
+<style>
+  /* Smooth scroll and prevent horizontal overflow */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website with Navbar</title>
+  /* Hero section - break out of 65% body width */
+  .hero-section {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 2rem 2rem 2rem;
+    /* Body is 65% centered, so left offset = (100-65)/2 = 17.5vw */
+    width: 100vw;
+    margin-left: -17.5vw;
+    box-sizing: border-box;
+  }
 
-  <style>
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-      margin: 0;
-      padding: 0;
+  /* Hero content */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-weight: 800;
+    color: rgba(255,69,0,0.9);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(255,69,0,0.1);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.4rem);
+    color: var(--pico-color);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--pico-muted-color);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .hero-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,69,0,0.6);
+    animation: bounce 2s infinite;
+    z-index: 200;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
     }
-
-    /* Glassy navbar */
-    .glass-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255, 30, 0, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 0 0 0 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: center;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+    40% {
+      transform: translateX(-50%) translateY(-10px);
     }
-
-    /* Tabs */
-    .glass-nav ul {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    60% {
+      transform: translateX(-50%) translateY(-5px);
     }
+  }
 
-    .glass-nav a {
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 17.6px; /* 10% bigger than 16px */
-      color: #fafafa;
-      padding: 6px 14px;
-      border-radius: 8px;
-      transition: 0.25s ease;
-    }
+  .hero-scroll-indicator svg {
+    width: 24px;
+    height: 24px;
+  }
 
-    .glass-nav a:hover {
-      background: rgba(255, 80, 50, 0.7);
-      color: white;
-    }
+  /* Hero Image Styles */
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin-top: 0.5rem;
+    z-index: 100;
+  }
 
-    /* Sections */
-    section {
-      padding: 0;          /* remove padding */
-      margin: 0;
-      min-height: 0vh;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* align titles to the left */
-      justify-content: flex-start;
-      box-sizing: border-box;
-    }
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-    section h2 {
-      margin: 0;
-      padding: 16px 24px 8px 24px; /* some space for title */
-    }
+  /* Navbar container - break out of 65% body width */
+  .nav-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: all 0.3s ease;
+    /* Body is 65% centered, so left offset = (100-65)/2 = 17.5vw */
+    width: 100vw;
+    margin-left: -17.5vw;
+    box-sizing: border-box;
+  }
 
-    section p {
-      margin: 0;
-      padding: 0 0px 0px 0px;
-    }
+  /* Glassy navbar */
+  .glass-nav {
+    width: 100%;
+    background: rgba(255, 30, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+  }
 
-  </style>
-</head>
-<body>
+  /* Tabs */
+  .glass-nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 2px 2rem;
+  }
 
-  <!-- Navbar -->
+  .glass-nav a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fafafa;
+    padding: 0px 14px;
+    border-radius: 8px;
+    transition: 0.25s ease;
+  }
+
+  .glass-nav a:hover {
+    background: rgba(255, 80, 50, 0.7);
+    color: white;
+  }
+
+  /* Sections */
+  section {
+    padding: 0;
+    margin: 0;
+    min-height: 0vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  section h2 {
+    margin: 0;
+    padding: 16px 24px 8px 24px;
+  }
+
+  section p {
+    margin: 0;
+    padding: 0 0px 0px 0px;
+  }
+</style>
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <!-- Title Content First -->
+  <div class="hero-content">
+    <h1 class="hero-title">Birds of a Feather… Flock Together?</h1>
+    <h2 class="hero-subtitle">Exploring How Similarity Shapes Negativity in Reddit's Ecosystem</h2>
+  </div>
+
+  <!-- Hero Image Below -->
+  <div class="hero-image-container">
+    <img src="{{ 'img/orange.png' | relative_url }}" alt="Hero Image" class="hero-image">
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="hero-scroll-indicator">
+    <span style="font-size: 0.875rem;">Scroll to explore</span>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</div>
+
+<!-- Rellax Parallax Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+<script>
+  var rellax = new Rellax('.rellax');
+</script>
+
+<!-- Sticky Navbar -->
+<div class="nav-container">
   <nav class="glass-nav">
     <ul>
       <li><a href="#section1">Overview</a></li>
@@ -92,26 +212,4 @@
       <li><a href="#section7">Predictive Power of Sentiment</a></li>
     </ul>
   </nav>
-
-  <!-- JS: Scroll up/down navbar -->
-  <script>
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('.glass-nav');
-
-    window.addEventListener('scroll', function() {
-      const st = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (st > lastScrollTop) {
-        // scrolling down → hide navbar
-        navbar.style.transform = 'translateY(-100%)';
-      } else {
-        // scrolling up → show navbar
-        navbar.style.transform = 'translateY(0)';
-      }
-
-      lastScrollTop = st <= 0 ? 0 : st;
-    });
-  </script>
-
-</body>
-</html>
+</div>

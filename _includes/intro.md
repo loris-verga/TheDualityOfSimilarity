@@ -1,12 +1,10 @@
 <section id="section1">
 </section>
-<br><br>
 
-# <span style="color:rgba(255,69,0,0.85);">Birds of a Feather… Flock Together?</span>
+## <span style="color:#ff4500" id="section1"> Similarity of Reddit communities and nature of interactions </span>
 
-### Exploring How Similarity Shapes negativity in Reddit’s Ecosystem
 
-We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes. But what if this intuition is wrong? What if the most intense disputes don’t arise between opposites… but between communities that look almost exactly the <strong>same</strong>?
+We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes. But what if this intuition is wrong? What if the most intense disputes don't arise between opposites… but between communities that look almost exactly the <strong>same</strong>?
 
 <p>
 <a href="https://www.reddit.com/" target="_blank" style="color:#ff4500;">Reddit<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
@@ -46,7 +44,6 @@ These datasets allow us to view Reddit not as a collection of disconnected topic
 
 <strong>Do birds of a feather really flock together ?</strong>
 
----
 
 ## <span style="color:#ff4500" id="section2">A Map of Reddit’s Interactions</span>
 

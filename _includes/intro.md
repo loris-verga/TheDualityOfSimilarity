@@ -17,37 +17,43 @@ We often imagine online conflict as something that emerges between groups that s
 </g></svg></a>, with its tens of thousands of micro-communities, called subreddits, and millions of cross-subreddit references, offers the opportunity to explore this paradox. Communities cite one another, sometimes to praise, often to mock, and occasionally to even escalate into cultural wars.
 </p>
 
-We have prepared a interactive graph that represents only 1500 links between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits by zooming in and moving nodes around.
+When a Reddit user cites a post authored by another user, we call this a hyperlink, because the URL of the cited post is simply included in the citing post. We will conduct our research primarily using these hyperlinks. 
 
-<iframe src="graphs/reddit_1500_hyperlinks.html" style="width:100%; height:620px;"></iframe>
+We rely on two large datasets from Stanford:
 
-<p style="font-size:14px; color:#666; text-align:center;">
+- <strong>850,000 inter-subreddit hyperlinks</strong> enriched with stylometric and psychological attributes  
+- <strong>300-dimensional subreddit embeddings</strong> capturing patterns of shared authorship between subreddits. 
+
+<div style="background-color: rgba(255, 69, 0, 0.08); border-left: 4px solid rgba(255, 69, 0, 0.6); padding: 1.5rem; margin: 2rem 0; border-radius: 4px; overflow: hidden;">
+  <p style="margin: 0 0 1.5rem 0; font-size: 1rem; line-height: 1.6;">
+    We have prepared a interactive graph that represents only 1500 hyperlinks between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits by zooming in and moving nodes around.
+  </p>
+  <iframe src="graphs/reddit_1500_hyperlinks.html" style="width:100%; height:620px; border: none; border-radius: 4px; display: block;"></iframe>
+  <p style="font-size:14px; color:#666; text-align:center;">
 	The size of each subreddit node depends on the number of links it receives.  
-</p>
+  </p>
+</div>
 
 Hidden inside these hyperlinks is a wealth of linguistic and psychological information:
 
-- how people <strong>write</strong>
-- how they <strong>feel</strong>
+- How people <strong>write</strong>
+- How they <strong>feel</strong>
 - how communities <strong>relate</strong> to one another
 
 This leads us to a provocative set of questions: <strong>Does similarity create harmony… or fuel negative reactions?</strong>
 
-And more specifically: <em>What does “similarity” even mean?</em> Shared users? Writing style? Emotional tone? <em>Do subreddits within the same thematic universe behave alike?</em> <em>Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
+And more specifically: <em>How to define similarity?</em> Shared users? Writing style? Emotional tone? <em>Do subreddits within the same thematic universe behave alike?</em> <em>Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
 
-To investigate this, we rely on two large datasets from Stanford:
-
-- <strong>850,000 inter-subreddit hyperlinks</strong> enriched with stylometric and psychological attributes  
-- <strong>300-dimensional subreddit embeddings</strong> capturing patterns of shared authorship
-
-These datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>. In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
+The datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>. In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
 
 <strong>Do birds of a feather really flock together ?</strong>
 
 
-## <span style="color:#ff4500" id="section2">A Map of Reddit’s Interactions</span>
+## <span style="color:#ff4500" id="section2">How to define Similarity ? </span>
 
-Before we can understand why communities clash, we must first understand **how they resemble one another**. On Reddit, similarity is not a single dimension. It is an intricate mix of **who posts where**, **how people write**, and **what psychological traits they express**.  
+Before we can understand why communities clash, we must first understand **how they resemble one another**. On Reddit, similarity is not a single dimension. It is an intricate mix of **common authors**, **how authors write**, and **what psychological traits they express**.
+
+<img src="{{ 'img/spiderman.png' | relative_url }}" alt="Spiderman pointing at Spiderman" style="max-width: 350px; width: 100%; height: auto; float: right; margin: 0 0 1rem 2rem;">
 
 To capture this, we introduce **three notions of similarity**, each one giving rise to a corresponding **distance** between subreddits:
 
@@ -59,7 +65,9 @@ Together, these distances serve as a springboard to define communities can be cl
 
 ### 1. Shared Authorship
 
-Every subreddit has a “population signature”: a set of users who post there. The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community. Two subreddits are close in this space **when many of the same users interact with both**. Hence, we consider two "close" subreddits as being similar.
+Every subreddit has a "population signature": a set of users who post there. The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community. Two subreddits are close in this space **when many of the same users interact with both**. Hence, we consider two "close" subreddits as being similar.
+
+<img src="{{ 'img/shared_authorship2.png' | relative_url }}" alt="Shared Authorship" style="max-width: 350px; width: 100%; height: auto; float: left; margin: 0 2rem 1rem 0;">
 
 <p>Mathematically, we compare two communities using <b>cosine similarity</b>: \( \text{cosine\_sim}(A, B) = \frac{A \cdot B}{\left\lVert A \right\rVert \cdot \left\lVert B \right\rVert} \) </p>
 
@@ -68,7 +76,7 @@ Every subreddit has a “population signature”: a set of users who post there.
 - **0** → Communities whose authorship overlaps
 - **2** → Communities with no shared authorship
 
----
+
 
 ### 2. Stylometric Signatures: How Communities Write
 

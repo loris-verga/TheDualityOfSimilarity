@@ -24,12 +24,14 @@ We rely on two large datasets from Stanford:
 - <strong>850,000 inter-subreddit hyperlinks</strong> enriched with stylometric and psychological attributes  
 - <strong>300-dimensional subreddit embeddings</strong> capturing patterns of shared authorship between subreddits. 
 
-<div style="background-color: rgba(255, 69, 0, 0.08); border-left: 4px solid rgba(255, 69, 0, 0.6); padding: 1.5rem; margin: 2rem 0; border-radius: 4px; overflow: hidden;">
-  <p style="margin: 0 0 1.5rem 0; font-size: 1rem; line-height: 1.6;">
+<div style="background-color: rgba(255, 69, 0, 0.08); border-left: 4px solid rgba(255, 69, 0, 0.6); padding: 1rem 1rem 0rem 1rem; margin: 1rem 0; border-radius: 4px; overflow: hidden;">
+  <p style="margin: 0 0 1.5rem 0;">
     We have prepared a interactive graph that represents only 1500 hyperlinks between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits by zooming in and moving nodes around.
   </p>
-  <iframe src="graphs/reddit_1500_hyperlinks.html" style="width:100%; height:620px; border: none; border-radius: 4px; display: block;"></iframe>
-  <p style="font-size:14px; color:#666; text-align:center;">
+  <div style="height:580px; border-radius: 10px; overflow: hidden; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+    <iframe src="graphs/reddit_1500_hyperlinks.html" style="position: relative; width:100%; height:620px; bottom:20px;" scrolling="no"></iframe>
+  </div>
+  <p style="font-size:14px; color:#666; text-align:center; margin-top:10px;">
 	The size of each subreddit node depends on the number of links it receives.  
   </p>
 </div>

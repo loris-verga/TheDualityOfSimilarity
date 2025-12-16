@@ -48,6 +48,15 @@ The datasets allow us to view Reddit not as a collection of disconnected topics,
 
 <strong>Do birds of a feather really flock together ?</strong>
 
+<div style="border: 2px solid rgba(255,69,0,0.6); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; background-color: rgba(255,69,0,0.03);">
+  <h3 style="color: #ff4500; margin-top: 0;">Research Questions</h3>
+  <ol>
+    <li>How does a difference in shared authorship, stylometric, or psychological similarity impact the negativity of inter-community interactions?</li>
+    <li>Are subreddits within the same topical category generally more similar to each other (based on shared authorship, stylometric, and psychological measures) than subreddits from different topical categories?</li>
+    <li>How do the 3 different measures of inter-community similarity—shared authorship, stylometric, and psychological—align and relate to each other?</li>
+    <li>Among the three defined similarity metrics, which one provides the greatest predictive power for classifying the sentiment of an inter-community hyperlink as either positive or negative?</li>
+  </ol>
+</div>
 
 ## <span style="color:#ff4500" id="section2">How to define Similarity ? </span>
 
@@ -65,22 +74,24 @@ Together, these distances serve as a springboard to define communities can be cl
 
 ### 1. Shared Authorship
 
-Every subreddit has a "population signature": a set of users who post there. The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community. Two subreddits are close in this space **when many of the same users interact with both**. Hence, we consider two "close" subreddits as being similar.
-
+Every subreddit has a "population signature": a set of users who post there. The Stanford embeddings dataset compresses this information into a **300-dimensional vector** for each community. Two subreddits are close in this space **when many of the same authors post in both**. 
 <img src="{{ 'img/shared_authorship2.png' | relative_url }}" alt="Shared Authorship" style="max-width: 350px; width: 100%; height: auto; float: left; margin: 0 2rem 1rem 0;">
 
-<p>Mathematically, we compare two communities using <b>cosine similarity</b>: \( \text{cosine\_sim}(A, B) = \frac{A \cdot B}{\left\lVert A \right\rVert \cdot \left\lVert B \right\rVert} \) </p>
+<p>Mathematically, we compare two embedding vectors using <b>cosine similarity</b>: \( \text{cosine\_sim}(A, B) = \frac{A \cdot B}{\left\lVert A \right\rVert \cdot \left\lVert B \right\rVert} \) </p>
 
 <p>To turn similarity into a distance, we use: \( \text{Shared Authorship Distance} = 1 − \text{cosine\_sim(A, B)} \). The cosine distance ranges from 0 to 2.</p>
+ 
 
 - **0** → Communities whose authorship overlaps
 - **2** → Communities with no shared authorship
 
-
+Intuitively, two subreddits having a small shared authorship between them mean that they probably share a lot of common authors.
 
 ### 2. Stylometric Signatures: How Communities Write
 
-Communities also differ in how they **sound** : their structure, complexity, and textual habits. To capture a community’s writing style, we compute a **stylometric signature**, a vector built from features such as:
+<img src="{{ 'img/stylometric2.png' | relative_url }}" alt="Stylometric Signatures" style="max-width: 350px; width: 100%; height: auto; float: right; margin: 0 0 1rem 2rem;">
+
+Communities also differ in the how they **sound** : their structure, complexity, and textual habits. To capture a **community's writing style**, we compute a **stylometric signature**, a vector built from features such as:
 
 - Average character count  
 - Fraction of uppercase letters
@@ -93,19 +104,22 @@ Once each subreddit has its stylometric signature, we again compare communities 
 
 <p>The resulting distance is: \( \text{Stylometric Distance} = 1 − \text{cosine\_sim(style\_A, style\_B)} \) </p>
 
----
 
 ### 3. Psychological Signatures: What Communities Express
+
+<img src="{{ 'img/psycho1.png' | relative_url }}" alt="Psychological Signatures" style="max-width: 350px; width: 100%; height: auto; float: left; margin: 0 2rem 1rem 0;">
 
 Language also reveals psychology. Each hyperlink post in the dataset includes **64 LIWC features** and **VADER sentiment scores**. LIWC is a text analysis program that counts words belonging to psychologically meaningful categories. Meanwhile, VADER (Valence Aware Dictionary and Sentiment Reasoner) is a rule-based sentiment analysis tool. It uses a specialized dictionary designed to accurately understand the emotions and opinions found in social media texts.
 
 For each subreddit, we aggregate the normalized LIWC+VADER features of all its outgoing posts to define a **psychological signature**, the average emotional and cognitive expression shown by its authors when interacting with other communities.
 
-As before, similarity is computed as a distance, using cosine similarity: 
+As before, similarity is computed as a distance, using cosine similarity:
 
 <p>\( \text{Psychological Distance} = 1 − \text{cosine\_sim(psych\_A, psych\_B)} \)</p>
 
 This gives us a final observation angle: **How similar communities are in what they feel and the emotions they display**.
+
+<div style="clear: both;"></div>
 
 ---
 
@@ -209,81 +223,86 @@ On the other hand, t-SNE is a tool that reveals local structures and potential c
 
 
 
-<ul data-tabs-pca>
-  <li><a data-tabby-default href="#stylometric_viz" style="color:#ff4500;">Stylometric Visualizations</a></li>
-  <li><a href="#psychological_viz" style="color:#ff4500;">Psychological Visualizations</a></li>
-</ul>
+<div class="viz-card">
+  <div class="viz-selector">
+    <button class="active" onclick="showViz('stylo-pca')">Stylometric<span class="method">PCA</span></button>
+    <button onclick="showViz('stylo-tsne')">Stylometric<span class="method">t-SNE</span></button>
+    <button onclick="showViz('psycho-pca')">Psychological<span class="method">PCA</span></button>
+    <button onclick="showViz('psycho-tsne')">Psychological<span class="method">t-SNE</span></button>
+  </div>
 
+  <div class="viz-content">
 
-<div id="stylometric_viz" class="tab_content_shadow">
-
-<div class="two-heatmaps-container">
+    <div id="stylo-pca" class="viz-panel active">
+      <div class="heatmap-container">
         {% include basic_plots/pca_stylo.html %}
+      </div>
+      <div class="viz-description">
+        <h4>PCA - Stylometric Distance</h4>
+        <p>
+          The PCA visualization captures <strong>61% of the total variance</strong>. The rest is not visible, due to features having low correlation with one another (mean absolute correlation ≈ 0.3).
+        </p>
+        <p>
+          We observe a <strong>single cloud of points</strong> with no visible clustering, suggesting that subreddit writing styles exist on a <strong>continuous spectrum</strong>, gradually blending into one another.
+        </p>
+      </div>
+    </div>
+
+    <div id="stylo-tsne" class="viz-panel">
+      <div class="heatmap-container">
         {% include basic_plots/tsne_stylo.html %}
-</div>
+      </div>
+      <div class="viz-description">
+        <h4>t-SNE - Stylometric Distance</h4>
+        <p>
+          t-SNE is a <strong>non-linear technique</strong> that maps neighbors in 18-dimensional space to remain neighbors in 2D. It reveals <strong>local structures and clusters</strong>, though distances between clusters are not globally meaningful.
+        </p>
+        <p>
+          This visualization shows <strong>one large, relatively unified cloud</strong>, with some potential clusters forming at the edges. Clusters exist but are <strong>tightly packed</strong>.
+        </p>
+      </div>
+    </div>
 
-<h3 style="margin-top:30px; color:#d02c2c;">What does it all mean ?</h3>
-
-<h4>PCA - Stylometric Distance</h4>
-<p>
-The PCA visualization allows us to capture <strong>61% of the total variance</strong>. This means the rest of the variance is not visible on the PCA graph, which is due to the features having low correlation with one another (mean absolute correlation ≈ 0.3).  
-</p>
-<p>
-We observe a <strong>single cloud of points</strong> with no visible clustering. This suggests that subreddit writing styles exist on a <strong>continuous spectrum</strong>, gradually blending into one another rather than forming a few distinct types.
-</p>
-
-<h4>t-SNE - Stylometric Distance</h4>
-<p>
-t-SNE is a <strong>non-linear technique</strong> designed to map points that are neighbors in the 18-dimensional space to remain neighbors in 2D. It is particularly useful for identifying <strong>local structures and clusters</strong>, although the distances between clusters in t-SNE are <strong>not meaningful globally</strong>.  
-</p>
-<p>
-Our t-SNE visualization shows <strong>one large, relatively unified cloud</strong>, with some potential clusters forming at the edges.
-</p>
-
-<h4>Conclusion - Stylometric Distance</h4>
-<p>
-The presence of clusters in the t-SNE graph indicates that some subreddits share a <strong>stylometric signature</strong>. However, the absence of clustering in PCA suggests that these groups are <strong>very close to each other</strong> along the principal components that explain most of the variance.  
-</p>
-<p>
-In summary, <strong>clusters exist but are tightly packed</strong>, and t-SNE allows us to visualize them despite their proximity.
-</p>
-
-</div>
-
-
-
-<div id="psychological_viz" class="tab_content_shadow">
-
-<div class="two-heatmaps-container">
+    <div id="psycho-pca" class="viz-panel">
+      <div class="heatmap-container">
         {% include basic_plots/pca_psycho.html %}
+      </div>
+      <div class="viz-description">
+        <h4>PCA - Psychological Distance</h4>
+        <p>
+          The first two principal components explain <strong>24.07%</strong> of the total variance. For high-dimensional data, this value is reasonable to grasp the main tendency.
+        </p>
+        <p>
+          The projection forms a <strong>dense, continuous cloud</strong> without sharp separations, suggesting that subreddits vary smoothly in their psychological tone.
+        </p>
+      </div>
+    </div>
+
+    <div id="psycho-tsne" class="viz-panel">
+      <div class="heatmap-container">
         {% include basic_plots/tsne_psycho.html %}
+      </div>
+      <div class="viz-description">
+        <h4>t-SNE - Psychological Distance</h4>
+        <p>
+          While t-SNE reveals a large central mass, it uncovers <strong>peripheral clusters</strong> reflecting <strong>locally cohesive psychological communities</strong>, even though the global landscape remains continuous.
+        </p>
+        <p>
+          This confirms that subreddit psychological signatures vary gradually, with some isolated clusters appearing at the edges.
+        </p>
+      </div>
+    </div>
+
+  </div>
 </div>
-
-<h3 style="margin-top:30px; color:#d02c2c;">What does it all mean ?</h3>
-
-<h4>PCA - Psychological Distance</h4>
-<p>
-The first two principal components explain <strong>24.07%</strong> of the total variance. As the original data is of high dimension, this value is not inherently bad to grasp to main tendency.  
-The resulting projection forms a <strong>dense, continuous cloud</strong> without sharp separations, suggesting that subreddits vary smoothly in their psychological tone.  
-</p>
-
-<h4>t-SNE - Psychological Distance</h4>
-<p>
-While t-SNE also reveals a large central mass, it uncovers <strong>peripheral clusters</strong>.  
-These clusters reflect <strong>locally cohesive psychological communities</strong>, even though the global landscape remains continuous.
-</p>
-
-<h4>Conclusion - Psychological Distance</h4>
-<p>
-Both visualizations confirm that while there may be local concentrations of similar subreddits, the overall structure of the data remains continuous and overlapping.  
-This continuity suggests that subreddit psychological signatures vary gradually, although some isolated clusters appear.
-</p>
-
-</div>
-
 
 <script>
-  var tabs = new Tabby('[data-tabs-pca]');
+function showViz(id) {
+  document.querySelectorAll('.viz-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.viz-selector button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.closest('button').classList.add('active');
+}
 </script>
 
 ---

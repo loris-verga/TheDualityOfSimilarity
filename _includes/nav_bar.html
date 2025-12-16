@@ -186,7 +186,7 @@
   </div>
 
   <!-- Hero Image Below -->
-  <div class="hero-image-container rellax">
+  <div class="hero-image-container">
     <img src="{{ 'img/orange.png' | relative_url }}" alt="Hero Image" class="hero-image">
   </div>
 
@@ -199,11 +199,7 @@
   </div>
 </div>
 
-<!-- Rellax Parallax Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 <script>
-  var rellax = new Rellax('.rellax');
-
   // Make scroll indicator clickable
   document.querySelector('.hero-scroll-indicator').addEventListener('click', function() {
     window.scrollBy({

@@ -44,7 +44,7 @@ Thanks to the analyses permormed by the authors of the datasets, we can obtain t
 
 - The proximity of subreddits in terms of common authors, thanks to the embeddings datasets.
 
-This data allows us to ask the following provocative question:<strong>Does similarity create harmony… or fuel negative reactions?</strong>
+This data allows us to ask the following provocative question: <strong>Does similarity create harmony… or fuel negative reactions?</strong>
 
 And more specifically: <em>How to define similarity?</em> Shared users? Writing style? Emotional tone? <em>Do subreddits within the same thematic universe behave alike?</em> <em>Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
 
@@ -317,7 +317,7 @@ We will dive into the analysis of how subreddit embedding distances relate to th
 
 Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war. However we need to take it into account for our analysis. In the following plots, the classes are balanced. 
 
-**We plot the histograms of distances between source and target subreddits for the hyperlink group with positive link sentiment and the one with negative sentiment**
+**We explore the correlation between the different distances measures and the sentiment of the interactions**
 <ul data-tabs-4>
   <li><a data-tabby-default href="#authorship_sentiment" style="color: #ff4500;">Authorship (Embeddings) Distance</a></li>
   <li><a href="#stylometric_sentiment" style="color: #ff4500;">Stylometric Distance</a></li>
@@ -487,11 +487,17 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
             <li>
               <b>Controlling for Confounders</b><br>
               We fit a logistic regression to estimate a <b>propensity score</b> using the hyperlink feature vector.<br>
-              One covariate stands out: <b>compound_sentiment</b>, which correlates with both distance and link sentiment, as we can see :<br>
+              One covariate stands out: <b>compound_sentiment</b>, which correlates strongly  with both distance and link sentiment. 
+              To handle it properly, we match pairs tighly with similar values of <b>compound_sentiment</b> and we use a really small treshold.
+
+              After the matching that matches pair with similar propensity score and tightly with similar values of compound_sentiment, we can see that both groups have similar distribution of compound sentiment value.  
+              
+              <br><br>
+
+               :<br>
 
               { include basic_plots/distrib_compound_embeddings_causal_analysis.html %}
 
-              To handle it properly, we match pairs with a caliper of <code>0.2 × std</code> of that feature.<br><br>
 
 
               <br>

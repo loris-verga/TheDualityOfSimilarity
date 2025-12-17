@@ -165,6 +165,11 @@
     color: white;
   }
 
+  .glass-nav a.active {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+  }
+
   /* Sections */
   section {
     padding: 0;
@@ -224,13 +229,44 @@
 <div class="nav-container">
   <nav class="glass-nav">
     <ul>
-      <li><a href="#section1">Overview</a></li>
-      <li><a href="#section2">Distance Definition</a></li>
-      <li><a href="#section3">Causal Analysis</a></li>
-      <li><a href="#section4">Categories</a></li>
-      <li><a href="#section5">Case Study</a></li>
-      <li><a href="#section6">Mutual Relationships of Distances</a></li>
-      <li><a href="#section7">Predictive Power of Sentiment</a></li>
+      <li><a href="#section1" data-section="section1">Overview</a></li>
+      <li><a href="#section2" data-section="section2">Distance Definition</a></li>
+      <li><a href="#section3" data-section="section3">Causal Analysis</a></li>
+      <li><a href="#section4" data-section="section4">Categories</a></li>
+      <li><a href="#section5" data-section="section5">Case Study</a></li>
+      <li><a href="#section6" data-section="section6">Mutual Relationships</a></li>
+      <li><a href="#section7" data-section="section7">Predictive Power</a></li>
     </ul>
   </nav>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const sectionIds = ['section1', 'section2', 'section3', 'section4', 'section5', 'section6', 'section7'];
+  const navLinks = document.querySelectorAll('.glass-nav a[data-section]');
+
+  function updateActiveNav() {
+    let currentSection = 'section1';
+
+    for (const sectionId of sectionIds) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150) {
+          currentSection = sectionId;
+        }
+      }
+    }
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.dataset.section === currentSection) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav();
+});
+</script>

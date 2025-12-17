@@ -30,7 +30,6 @@ li {
 
 .two-heatmaps-container {
 	display: flex;
-	gap: 1rem;
 	width: 100%;
 }
 
@@ -38,7 +37,7 @@ li {
 	aspect-ratio: 1;
 	flex: 1;
 	min-width: 0;
-	min-height: 500px;
+	height: 610px;
 }
 
 @media (max-width: 900px) {
@@ -162,7 +161,7 @@ li {
 .viz-selector {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	background: #2a2a2a;
+	/* background: #2a2a2a; */
 }
 
 .viz-selector button {
@@ -172,14 +171,15 @@ li {
 	cursor: pointer;
 	font-size: 0.75rem;
 	font-weight: 500;
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 69, 0.9);
 	transition: all 0.3s ease;
 	border-bottom: 2px solid transparent;
 	line-height: 1.2;
+	border-radius: 0;
 }
 
 .viz-selector button:hover {
-	color: rgba(255, 255, 255, 0.9);
+	color: rgba(255, 69, 0, 0.5);
 	background: rgba(255, 255, 255, 0.05);
 }
 
@@ -217,7 +217,7 @@ li {
 }
 
 .viz-panel .heatmap-container {
-	width: 90%;
+	width: 100%;
 	height: 480px;
 	background: white;
 	border-radius: 8px;
@@ -242,7 +242,6 @@ li {
 .viz-panel .viz-description p {
 	margin: 0.5rem 0;
 	color: #555;
-	font-size: 0.95rem;
 	line-height: 1.5;
 }
 

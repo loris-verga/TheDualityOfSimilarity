@@ -463,7 +463,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
           A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
 
           ---
-          ### <span style="color:#ff4500">Causal Analysis: Does Authorship Distance Cause Negativity?</span>
+          ### <span style="color:#ff4500">Causal Analysis: Does -+++Cause Negativity?</span>
           To test whether being “far apart” in embedding space actually changes the sentiment of links, we frame distance as a treatment.
 
           <ul>

@@ -30,14 +30,24 @@ li {
 
 .two-heatmaps-container {
 	display: flex;
-	width: 100%;
 	gap: 1rem;
+	width: 100%;
 }
 
 .two-heatmaps-container .heatmap-container {
-	aspect-ratio: 1.15;
+	aspect-ratio: 1;
 	flex: 1;
 	min-width: 0;
+	min-height: 500px;
+}
+
+@media (max-width: 900px) {
+	.two-heatmaps-container {
+		flex-direction: column;
+	}
+	.two-heatmaps-container .heatmap-container {
+		min-height: 400px;
+	}
 }
 
 .tab_content_shadow {
@@ -47,6 +57,41 @@ li {
 	border-left: 3px solid rgba(255, 69, 0, 0.4);
 	background-color: rgba(255, 69, 0, 0.02);
 	animation: tabFadeIn 0.35s ease-out;
+}
+
+/* Break out tabs navigation and cards for categories */
+[data-tabs-6] {
+	width: 98vw;
+	margin-left: calc(-49vw + 50%);
+	margin-right: calc(-49vw + 50%);
+	padding: 0 40px;
+}
+
+#authorship_categories,
+#stylometric_categories,
+#psychological_categories {
+	padding: 25px 40px;
+	border-radius: 0 0 10px 10px;
+	width: 98vw;
+	margin-left: calc(-49vw + 50%);
+	margin-right: calc(-49vw + 50%);
+}
+
+@media (max-width: 1200px) {
+	[data-tabs-6] {
+		width: 100vw;
+		margin-left: calc(-50vw + 50%);
+		margin-right: calc(-50vw + 50%);
+		padding: 0 15px;
+	}
+	#authorship_categories,
+	#stylometric_categories,
+	#psychological_categories {
+		width: 100vw;
+		margin-left: calc(-50vw + 50%);
+		margin-right: calc(-50vw + 50%);
+		padding: 20px 15px;
+	}
 }
 
 @keyframes tabFadeIn {

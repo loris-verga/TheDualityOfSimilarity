@@ -30,7 +30,6 @@ li {
 
 .two-heatmaps-container {
 	display: flex;
-	gap: 1rem;
 	width: 100%;
 }
 
@@ -38,7 +37,7 @@ li {
 	aspect-ratio: 1;
 	flex: 1;
 	min-width: 0;
-	min-height: 500px;
+	height: 610px;
 }
 
 @media (max-width: 900px) {

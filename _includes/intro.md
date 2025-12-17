@@ -313,10 +313,11 @@ function showViz(id) {
 
 ### Distance Type & Observed Sentiment
 
-We first look at how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
-Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war.
+We will dive into the analysis of how subreddit embedding distances relate to the sentiment of the hyperlinks they exchange.<br>
 
-**Are positive and negative links present at different distances?**
+Roughly **10% of all links** in the dataset are negative, enough to notice patterns without depicting Reddit as a civil war. However we need to take it into account for our analysis. In the following plots, the classes are balanced. 
+
+**We plot the histograms of distances between source and target subreddits for the hyperlink group with positive link sentiment and the one with negative sentiment**
 <ul data-tabs-4>
   <li><a data-tabby-default href="#authorship_sentiment" style="color: #ff4500;">Authorship (Embeddings) Distance</a></li>
   <li><a href="#stylometric_sentiment" style="color: #ff4500;">Stylometric Distance</a></li>

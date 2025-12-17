@@ -41,10 +41,63 @@ li {
 }
 
 .tab_content_shadow {
-	/*background-color: rgba(255, 69, 0, 0.03);*/
 	box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.05);
 	padding: 15px;
 	border-radius: 0 0 10px 10px;
+	border-left: 3px solid rgba(255, 69, 0, 0.4);
+	background-color: rgba(255, 69, 0, 0.02);
+	animation: tabFadeIn 0.35s ease-out;
+}
+
+@keyframes tabFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Authorship tabs - Orange */
+#authorship_sentiment,
+#shared_dist,
+#causal_authorship,
+#authorship_categories {
+	border-left-color: rgba(255, 69, 0, 0.5);
+	background-color: rgba(255, 69, 0, 0.025);
+}
+
+/* Stylometric tabs - Cyan */
+#stylometric_sentiment,
+#stylo_dist,
+#causal_stylo,
+#stylometric_categories {
+	border-left-color: rgba(0, 186, 255, 0.5);
+	background-color: rgba(0, 186, 255, 0.025);
+}
+
+/* Psychological tabs - Dark */
+#psychological_sentiment,
+#psycho_dist,
+#causal_psycho,
+#psychological_categories {
+	border-left-color: rgba(27, 38, 44, 0.5);
+	background-color: rgba(27, 38, 44, 0.025);
+}
+
+/* Viz panel color coding */
+#stylo-pca .viz-description,
+#stylo-tsne .viz-description {
+	border-left-color: rgba(0, 186, 255, 0.6);
+	background-color: rgba(0, 186, 255, 0.03);
+}
+
+#psycho-pca .viz-description,
+#psycho-tsne .viz-description {
+	border-left-color: rgba(27, 38, 44, 0.6);
+	background-color: rgba(27, 38, 44, 0.03);
 }
 
 .two-barplots-container {

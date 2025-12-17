@@ -147,8 +147,8 @@ li {
 
 .two-barplots-container {
 	display: flex;
-	width: 100%;
-	gap: 1rem;
+	width: 150%;
+	margin-left: -20%;
 }
 
 /* Visualization Card */

@@ -38,15 +38,15 @@ We rely on two large datasets from Stanford:
 
 Thanks to the analyses permormed by the authors of the datasets, we can obtain the following information:
 
-- The authors' writing style when they write posts, thanks to the stylometric data attached to the hyperlinks.
+- The authors' writing style when they write posts, based on the stylometric data attached to the hyperlinks.
 
-- The emotions that the authors express when they write their posts, thanks to the psychological data attached to the hyperlinks.
+- The emotions that the authors express when they write their posts, based on the psychological data attached to the hyperlinks.
 
-- The proximity of subreddits in terms of common authors, thanks to the embeddings datasets.
+- The proximity of subreddits in terms of common authors, based on the embeddings datasets.
 
 This data allows us to ask the following provocative question: <strong>Does similarity create harmony… or fuel negative reactions?</strong>
 
-And more specifically: <em>How to define similarity?</em> Shared users? Writing style? Emotional tone? <em>Do subreddits within the same thematic universe behave alike?</em> <em>Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
+And more specifically: <em>How to define similarity? Shared users? Writing style? Emotional tone? Do subreddits within the same thematic universe behave alike? Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
 
 The datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>. In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
 
@@ -401,8 +401,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant. With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
   </p>
   <p>
-    The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  <br>
-    This reflects a strong statistical signal, but the <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
+    The <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
   </p>
   <hr>
   <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
@@ -411,7 +410,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     <li><b>p &lt; 0.05</b></li>
   </ul>
   <p>
-    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest compared with shared authorship.  <br>
+    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest.  <br>
     Psychological distance therefore captures sentiment-relevant variation, but only partially.
   </p>
 </div>
@@ -702,7 +701,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   <ul>
     <li>
       <b>Binarizing distance</b><br>
-      There is no natural cutoff in the cosine-distance distribution, so we split at the <b>median</b> — convenient and balanced (with the usual loss of granularity).
+      There is no natural cutoff in the cosine-distance distribution, so we split at the <b>median</b> : convenient and balanced (with the usual loss of granularity).
     </li>
 
     <li>
@@ -773,7 +772,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     The difference in mean link sentiment between the Stylometrically Distant and Stylometrically Close groups.
   </p>
   <p>
-    The <b>Average Treatment Effect</b> reaches <b>-0.19</b>. However, the p-value is equal to 0.18. At a 5% level, we cannot reject the null hypothesis that the Stylometrically Distant and Close groups have the same link sentiment.
+    Although the <b>Average Treatment Effect</b> is non negligible, the p-value surpasses conventional thresholds. We cannot deny that the Stylometrically Distant and Close groups have statistically similar link sentiment ratio.
   </p>
   <p class="ignore">
     Overall, stylometric distance shows—at most—a <b>very weak</b> causal influence on sentiment.  

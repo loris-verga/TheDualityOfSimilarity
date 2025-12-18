@@ -69,7 +69,7 @@ li {
 #authorship_categories,
 #stylometric_categories,
 #psychological_categories {
-	padding: 25px 40px;
+	/*padding: 25px 40px;*/
 	border-radius: 0 0 10px 10px;
 	width: 98vw;
 	margin-left: calc(-49vw + 50%);

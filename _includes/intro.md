@@ -327,10 +327,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
 <div id="authorship_sentiment" class="tab_content_shadow">
   {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
   <p>
-    Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links. This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
-  </p>
-  <p>
-    Positive links show a small bump near cosine distance <strong>~0.1</strong>, while negative links spike around <strong>~0.6</strong>. The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
+    Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links. This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
   </p>
   <hr>
   <p><span style="color:#ff4500">Are the Means Actually Different?</span></p>
@@ -353,7 +350,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     <li><strong>p &lt; 0.05</strong></li>
   </ul>
   <p>
-    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>. A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
+    So yes, the relationship is statistically significant, but the linear effect is <strong>weak</strong>. A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
   </p>
 </div>
 
@@ -369,11 +366,11 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
   {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
 
   <p>
-    The difference is statistically significant : negative interactions occur between slightly more stylometrically distant communities. But the effect size is small: about <b>0.77 vs. 0.75</b>.  
+    The difference is statistically significant : negative interactions occur between slightly more stylometrically distant communities. But the effect size is very small: about <b>0.017</b>.  
   </p>
   <p>
-    Even though the t-test returns <b>p ≤ 0.05</b> (allowing us to reject the null), the absolute difference (<b>≈ 0.017</b>) is minimal.  
-    Similar writing styles align mildly with positivity, but the relationship remains weak.
+    Even though the t-test returns <b>p ≤ 0.05</b>, the absolute difference is minimal.  
+    Similar writing styles align mildly with positivity, but the relationship remains very weak.
   </p>
   <hr>
   <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
@@ -772,7 +769,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     The difference in mean link sentiment between the Stylometrically Distant and Stylometrically Close groups.
   </p>
   <p>
-    Although the <b>Average Treatment Effect</b> is non negligible, the p-value surpasses conventional thresholds. We cannot deny that the Stylometrically Distant and Close groups have statistically similar link sentiment ratio.
+    Although the ATE is non negligible, the p-value surpasses conventional thresholds. Therefore, cannot deny that the Stylometrically Distant and Close groups have statistically similar link sentiment ratio.
   </p>
   <p class="ignore">
     Overall, stylometric distance shows—at most—a <b>very weak</b> causal influence on sentiment.  
@@ -820,7 +817,6 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
       The <b>ATE : -0.08</b>
       <ul>
         <li><b>p < 0.05</b></li>
-        <li>→ We <b>can reject</b> the null hypothesis.</li>
       </ul>
       Great news! We find evidence that a <b>higher psychological distance</b> <em>causes</em> more negativity in link sentiment.<br>
       In other words, users who interact from a relatively different emotional space show more negativity than those with similar emotional expressions.<br>

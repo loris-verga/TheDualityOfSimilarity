@@ -50,16 +50,6 @@ The datasets allow us to view Reddit not as a collection of disconnected topics,
 
 <strong>Do birds of a feather really flock together ?</strong>
 
-<div style="border: 2px solid rgba(255,69,0,0.6); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; background-color: rgba(255,69,0,0.03);">
-  <h3 style="color: #ff4500; margin-top: 0;">Research Questions</h3>
-  <ol>
-    <li>How does a difference in shared authorship, stylometric, or psychological similarity impact the negativity of inter-community interactions?</li>
-    <li>Are subreddits within the same topical category generally more similar to each other (based on shared authorship, stylometric, and psychological measures) than subreddits from different topical categories?</li>
-    <li>How do the 3 different measures of inter-community similarity—shared authorship, stylometric, and psychological—align and relate to each other?</li>
-    <li>Among the three defined similarity metrics, which one provides the greatest predictive power for classifying the sentiment of an inter-community hyperlink as either positive or negative?</li>
-  </ol>
-</div>
-
 ## <span style="color:#ff4500" id="section2">How to define Similarity ? </span>
 
 Before we can understand why communities clash, we must first understand **how they resemble one another**. On Reddit, similarity is not a single dimension. It is an intricate mix of **common authors**, **how authors write**, and **what psychological traits they express**.

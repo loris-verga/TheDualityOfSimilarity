@@ -377,9 +377,7 @@ Roughly **10% of all links** in the dataset are negative, enough to notice patte
     <li><b>p &lt; 0.05</b></li>
   </ul>
   <p>
-    The sign and significance mirror the embedding findings, but the strength is even weaker.  <br>
-    Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment.  <br>
-    While statistically detectable, it is far too small to matter in practice.
+    The sign and significance mirror the embedding findings, but the strength is even weaker. Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment. While statistically detectable, it is far too small to matter in practice.
   </p>
 </div>
 

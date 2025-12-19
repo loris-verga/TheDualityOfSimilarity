@@ -1,8 +1,6 @@
-<section id="section1">
-</section>
+<span style="margin-top:15px;"></span>
 
-## <span style="color:#ff4500" id="section1"> Similarity of Reddit communities and nature of interactions </span>
-
+## <span style="color:#ff4500;" id="section1"> Similarity of Reddit communities and nature of interactions </span>
 
 We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes. But what if this intuition is wrong? What if the most intense disputes don't arise between opposites… but between communities that look almost exactly the <strong>same</strong>?
 

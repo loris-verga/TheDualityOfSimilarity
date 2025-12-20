@@ -34,7 +34,7 @@ We rely on two large datasets from Stanford:
   </p>
 </div>
 
-Thanks to the analyses permormed by the authors of the datasets, we can obtain the following information:
+Thanks to the analyses performed by the authors of the datasets, we can obtain the following information:
 
 - The authors' writing style when they write posts, based on the stylometric data attached to the hyperlinks.
 
@@ -277,7 +277,7 @@ On the other hand, t-SNE is a tool that reveals local structures and potential c
       <div class="viz-description">
         <h4>t-SNE - Psychological Distance</h4>
         <p>
-          While t-SNE reveals a large central mass, it uncovers peripheral clusters</strong> reflecting locally cohesive psychological communities, even though the global landscape remains continuous.
+          While t-SNE reveals a large central mass, it uncovers peripheral clusters reflecting locally cohesive psychological communities, even though the global landscape remains continuous.
         </p>
         <p>
           This confirms that subreddit psychological signatures vary gradually, with some isolated clusters appearing at the edges.
@@ -568,7 +568,6 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
           the difference in mean link sentiment between the Stylometrically Distant and Stylometrically Close groups.
 
           The **Average Treatment Effect** reaches **-0.19**. However, the p-value is equal to 0.18. At a 5% level, we cannot reject the null hypothesis that the Stylometrically Distant and Close groups have the same link sentiment.
-          meme/
 
 
           <p class="ignore">
@@ -755,7 +754,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
     The difference in mean link sentiment between the Stylometrically Distant and Stylometrically Close groups.
   </p>
   <p>
-    Although the ATE is non negligible, the p-value surpasses conventional thresholds. Therefore, cannot deny that the Stylometrically Distant and Close groups have statistically similar link sentiment ratio.
+    Although the ATE is non negligible, the p-value surpasses conventional thresholds. Therefore, we cannot deny that the Stylometrically Distant and Close groups have statistically similar link sentiment ratio.
   </p>
   <p class="ignore">
     Overall, stylometric distance shows—at most—a <b>very weak</b> causal influence on sentiment.  

@@ -668,7 +668,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
 
 ### Causal Analysis between Distance Type & Link Sentiment
 
-<p>Correlation is nice, but as every stats professor loves to remind us: <em>correlation does not imply causation</em>. So let's put on our causal analysis hats and find out if distance actually <strong>causes</strong> negativity—or if we've just been chasing confounders this whole time.</p>
+<p>Correlation is nice, but as every stats professor loves to remind us: <em>correlation does not imply causation</em>. So let's put on our causal analysis hats and find out if distance actually <strong>causes</strong> negativity, or if we've just been chasing confounders this whole time.</p>
 
 <ul data-tabs-5>
   <li><a data-tabby-default href="#causal_authorship" style="color: #ff4500;">Authorship Distance</a></li>
@@ -818,6 +818,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
   var tabs = new Tabby('[data-tabs-5]');
 </script>
 <br>
-These insights set the context for a deeper question: **How does similarity in each space relate to negativity in cross-subreddit interactions?**
+These insights set the context for a deeper question: <br>
+**How does similarity in each space relate to negativity in cross-subreddit interactions?**
 
 ---

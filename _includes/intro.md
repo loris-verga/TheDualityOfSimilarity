@@ -303,7 +303,7 @@ function showViz(id) {
 
 Now for the juicy part: do communities that are "close" actually get along, or is proximity just another excuse to fight?
 
-Good news: Reddit is not a total warzone. Only about **10% of all links** are negative—enough drama to keep things interesting, but not enough to call it a civil war. Still, we need to account for this imbalance, so in the plots below, the classes are balanced.
+Good news: Reddit is not a total warzone. Only about **10% of all links** are negative, enough drama to keep things interesting, but not enough to call it a civil war. Still, we need to account for this imbalance, so in the plots below, the classes are balanced.
 
 **Let's see if distance and sentiment are actually correlated, or if we're just grasping at statistical straws.**
 <ul data-tabs-4>

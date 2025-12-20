@@ -49,7 +49,7 @@ Our findings open the door to potential future research, such as analyzing post 
     Finally, our predictive analysis confirms that similarity does carry information
     about future interactions, but only to a limited extent. Shared authorship is the
     most informative signal on its own, and combining distance measures improves prediction
-    slightly, especially with non-linear models. Still, negativity on Reddit remains only
+    slightly, especially using a non-linear model. Still, negativity on Reddit remains only
     partially predictable, reflecting the many forces that shape online conflict.
   </p>
 

@@ -1,8 +1,6 @@
-<section id="section1">
-</section>
+<span style="margin-top:15px;"></span>
 
-## <span style="color:#ff4500" id="section1"> Similarity of Reddit communities and nature of interactions </span>
-
+## <span style="color:#ff4500;" id="section1"> Similarity of Reddit communities and nature of interactions </span>
 
 We often imagine online conflict as something that emerges between groups that share nothing in common : political opposites, rival fandoms, ideological extremes. But what if this intuition is wrong? What if the most intense disputes don't arise between opposites… but between communities that look almost exactly the <strong>same</strong>?
 
@@ -29,7 +27,7 @@ We rely on two large datasets from Stanford:
     We have prepared a interactive graph that represents only 1500 hyperlinks between subreddits (out of more than 850,000!). Before diving into the Reddit ecosystem, take a moment to explore the connections between a small subset of subreddits by zooming in and moving nodes around.
   </p>
   <div style="height:580px; border-radius: 10px; overflow: hidden; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
-    <iframe src="graphs/reddit_1500_hyperlinks.html" style="position: relative; width:100%; height:620px; bottom:20px;" scrolling="no"></iframe>
+    <iframe src="graphs/reddit_1500_hyperlinks.html" style="position: relative; width:100%; height:620px; bottom:20px;"></iframe>
   </div>
   <p style="font-size:14px; color:#666; text-align:center; margin-top:10px;">
 	The size of each subreddit node depends on the number of links it receives.  
@@ -38,29 +36,19 @@ We rely on two large datasets from Stanford:
 
 Thanks to the analyses permormed by the authors of the datasets, we can obtain the following information:
 
-- The authors' writing style when they write posts, thanks to the stylometric data attached to the hyperlinks.
+- The authors' writing style when they write posts, based on the stylometric data attached to the hyperlinks.
 
-- The emotions that the authors express when they write their posts, thanks to the psychological data attached to the hyperlinks.
+- The emotions that the authors express when they write their posts, based on the psychological data attached to the hyperlinks.
 
-- The proximity of subreddits in terms of common authors, thanks to the embeddings datasets.
+- The proximity of subreddits in terms of common authors, based on the embeddings datasets.
 
 This data allows us to ask the following provocative question: <strong>Does similarity create harmony… or fuel negative reactions?</strong>
 
-And more specifically: <em>How to define similarity?</em> Shared users? Writing style? Emotional tone? <em>Do subreddits within the same thematic universe behave alike?</em> <em>Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
+And more specifically: <em>How to define similarity? Shared users? Writing style? Emotional tone? Do subreddits within the same thematic universe behave alike? Is there a type of similarity so fundamental that it predicts whether an inter-community interaction will be positive or hostile?</em>
 
 The datasets allow us to view Reddit not as a collection of disconnected topics, but as a dynamic ecosystem of <strong>mindsets</strong>, <strong>writing styles</strong>, and <strong>shared populations</strong>. In this data story, we map out what it means for two communities to be “similar”, examine how similarity relates to negativity, and ask:
 
 <strong>Do birds of a feather really flock together ?</strong>
-
-<div style="border: 2px solid rgba(255,69,0,0.6); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; background-color: rgba(255,69,0,0.03);">
-  <h3 style="color: #ff4500; margin-top: 0;">Research Questions</h3>
-  <ol>
-    <li>How does a difference in shared authorship, stylometric, or psychological similarity impact the negativity of inter-community interactions?</li>
-    <li>Are subreddits within the same topical category generally more similar to each other (based on shared authorship, stylometric, and psychological measures) than subreddits from different topical categories?</li>
-    <li>How do the 3 different measures of inter-community similarity—shared authorship, stylometric, and psychological—align and relate to each other?</li>
-    <li>Among the three defined similarity metrics, which one provides the greatest predictive power for classifying the sentiment of an inter-community hyperlink as either positive or negative?</li>
-  </ol>
-</div>
 
 ## <span style="color:#ff4500" id="section2">How to define Similarity ? </span>
 
@@ -327,10 +315,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
 <div id="authorship_sentiment" class="tab_content_shadow">
   {% include basic_plots/indiv_distrib_cosine_dist_embeddings_by_link_sentiment.html %}
   <p>
-    Yes. Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links. This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
-  </p>
-  <p>
-    Positive links show a small bump near cosine distance <strong>~0.1</strong>, while negative links spike around <strong>~0.6</strong>. The curves cross around <strong>0.5</strong>, below that, positive links dominate; above that, negative links take over.
+    Subreddit pairs with <strong>negative</strong> link sentiment have noticeably <strong>larger cosine distances</strong> than those with positive links. This suggests that aligned communities tend to get along more (shocking, we know !), while more distant ones are more likely to disagree.
   </p>
   <hr>
   <p><span style="color:#ff4500">Are the Means Actually Different?</span></p>
@@ -353,7 +338,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
     <li><strong>p &lt; 0.05</strong></li>
   </ul>
   <p>
-    So yes, the relationship is statistically significant, but the linear effect is <strong>very weak</strong>. A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
+    So yes, the relationship is statistically significant, but the linear effect is <strong>weak</strong>. A reasonable interpretation: embedding distance influences sentiment slightly, but it is far from the main factor.
   </p>
 </div>
 
@@ -369,11 +354,11 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
   {% include basic_plots/mean_stylo_cosine_dist_across_groups_of_link_sentiment.html %}
 
   <p>
-    The difference is statistically significant : negative interactions occur between slightly more stylometrically distant communities. But the effect size is small: about <b>0.77 vs. 0.75</b>.  
+    The difference is statistically significant : negative interactions occur between slightly more stylometrically distant communities. But the effect size is very small: about <b>0.017</b>.  
   </p>
   <p>
-    Even though the t-test returns <b>p ≤ 0.05</b> (allowing us to reject the null), the absolute difference (<b>≈ 0.017</b>) is minimal.  
-    Similar writing styles align mildly with positivity, but the relationship remains weak.
+    Even though the t-test returns <b>p ≤ 0.05</b>, the absolute difference is minimal.  
+    Similar writing styles align mildly with positivity, but the relationship remains very weak.
   </p>
   <hr>
   <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
@@ -382,9 +367,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
     <li><b>p &lt; 0.05</b></li>
   </ul>
   <p>
-    The sign and significance mirror the embedding findings, but the strength is even weaker.  <br>
-    Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment.  <br>
-    While statistically detectable, it is far too small to matter in practice.
+    The sign and significance mirror the embedding findings, but the strength is even weaker. Here, stylometric distance shows an <b>almost non-existent</b> linear relationship with link sentiment. While statistically detectable, it is far too small to matter in practice.
   </p>
 </div>
 
@@ -401,8 +384,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
     The difference in sample means is small, only about <b>0.1</b>, yet the confidence intervals indicate that the gap might be statistically significant. With a p-value ≤ 0.05, we reject the null hypothesis and conclude that negative interactions occur the most between psychologically more distant communities.
   </p>
   <p>
-    The <b>t-statistic (-75.44)</b> is notably large, far exceeding the stylometric result.  <br>
-    This reflects a strong statistical signal, but the <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
+    The <b>practical</b> impact remains limited: psychological distance is associated with more negativity, though the effect size is still weak.
   </p>
   <hr>
   <p><span style="color:#ff4500">Correlation: How Strong Is the Relationship?</span></p>
@@ -411,7 +393,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
     <li><b>p &lt; 0.05</b></li>
   </ul>
   <p>
-    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest compared with shared authorship.  <br>
+    The correlation is statistically significant and stronger than for stylometric distance (10 times larger!), yet remains modest.  <br>
     Psychological distance therefore captures sentiment-relevant variation, but only partially.
   </p>
 </div>
@@ -702,7 +684,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
   <ul>
     <li>
       <b>Binarizing distance</b><br>
-      There is no natural cutoff in the cosine-distance distribution, so we split at the <b>median</b> — convenient and balanced (with the usual loss of granularity).
+      There is no natural cutoff in the cosine-distance distribution, so we split at the <b>median</b> : convenient and balanced (with the usual loss of granularity).
     </li>
 
     <li>
@@ -773,7 +755,7 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
     The difference in mean link sentiment between the Stylometrically Distant and Stylometrically Close groups.
   </p>
   <p>
-    The <b>Average Treatment Effect</b> reaches <b>-0.19</b>. However, the p-value is equal to 0.18. At a 5% level, we cannot reject the null hypothesis that the Stylometrically Distant and Close groups have the same link sentiment.
+    Although the ATE is non negligible, the p-value surpasses conventional thresholds. Therefore, cannot deny that the Stylometrically Distant and Close groups have statistically similar link sentiment ratio.
   </p>
   <p class="ignore">
     Overall, stylometric distance shows—at most—a <b>very weak</b> causal influence on sentiment.  
@@ -821,7 +803,6 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
       The <b>ATE : -0.08</b>
       <ul>
         <li><b>p < 0.05</b></li>
-        <li>→ We <b>can reject</b> the null hypothesis.</li>
       </ul>
       Great news! We find evidence that a <b>higher psychological distance</b> <em>causes</em> more negativity in link sentiment.<br>
       In other words, users who interact from a relatively different emotional space show more negativity than those with similar emotional expressions.<br>

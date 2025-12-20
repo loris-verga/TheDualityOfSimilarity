@@ -59,5 +59,4 @@ Our findings open the door to potential future research, such as analyzing post 
     into new notions of similarity and how these dynamics evolve over time, especially
     given that our data spans over three years of Reddit’s history.
   </p>
-</section>
 

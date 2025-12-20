@@ -11,7 +11,7 @@ All in all, we reviewed the various metrics and analyzed them to see what charac
 Our findings open the door to potential future research, such as analyzing post links via new distances. Our case study also revealed a facet of subreddit that is certain humor-oriented subreddits sending negativity to related-topics subreddits, but this is only one facet among many others that would be interesting to study and understand their impact on the Reddit ecosystem. Also take into account that the posts date back around 10 years. It would be interesting to see today how certain metrics have evolved in relation to negativity: would the gap between positive posts be even wider for each distance?
 
 
-  <h2>Conclusion</h2>
+  ### <span style="color:#ff4500">Conclusion</span>
 
   <p>
     So, do birds of a feather flock together or do they end up pecking at each other?
@@ -31,7 +31,7 @@ Our findings open the door to potential future research, such as analyzing post 
   <p>
     At the same time, our results highlight that Reddit is not a neatly partitioned
     landscape. Subreddits overlap heavily, category boundaries are blurry, and attempts
-    to place communities into rigid thematic boxes are not often successful. Similarity on Reddit
+    to place communities into rigid thematic boxes are not always successful. Similarity on Reddit
     is continuous rather than categorical, shaped by shared users and overlapping
     interests rather than clean divisions.
   </p>

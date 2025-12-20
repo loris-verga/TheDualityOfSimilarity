@@ -818,7 +818,5 @@ Good news: Reddit is not a total warzone. Only about **10% of all links** are ne
   var tabs = new Tabby('[data-tabs-5]');
 </script>
 <br>
-These insights set the context for a deeper question: <br>
-**How does similarity in each space relate to negativity in cross-subreddit interactions?**
 
 ---

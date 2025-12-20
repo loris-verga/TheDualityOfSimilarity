@@ -1,4 +1,3 @@
-{% include test.md %}
 {% include intro.md %}
 {% include R2.md %}
 {% include R3.md %}
